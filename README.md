@@ -33,7 +33,7 @@ El juego transcurre en Abrakazam un mundo mágico que se ha visto invadido por c
  - # Gameplay: 
 
 - # Documento de diseño del videojuego: 
-https://github.com/merchf/DVI_Project/GDD.md
+https://github.com/merchf/DVI_Project/blob/master/GDD.md
 - # Url juego: 
 
 
