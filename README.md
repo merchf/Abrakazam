@@ -1,7 +1,4 @@
-# DVI_Project
-
-
-# Apta
+# ABRAKAZAM
 
 Desarrollado por: 
 
@@ -12,14 +9,13 @@ Desarrollado por:
 
 **Descripción**:
 
-El juego nos pone en la situación de Sandra, una chica que tiene mucho interés en informática, algo que en chicas de su edad no suele ser común, de modo que el jugador tendrá que ayudar a Sandra a conseguir su objetivo pese a la perspectiva de sus compañeros y profesores.
+El juego transcurre en Abrakazam un mundo mágico que se ha visto invadido por criaturas malignas
 
 
-|**Géneros**: Novela gráfica  |  **Modos:** Historia|
+|**Géneros**: Plataformas |  **Modos:** Un jugador|
 |--|--|
-|**Público objetivo**: Chicas de unos 11-12 años  |**Plataformas**: PC|
-|**Cantidades**: Escenarios: 11, Objetos: 4, Personajes: 9| |
-
+|**Público objetivo**: 7+ |**Plataformas**: PC|
+|**Cantidades**: Escenarios: 7, Objetos: , Personajes: 6| |
 
 
  **Referencias**
@@ -37,7 +33,7 @@ El juego nos pone en la situación de Sandra, una chica que tiene mucho interés
  - # Gameplay: 
 
 - # Documento de diseño del videojuego: 
-
+https://github.com/merchf/DVI_Project/GDD.md
 - # Url juego: 
 
 
