@@ -18,6 +18,18 @@ El juego transcurre en Abrakazam un mundo mágico que se ha visto invadido por c
 |**Cantidades**: Escenarios: 7, Objetos: , Personajes: 6| |
 
 
+
+# Archivos de interés
+- # Url juego: 
+https://merchf.github.io/Abrakazam/
+
+ - # Gameplay: 
+
+- # Documento de diseño del videojuego: 
+https://github.com/merchf/DVI_Project/blob/master/GDD.md
+
+
+
  **Referencias**
 
  Los recursos utilizados en el proyecto son los siguientes:
@@ -28,13 +40,6 @@ El juego transcurre en Abrakazam un mundo mágico que se ha visto invadido por c
 - # Música
    
 
-# Archivos de interés
-
- - # Gameplay: 
-
-- # Documento de diseño del videojuego: 
-https://github.com/merchf/DVI_Project/blob/master/GDD.md
-- # Url juego: 
 
 
 
