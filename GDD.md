@@ -49,7 +49,7 @@ Además, al final de cada nivel, el jugador se enfrentará a un enemigo final pa
  ![Portada Juego]()
  |--|
  
-1.1 Relato breve y parcial de una partida típica
+**1.1 Relato breve y parcial de una partida típica**
 - El jugador ingresa el nombre que quiere tener y da a JUGAR.
 - Aparece la pantalla del primer nivel. En el juego habrá siete niveles, cada uno con temática diferente haciendo alusión al viaje que hará nuestro protagonista, desde su inicio hasta llegar al portal final. 
   Niveles: Tren-Castillo-Escaleras- Escoba-Laberinto-Bosque Oscuro- Lago negro.
@@ -74,9 +74,9 @@ El juego contará con un menú inicial simple e intuitivo con:
 
 La temática del menú será fantástica, mostrando las siete gemas y el portal mágico. Además de poner a algún personaje.
 
-2.1.Configuración
+**2.1.Configuración**
 No dispone de configuración. 
-2.2 Interfaz y control
+**2.2 Interfaz y control**
 Para los controles se utilizará el teclado, ya que es un juego destinado a que se juego en PC.
 La interfaz de juego se desarrollará en JavaScript con metodología html.
 Se desarrollarán diferentes niveles con diseños diferentes y plataformas, en los que el personaje podrá saltar, atacar, 	escalar, moverse a la izquierda y derecha, meterse por puertas, recoger objetos e interactuar con objetos. Todo ello, 		utilizando las flechas del teclado y algunas letras.
@@ -85,7 +85,7 @@ Se desarrollarán diferentes niveles con diseños diferentes y plataformas, en l
 
 Durante el juego habrá que ir superando los niveles, derrotando enemigos y  jefes e ir  recolectando las gemas para cerrar el portal del nivel final.
 
-3.1.Mecánica
+**3.1.Mecánica**
 
 - Saltar: espacio.
 - Andar: flechas izquierda y derecha.
@@ -95,7 +95,7 @@ Durante el juego habrá que ir superando los niveles, derrotando enemigos y  jef
 - Doble salto: doble espacio.
 - Coger objetos:Llevar al personaje al objeto y este se coge automáticamente.
 
-3.2.Dinámica
+**3.2.Dinámica**
 
 Para poder completar un nivel se deberá pasar el nivel plataforma hasta llegar a una puerta, que te lleva a la pantalla del jefe final.
 Una vez ahí se establece el juego de piedra(Q), papel(W) o tijera(E), cada uno asignado a un hechizo. Si se supera se gana la gema, te pasas en nivel y puedes seguir jugando.
@@ -117,19 +117,20 @@ Si se queda sin vida, GAME OVER.
 	- Abrir puertas y avanzar en el nivel, en el caso de que recoja una llave.
 	- Pasar de nivel, en el caso que consiga la gema.
 
-3.3.Estética
+**3.3.Estética**
 
 Modo pixel, basándonos en Alex Kidd.
 Dependiendo del nivel, los escenarios serán claros u oscuros, aunque predominarán los oscuros.
 	
 **4.Contenido**
+
 Mencionar el tipo de elementos que se van a necesitar (imágenes, sonidos, música…)
 
 - Imágenes:
 - Sonidos:
 - Música:
 
-4.1.Historia
+**4.1.Historia**
 
 El juego transcurre en el mágico reino de Abrakazam, donde el malvado Mr Lion ha abierto un portal mágico trayendo el pánico y el terror a todas sus tierras.
 Sólo consiguiendo el poder de las siete gemas astrales, nacidas de las mismísimas estrellas y repartidas por todo el reino, se podrá cerrar el portal y devolver la paz.
@@ -137,7 +138,7 @@ Sólo consiguiendo el poder de las siete gemas astrales, nacidas de las mismísi
 El protagonista comenzará su aventura en un tren lleno de zombies, llegará a un castillo en ruinas, subirá un porrón de escaleras, echará a volar en su escoba para escapar de sus enemigos, aterrizará en un laberinto, que termina desembocando en el bosque oscuro, donde se encuentra el portal mágico en medio del lago negro. Todo esto venciendo a los enemigos, a sus jefes y ganando las siete gemas para cerrar el portal y vencer a Mr Lion.
 
 	 
-4.2.Niveles
+**4.2.Niveles**
 
 Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedra, papel o tijera).
 
@@ -154,16 +155,16 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 	- Objetos: poción curativa y gema roja.
 
 - Nivel 3- Escaleras:
-- Descripción: Nuestro personaje tiene que huir del castillo, los enemigos son demasiados, por ello, comienza a subir las escaleras del castillo.
-- Metodología: Plataformas Vertical, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
-- Enemigos: Trolls y Jefe Troll.
-- Objetos: poción curativa y gema morada.
+	- Descripción: Nuestro personaje tiene que huir del castillo, los enemigos son demasiados, por ello, comienza a subir las escaleras del castillo.
+	- Metodología: Plataformas Vertical, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
+	- Enemigos: Trolls y Jefe Troll.
+	- Objetos: poción curativa y gema morada.
 
 - Nivel 4- Escoba/Cielo:
-- Descripción: Nuestro personaje llega al final de las escaleras, su única opción para escapar de sus enemigos y continuar su viaje es echar a volar. Por ello llama a su escoba y salta.
-- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda para esquivar.
-- Enemigos: Dragones y Jefe Dragón.
-- Objetos: poción curativa y gema azul.
+	- Descripción: Nuestro personaje llega al final de las escaleras, su única opción para escapar de sus enemigos y continuar su viaje es echar a volar. Por ello llama a su escoba y salta.
+	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda para esquivar.
+	- Enemigos: Dragones y Jefe Dragón.
+	- Objetos: poción curativa y gema azul.
 
 - Nivel 5- Laberinto:
 	- Descripción: Tras volar en su escoba, nuestro personaje aterriza a las puertas de un laberinto, que lo separa del bosque 	oscuro al que debe entrar.
@@ -178,54 +179,34 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 	- Objetos: poción curativa y gema verde.
 
 - Nivel 7- Lago negro
-	- Descripción: A sólo una gema nuestro personaje desemboca en el lago negro, donde se encuentra el portal mágico y a Mr 	Lion. 
-	Sólo le queda conseguir la última gema para poder cerrar el portal y salvar el reino de Abrakadam.
+	- Descripción: A sólo una gema nuestro personaje desemboca en el lago negro, donde se encuentra el portal mágico y a Mr 	Lion. Sólo le queda conseguir la última gema para poder cerrar el portal y salvar el reino de Abrakadam.
 	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
 	- Enemigos: Medusas y Mr Lion.
 	- Objetos: poción curativa y gema negra.
 
 	 
-	 4.3. **Personajes**
+**4.3.Personajes**
 
-	 
- - El personaje principal es Sandra, chica de 18 años que quiere dedicarse a la informática.
- -De izquierda a derecha tenemos a el mejor amigo de Sandra llamado Dani que será un apoyo a lo largo del juego, aunque al principio no se muestre muy de acuerdo.  Julia y Mario son los compañeros de clase con los que Sandra tiene más confianza.
+- Avatar del protagonista: Un mago.
+- Enemigos: Las criaturas que han atravesado el portal y están destruyendo el reino. Los enemigos que hay que ir derrotando en cada nivel. 
+	- Zombies:
+	- Jefe Zombie:
+	- Trolls:
+	- Jefe Troll:
+	- Dragones:
+	- Jefe Dragón:
+	- Espantapájaros:
+	- Jefe Espantapájaro:
+	- Arañas:
+	- Jefe Araña:
+	- Medusas:
+- Mr Lion: El antagonista del juego. El malvado hechicero que ha abierto el portal, que ha traído a todos los enemigos y el caos al reino. El jefe final que hay que derrotar en el último nivel.
+
+**4.4.Objetos**
  
- 
-| ![Dani](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/juegos%20serios%20%28personajes%20sin%20fondo%29/chicos/chicos1_frente.png?raw=true) | ![Julia](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/juegos%20serios%20%28personajes%20sin%20fondo%29/chicas/chicas2_lado.png?raw=true) |	![Mario](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/juegos%20serios%20%28personajes%20sin%20fondo%29/chicos/chicos4_frente.png?raw=true) |
-|--|--|--|
+- Llaves: Para abrir puertas cerradas. Colocadas en los niveles que las requieran.
+- Pociones curativas: Para recuperar vida del personaje. Colocadas aleatoriamente en cada nivel.
+- Gemas: Entregada al final de cada nivel. Cada una tiene un color diferente y son necesarias para cerrar el portal final.
 
-
- - **Compañeros de clase.**
- 
-|  ![Compañero1](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/juegos%20serios%20%28personajes%20sin%20fondo%29/chicos/chicos3_frente.png?raw=true)| ![Compañera2](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/juegos%20serios%20%28personajes%20sin%20fondo%29/chicas/chicas3_lado.png?raw=true) | ![Compañero3](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/juegos%20serios%20%28personajes%20sin%20fondo%29/chicos/chicos2_frente.png?raw=true) |
-|--|--|--|
-
-
- - Profesor y tutor de la clase de Sandra
-
-
-![Profesor](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/juegos%20serios%20%28personajes%20sin%20fondo%29/adultos/profesor-explicando.png?raw=true)
-
- - Los padres de Sandra, que no se opondrán a ella para estudiar la carrera.
-
-|  ![Padre](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/juegos%20serios%20%28personajes%20sin%20fondo%29/adultos/padre.png?raw=true)| ![Madre](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/juegos%20serios%20%28personajes%20sin%20fondo%29/adultos/madre.png?raw=true) |
-|--|--|
-
- 4.4. **Objetos**
- 
-|![Libros](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/otros/Libros-Mesa.png?raw=true)|![cartera](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/escenarios/habitaci%C3%B3n/cartera.png?raw=true)  |  ![llaves](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/escenarios/habitaci%C3%B3n/llaves.png?raw=true)|	![bolso](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/escenarios/habitaci%C3%B3n/bolso.png?raw=true) |
-| -- |--|--|--|
-
- - Los libros los recoge Sandra al principio del juego cuando se va a ir de clase para quedar con sus amigos en el Burger. Es un objeto necesario para salir de la clase.
- -  Las llaves es un objeto necesario para salir de la casa.
- - La cartera se debe de usar obligatoriamente el segundo día para salir de la habitación, ya que Sandra debe dinero a Dani del Burguer.
- -  El bolso es un objeto secundario.
-
-| ![ánimo 6](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/Barra%20de%20vida/Vida%206.png?raw=true) | ![ánimo 5](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/Barra%20de%20vida/Vida%205.png?raw=true) |![ánimo 4](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/Barra%20de%20vida/Vida%204.png?raw=true)	|	![ánimo 3](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/Barra%20de%20vida/Vida%203.png?raw=true)|	![ánimo 2](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/Barra%20de%20vida/Vida%202.png?raw=true)|![ánimo 1](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/Barra%20de%20vida/Vida%201.png?raw=true)	| ![ánimo 0](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/Barra%20de%20vida/Vacia%20.png?raw=true)|
-|--|--|--|--|--|--|--|
-
-
-
-Las barra de ánimo muestra el ánimo del personaje de Sandra en todo momento, pudiendo variar dependiendo de las respuestas que pongamos y dependiendo del ánimo que tenga el personaje al final del juego, se alcanzará un final y otro.
-
+**Referencias**
+-  Juego de Alex Kidd.
