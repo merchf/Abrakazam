@@ -4,8 +4,6 @@
 Desarrollado por: 
 
 | Esther Peñas Martinez |Mercedes Herrero Fernández|
-|--|--|--|--|--|--|
-
 
 
 **Resumen**:
@@ -46,10 +44,12 @@ Además, al final de cada nivel, el jugador se enfrentará a un enemigo final pa
 
 
  **Vista general**
+ 
  ![Portada Juego]()
  |--|
  
 **1.1 Relato breve y parcial de una partida típica**
+
 - El jugador ingresa el nombre que quiere tener y da a JUGAR.
 - Aparece la pantalla del primer nivel. En el juego habrá siete niveles, cada uno con temática diferente haciendo alusión al viaje que hará nuestro protagonista, desde su inicio hasta llegar al portal final. 
   Niveles: Tren-Castillo-Escaleras- Escoba-Laberinto-Bosque Oscuro- Lago negro.
@@ -75,8 +75,11 @@ El juego contará con un menú inicial simple e intuitivo con:
 La temática del menú será fantástica, mostrando las siete gemas y el portal mágico. Además de poner a algún personaje.
 
 **2.1.Configuración**
+
 No dispone de configuración. 
+
 **2.2 Interfaz y control**
+
 Para los controles se utilizará el teclado, ya que es un juego destinado a que se juego en PC.
 La interfaz de juego se desarrollará en JavaScript con metodología html.
 Se desarrollarán diferentes niveles con diseños diferentes y plataformas, en los que el personaje podrá saltar, atacar, 	escalar, moverse a la izquierda y derecha, meterse por puertas, recoger objetos e interactuar con objetos. Todo ello, 		utilizando las flechas del teclado y algunas letras.
