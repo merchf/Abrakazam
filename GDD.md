@@ -64,39 +64,126 @@ Además, al final de cada nivel, el jugador se enfrentará a un enemigo final pa
 - Una vez derrotado al jefe final, el jugador obtendrá la gema y pasará al siguiente nivel.
 - Cuando se llegue al último nivel el juego de piedra papel o tijera se pondrá más difícil, dejando más de tres opciones a elegir.
 
- 2.  **Menús y modos de juego**
+**2. Menús y modos de juego**
 
-El juego dispone de un menú sencillo, en el que solo se puede comenzar una partida o acceder a los créditos como se aprecia en la foto de vista general. Los emoticonos que hay en la esquina son información sobre el juego, ya que está en español y va sobre la educación.
-Una vez en la pantalla de créditos, podemos acceder al menú principal  clicando en el icono de flechas.
-![Créditos](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/escenarios/creditos.png?raw=true)
-	 2.1. **Configuración**
-	 No dispone de configuración. 
-	 2.2 **Interfaz y control**
-	 Los controles son todos con el ratón, de modo que así es más accesible para todo el mundo. Además, la interfaz del juego es bastante simple, consiste en cajas emergentes de diálogos (cambian de sitio dependiendo de quien habla) y se clickea para moverse o cambiar de diálogo.
+El juego contará con un menú inicial simple e intuitivo con:
+
+- Botón JUGAR: iniciará el juego. Se tendrá que ingresar antes el nombre del personaje.
+- Botón CRÉDITOS: mostrará los nombres de los creadores.
+- Espacio para ingresar el nombre del personaje a gusto del jugador.
+
+La temática del menú será fantástica, mostrando las siete gemas y el portal mágico. Además de poner a algún personaje.
+
+2.1.Configuración
+No dispone de configuración. 
+2.2 Interfaz y control
+Para los controles se utilizará el teclado, ya que es un juego destinado a que se juego en PC.
+La interfaz de juego se desarrollará en JavaScript con metodología html.
+Se desarrollarán diferentes niveles con diseños diferentes y plataformas, en los que el personaje podrá saltar, atacar, 	escalar, moverse a la izquierda y derecha, meterse por puertas, recoger objetos e interactuar con objetos. Todo ello, 		utilizando las flechas del teclado y algunas letras.
 	 
- 3. **Jugabilidad**
- 
-	 3.1. **Mecánica**
+**3. Jugabilidad**
 
-	 Puesto que el control es mediante un ratón las mecánicas son interactuar con los personajes o con objetos.
+Durante el juego habrá que ir superando los niveles, derrotando enemigos y  jefes e ir  recolectando las gemas para cerrar el portal del nivel final.
+
+3.1.Mecánica
+
+- Saltar: espacio.
+- Andar: flechas izquierda y derecha.
+- Escalar: flechas arriba y abajo cuando se llegue a una escalera o enredadera.
+- Atacar: Teclas Q, W y E para lanzar diferentes conjuros.
+- Atravesar puerta: flecha para arriba cuando el personaje está frente a una puerta.
+- Doble salto: doble espacio.
+- Coger objetos:Llevar al personaje al objeto y este se coge automáticamente.
+
+3.2.Dinámica
+
+Para poder completar un nivel se deberá pasar el nivel plataforma hasta llegar a una puerta, que te lleva a la pantalla del jefe final.
+Una vez ahí se establece el juego de piedra(Q), papel(W) o tijera(E), cada uno asignado a un hechizo. Si se supera se gana la gema, te pasas en nivel y puedes seguir jugando.
+
+Para perder en el juego tu personaje se tiene que quedar sin vidas, en principio contará con seis corazones. Por cada enemigo que le ataque irá perdiendo medio corazón, excepto en la batalla final que irá perdiendo un corazón entero.
+Si se queda sin vida, GAME OVER.
+
+- Saltar: Le permite al personaje moverse entre plataformas o subir escalones.
+- Andar: Le permite al personaje moverse por el nivel y recolectar los objetos, además de escapar de los enemigos.
+- Escalar: Le permite al personaje subir y bajar entre los diferentes niveles que tenga el nivel, además de subir y bajar a    plataformas, que no se puedan alcanzar saltando.
+- Atacar: Le permite al personaje defenderse contra sus enemigos (6 de vida).
+	- Bolas de fuego (Q): - 1 de vida al enemigo. Recarga Total: 5 segundos.
+	- Congelación (W): Mantiene al enemigo inmóvil 10 segundos. Recarga Total: 10 segundos.
+	- Rayo (E): - 2 de vida. Recarga Total: 15 segundos.
+- Atravesar puerta: Le permite al personaje pasar al nivel final del jefe.
+- Doble salto: Le permite al personaje llegar a plataformas más elevadas.
+- Coger objetos:  Le permite al personaje:
+	- Ganar vida, en el caso que recoja una poción.
+	- Abrir puertas y avanzar en el nivel, en el caso de que recoja una llave.
+	- Pasar de nivel, en el caso que consiga la gema.
+
+3.3.Estética
+
+Modo pixel, basándonos en Alex Kidd.
+Dependiendo del nivel, los escenarios serán claros u oscuros, aunque predominarán los oscuros.
+	
+**4.Contenido**
+Mencionar el tipo de elementos que se van a necesitar (imágenes, sonidos, música…)
+
+- Imágenes:
+- Sonidos:
+- Música:
+
+4.1.Historia
+
+El juego transcurre en el mágico reino de Abrakazam, donde el malvado Mr Lion ha abierto un portal mágico trayendo el pánico y el terror a todas sus tierras.
+Sólo consiguiendo el poder de las siete gemas astrales, nacidas de las mismísimas estrellas y repartidas por todo el reino, se podrá cerrar el portal y devolver la paz.
+
+El protagonista comenzará su aventura en un tren lleno de zombies, llegará a un castillo en ruinas, subirá un porrón de escaleras, echará a volar en su escoba para escapar de sus enemigos, aterrizará en un laberinto, que termina desembocando en el bosque oscuro, donde se encuentra el portal mágico en medio del lago negro. Todo esto venciendo a los enemigos, a sus jefes y ganando las siete gemas para cerrar el portal y vencer a Mr Lion.
+
 	 
-	 3.2.**Dinámica**
+4.2.Niveles
 
-	 En este juego no hay una forma explícita de perder, sin embargo el juego cuenta con dos finales, uno en el que Sandra logra su sueño, y otra en la que no lo consigue.
-	 
-	 3.3.**Estética**
+Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedra, papel o tijera).
 
-	 Se sigue una estética minimalista, donde destacan más las formas en contraste con el fondo.
-	 ![escenario burguer](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/escenarios/burger.png?raw=true)![escenario habitación casa](https://github.com/amprubio/JS-uAdventure/blob/master/PrimerPrototipo/Recursos/escenarios/casa-habitacion.png?raw=true)
- 4. **Contenido**
+- Nivel 1-Tren:
+	- Descripción: Al inicio el protagonista está en un tren camino a su destino, tendrá que atravesar los vagones hasta 		llegar a la locomotora.
+	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
+	- Enemigos: Zombies y Jefe Zombie.
+	- Objetos: poción curativa y gema amarilla.
 
-	 4.1.**Historia**
+- Nivel 2-Castillo:
+	- Descripción: Tras el viaje en tren nuestro protagonista llega al castillo, ahora en ruinas y entra en él en busca del 	malvado Mr Lion y la gema.
+	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
+	- Enemigos: Trolls y Jefe Troll.
+	- Objetos: poción curativa y gema roja.
 
-	 Sandra es una alumna de segundo de bachillerato que está pensando en hacer ingeniería informática, pero tanto sus compañeros, el profesor y sus padres le hacen dudar con sus opiniones de lo que de verdad quiere estudiar. A medida que vaya hablando con más personajes su ánimo irá aumentando o bajando dependiendo de cómo responda a esas críticas.
-	 
-	 4.2.**Niveles**
+- Nivel 3- Escaleras:
+- Descripción: Nuestro personaje tiene que huir del castillo, los enemigos son demasiados, por ello, comienza a subir las escaleras del castillo.
+- Metodología: Plataformas Vertical, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
+- Enemigos: Trolls y Jefe Troll.
+- Objetos: poción curativa y gema morada.
 
-	 “Apto” no tiene niveles salvo por la prueba final, pero por lo demás es un juego conversacional en el que la dinámica es no desanimarse por los comentarios de otros personajes.
+- Nivel 4- Escoba/Cielo:
+- Descripción: Nuestro personaje llega al final de las escaleras, su única opción para escapar de sus enemigos y continuar su viaje es echar a volar. Por ello llama a su escoba y salta.
+- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda para esquivar.
+- Enemigos: Dragones y Jefe Dragón.
+- Objetos: poción curativa y gema azul.
+
+- Nivel 5- Laberinto:
+	- Descripción: Tras volar en su escoba, nuestro personaje aterriza a las puertas de un laberinto, que lo separa del bosque 	oscuro al que debe entrar.
+	- Metodología: Laberinto de una pantalla, donde se utilizarán movimientos arriba, abajo, derecha e izquierda. Debe 	encontrar tres llaves para poder abrir la puerta y pasar.
+	- Enemigos: Espantapájaros y Jefe Espantapájaros.
+	- Objetos: poción curativa, llaves y gema naranja.
+
+- Nivel 6- Bosque Oscuro:
+	- Descripción: Atravesado el laberinto nuestro personaje se adentra en el bosque oscuro, guiándose por sus instintos hacia 	la próxima gema.
+	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
+	- Enemigos: Arañas y Jefe Araña.
+	- Objetos: poción curativa y gema verde.
+
+- Nivel 7- Lago negro
+	- Descripción: A sólo una gema nuestro personaje desemboca en el lago negro, donde se encuentra el portal mágico y a Mr 	Lion. 
+	Sólo le queda conseguir la última gema para poder cerrar el portal y salvar el reino de Abrakadam.
+	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
+	- Enemigos: Medusas y Mr Lion.
+	- Objetos: poción curativa y gema negra.
+
 	 
 	 4.3. **Personajes**
 
