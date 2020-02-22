@@ -9,13 +9,19 @@ Desarrollado por:
 
 **Descripción**:
 
-El juego transcurre en Abrakazam un mundo mágico que se ha visto invadido por criaturas malignas
+El juego transcurre en el mágico reino de Abrakazam, donde el malvado Mr Lion ha abierto un portal mágico trayendo el pánico y el terror a todas sus tierras.
+Sólo consiguiendo el poder de las siete gemas astrales, nacidas de las mismísimas estrellas y repartidas por todo el reino, se podrá cerrar el portal y devolver la paz.
+¿Serás lo suficientemente valiente como para enfrentarte a las malvadas criaturas que han atravesado el portal e invadido el reino? ¿Podrás conseguir las siete gemas para poder cerrar el portal y derrotar al poderoso Mr Lion? El futuro de Abrakazam está en tus manos. Suerte.
 
 
-|**Géneros**: Plataformas |  **Modos:** Un jugador|
-|--|--|
-|**Público objetivo**: 7+ |**Plataformas**: PC|
-|**Cantidades**: Escenarios: 7, Objetos: , Personajes: 6| |
+# Archivos de interés
+- # Url juego: 
+https://merchf.github.io/Abrakazam/
+
+ - # Gameplay: 
+
+- # Documento de diseño del videojuego: 
+https://github.com/merchf/DVI_Project/blob/master/GDD.md
 
 
  **Referencias**
@@ -27,14 +33,6 @@ El juego transcurre en Abrakazam un mundo mágico que se ha visto invadido por c
 
 - # Música
    
-
-# Archivos de interés
-
- - # Gameplay: 
-
-- # Documento de diseño del videojuego: 
-https://github.com/merchf/DVI_Project/blob/master/GDD.md
-- # Url juego: 
 
 
 
