@@ -197,8 +197,6 @@ footer {
     height: 100vh;
     min-height: 500px;
     max-height: 1080px;
-    background: url(../images/fondoweb.gif);
-    background-size: cover;
     padding: 15px;
     overflow: hidden
 }
@@ -240,6 +238,9 @@ footer {
     right: 0;
     bottom: 0;
     left: 0;
+    background: url(../images/fondoweb.gif);
+    background-repeat: round;    
+    background-size: cover;
   /* background: rgba(33, 125, 187, 0.8);*/
     z-index: 1
 }
