@@ -32,6 +32,7 @@ Sólo consiguiendo el poder de las siete gemas astrales, nacidas de las mismísi
 |**FECHA**|  **VERSIÓN**|
 |--|--|
 |16/02/2020| 1.0 |
+|16/02/2020| 2.0 |
 
  **1. Aspectos generales**
  
@@ -39,7 +40,7 @@ A través de Abrakazam se pretende que el jugador pase un buen rato y se entrete
 Sumiéndose en un aventura llena de magia y enemigos, a lo largo de los diferentes niveles.
 
 El juego consta de 7 niveles, por lo que consta de 7 localizaciones distintas.
-Todos los niveles serán plataforma. Contendrán pociones de curación y enemigos, a los que el jugador podrá derrotar con sus poderes mágicos o esquiva con sus acciones.
+Todos los niveles serán plataforma. Contendrán pociones de curación, llaves (que el jugador deberá coger para poder abrir la puerta final y pasarse el nivel) y enemigos, a los que el jugador podrá derrotar con sus poderes mágicos o esquiva con sus acciones.
 Además, al final de cada nivel, el jugador se enfrentará a un enemigo final para conseguir la gema y completar el nivel.
 
 
@@ -58,7 +59,7 @@ Además, al final de cada nivel, el jugador se enfrentará a un enemigo final pa
     - Escaleras y enredaderas: Por las cuales el jugador podrá subir y bajar escalando.
     - Pociones de curación: que sanarán al personaje.
     - Enemigos: Depende de la temática del nivel habrá un enemigo u otro. El personaje podrá derrotarlos usando sus poderes o esquivarlos.
-    - Llaves: para abrir puertas cerradas.
+    - Llaves: para abrir puertas, quellevarán al jefe final de cada nivel.
     - Puerta final: para pasar la la pantalla del jefe.
 - Una vez pasada la puerta final, el personaje se enfrentará al jefe del nivel con el mítico juego de piedra, papel o tijera.
 - Una vez derrotado al jefe final, el jugador obtendrá la gema y pasará al siguiente nivel.
@@ -149,48 +150,49 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 	- Descripción: Al inicio el protagonista está en un tren camino a su destino, tendrá que atravesar los vagones hasta 		llegar a la locomotora.
 	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
 	- Enemigos: Zombies y Jefe Zombie.
-	- Objetos: poción curativa y gema amarilla.
+	- Objetos: poción curativa, llave y gema amarilla.
 
 - Nivel 2-Castillo:
 	- Descripción: Tras el viaje en tren nuestro protagonista llega al castillo, ahora en ruinas y entra en él en busca del 	malvado Mr Lion y la gema.
 	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
 	- Enemigos: Trolls y Jefe Troll.
-	- Objetos: poción curativa y gema roja.
+	- Objetos: poción curativa, llave y gema roja.
 
 - Nivel 3- Escaleras:
 	- Descripción: Nuestro personaje tiene que huir del castillo, los enemigos son demasiados, por ello, comienza a subir las escaleras del castillo.
 	- Metodología: Plataformas Vertical, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
 	- Enemigos: Trolls y Jefe Troll.
-	- Objetos: poción curativa y gema morada.
+	- Objetos: poción curativa, llave y gema morada.
 
 - Nivel 4- Escoba/Cielo:
 	- Descripción: Nuestro personaje llega al final de las escaleras, su única opción para escapar de sus enemigos y continuar su viaje es echar a volar. Por ello llama a su escoba y salta.
 	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda para esquivar.
 	- Enemigos: Dragones y Jefe Dragón.
-	- Objetos: poción curativa y gema azul.
+	- Objetos: poción curativa, llave y gema azul.
 
 - Nivel 5- Laberinto:
 	- Descripción: Tras volar en su escoba, nuestro personaje aterriza a las puertas de un laberinto, que lo separa del bosque 	oscuro al que debe entrar.
 	- Metodología: Laberinto de una pantalla, donde se utilizarán movimientos arriba, abajo, derecha e izquierda. Debe 	encontrar tres llaves para poder abrir la puerta y pasar.
 	- Enemigos: Espantapájaros y Jefe Espantapájaros.
-	- Objetos: poción curativa, llaves y gema naranja.
+	- Objetos: poción curativa, llave y gema naranja.
 
 - Nivel 6- Bosque Oscuro:
 	- Descripción: Atravesado el laberinto nuestro personaje se adentra en el bosque oscuro, guiándose por sus instintos hacia 	la próxima gema.
 	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
 	- Enemigos: Arañas y Jefe Araña.
-	- Objetos: poción curativa y gema verde.
+	- Objetos: poción curativa, llave y gema verde.
 
 - Nivel 7- Lago negro
 	- Descripción: A sólo una gema nuestro personaje desemboca en el lago negro, donde se encuentra el portal mágico y a Mr 	Lion. Sólo le queda conseguir la última gema para poder cerrar el portal y salvar el reino de Abrakadam.
 	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
 	- Enemigos: Medusas y Mr Lion.
-	- Objetos: poción curativa y gema negra.
+	- Objetos: poción curativa, llave y gema negra.
 
 	 
 **4.3.Personajes**
 
-- Avatar del protagonista: Un mago.
+- Avatar del protagonista: Una bruja.
+
 - Enemigos: Las criaturas que han atravesado el portal y están destruyendo el reino. Los enemigos que hay que ir derrotando en cada nivel. 
 	- Zombies:
 	- Jefe Zombie:
@@ -203,11 +205,12 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 	- Arañas:
 	- Jefe Araña:
 	- Medusas:
+	
 - Mr Lion: El antagonista del juego. El malvado hechicero que ha abierto el portal, que ha traído a todos los enemigos y el caos al reino. El jefe final que hay que derrotar en el último nivel.
 
 **4.4.Objetos**
  
-- Llaves: Para abrir puertas cerradas. Colocadas en los niveles que las requieran.
+- Llaves: Para abrir puertas cerradas. Colocadas en los niveles para abrir la puerta que llevará al jefe final de cada nivel.
 - Pociones curativas: Para recuperar vida del personaje. Colocadas aleatoriamente en cada nivel.
 - Gemas: Entregada al final de cada nivel. Cada una tiene un color diferente y son necesarias para cerrar el portal final.
 
