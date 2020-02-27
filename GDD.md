@@ -221,6 +221,8 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
  
 - Pociones curativas: Para recuperar vida del personaje. Colocadas aleatoriamente en cada nivel.
 
+ ![Poción curativa](https://github.com/merchf/Abrakazam/blob/master/public/images/Poci%C3%B3nCuraci%C3%B3n.gif)
+ 
 - Gemas: Entregada al final de cada nivel. Cada una tiene un color diferente y son necesarias para cerrar el portal final.
 
 ![Gemas](https://github.com/merchf/Abrakazam/blob/master/public/images/Gemas.gif)
