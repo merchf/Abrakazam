@@ -204,7 +204,7 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 	
 - Mr Lion: El antagonista del juego. El malvado hechicero que ha abierto el portal, que ha traído a todos los enemigos y el caos al reino. El jefe final que hay que derrotar en los niveles.
 
- ![Mr Lion]()
+ ![Mr Lion](https://github.com/merchf/Abrakazam/blob/master/public/images/MrLion.png)
  
 **4.4.Objetos**
  
