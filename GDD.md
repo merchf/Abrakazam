@@ -48,7 +48,9 @@ Además, al final de cada nivel, el jugador se enfrentará a un enemigo final pa
  
  ![Portada Juego]()
   
- ![MAPA]()
+  **MAPA**
+  
+ ![MAPA](https://github.com/merchf/Abrakazam/blob/master/public/images/AbrakazamMapa.png)
  
  |--|
  
