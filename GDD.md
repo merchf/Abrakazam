@@ -32,15 +32,15 @@ Sólo consiguiendo el poder de las siete gemas astrales, nacidas de las mismísi
 |**FECHA**|  **VERSIÓN**|
 |--|--|
 |16/02/2020| 1.0 |
-|16/02/2020| 2.0 |
-
+|20/02/2020| 2.0 |
+|27/02/2020| 3.0 |
  **1. Aspectos generales**
  
 A través de Abrakazam se pretende que el jugador pase un buen rato y se entretenga. 
 Sumiéndose en un aventura llena de magia y enemigos, a lo largo de los diferentes niveles.
 
 El juego consta de 7 niveles, por lo que consta de 7 localizaciones distintas.
-Todos los niveles serán plataforma. Contendrán pociones de curación, llaves (que el jugador deberá coger para poder abrir la puerta final y pasarse el nivel) y enemigos, a los que el jugador podrá derrotar con sus poderes mágicos o esquiva con sus acciones.
+Todos los niveles serán plataforma. Contendrán pociones de curación, llaves (que el jugador deberá coger para poder abrir la puerta final y pasarse el nivel) y enemigos, a los que el jugador podrá derrotar con sus poderes mágicos o esquivar con sus acciones.
 Además, al final de cada nivel, el jugador se enfrentará a un enemigo final para conseguir la gema y completar el nivel.
 
 
@@ -102,19 +102,20 @@ Durante el juego habrá que ir superando los niveles, derrotando enemigos y  jef
 **3.2.Dinámica**
 
 Para poder completar un nivel se deberá pasar el nivel plataforma hasta llegar a una puerta, que te lleva a la pantalla del jefe final.
-Una vez ahí se establece el juego de piedra(Q), papel(W) o tijera(E), cada uno asignado a un hechizo. Si se supera se gana la gema, te pasas en nivel y puedes seguir jugando.
+Una vez ahí se establece el juego de piedra(Q), papel(W) o tijera(E), cada uno asignado a un hechizo en nuestro caso. 
+Si se supera se gana la gema, te pasas en nivel y puedes seguir jugando.
 
-Para perder en el juego tu personaje se tiene que quedar sin vidas, en principio contará con seis corazones. Por cada enemigo que le ataque irá perdiendo medio corazón, excepto en la batalla final que irá perdiendo un corazón entero.
+Para perder en el juego tu personaje se tiene que quedar sin vidas, en principio contará con seis corazones. Dependerá de los ataques de  cada enemigo la vida que el personaje pierda, excepto en la batalla final que irá perdiendo un corazón entero. 
 Si se queda sin vida, GAME OVER.
 
 - Saltar: Le permite al personaje moverse entre plataformas o subir escalones.
 - Andar: Le permite al personaje moverse por el nivel y recolectar los objetos, además de escapar de los enemigos.
 - Escalar: Le permite al personaje subir y bajar entre los diferentes niveles que tenga el nivel, además de subir y bajar a    plataformas, que no se puedan alcanzar saltando.
-- Atacar: Le permite al personaje defenderse contra sus enemigos (6 de vida).
-	- Bolas de fuego (Q): - 1 de vida al enemigo. Recarga Total: 5 segundos.
-	- Congelación (W): Mantiene al enemigo inmóvil 10 segundos. Recarga Total: 10 segundos.
-	- Rayo (E): - 2 de vida. Recarga Total: 15 segundos.
-- Atravesar puerta: Le permite al personaje pasar al nivel final del jefe.
+- Atacar: Le permite al personaje defenderse contra sus enemigos (más de 6 de vida).
+	- Bolas de fuego (Q): - 1 de vida al enemigo. (Recarga Total: 5 segundos)
+	- Congelación (W): Mantiene al enemigo inmóvil 5 segundos. (Recarga Total: 5 segundos)
+	- Rayo (E): - 2 de vida. (Recarga Total: 10 segundos)
+- Atravesar puerta: Le permite al personaje pasar al nivel final del jefe. Soólo se podrá atravesar la puerta si se tiene la llave escondida en cada nivel.
 - Doble salto: Le permite al personaje llegar a plataformas más elevadas.
 - Coger objetos:  Le permite al personaje:
 	- Ganar vida, en el caso que recoja una poción.
@@ -149,37 +150,37 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 - Nivel 1-Tren:
 	- Descripción: Al inicio el protagonista está en un tren camino a su destino, tendrá que atravesar los vagones hasta 		llegar a la locomotora.
 	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
-	- Enemigos: Zombies y Jefe Zombie.
+	- Enemigos: Zombies y Mr Lion.
 	- Objetos: poción curativa, llave y gema amarilla.
 
 - Nivel 2-Castillo:
 	- Descripción: Tras el viaje en tren nuestro protagonista llega al castillo, ahora en ruinas y entra en él en busca del 	malvado Mr Lion y la gema.
 	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
-	- Enemigos: Trolls y Jefe Troll.
+	- Enemigos: Trolls y Mr Lion.
 	- Objetos: poción curativa, llave y gema roja.
 
 - Nivel 3- Escaleras:
 	- Descripción: Nuestro personaje tiene que huir del castillo, los enemigos son demasiados, por ello, comienza a subir las escaleras del castillo.
 	- Metodología: Plataformas Vertical, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
-	- Enemigos: Trolls y Jefe Troll.
+	- Enemigos: Trolls y Mr Lion.
 	- Objetos: poción curativa, llave y gema morada.
 
 - Nivel 4- Escoba/Cielo:
 	- Descripción: Nuestro personaje llega al final de las escaleras, su única opción para escapar de sus enemigos y continuar su viaje es echar a volar. Por ello llama a su escoba y salta.
 	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda para esquivar.
-	- Enemigos: Dragones y Jefe Dragón.
+	- Enemigos: Dragones y Mr Lion.
 	- Objetos: poción curativa, llave y gema azul.
 
 - Nivel 5- Laberinto:
 	- Descripción: Tras volar en su escoba, nuestro personaje aterriza a las puertas de un laberinto, que lo separa del bosque 	oscuro al que debe entrar.
 	- Metodología: Laberinto de una pantalla, donde se utilizarán movimientos arriba, abajo, derecha e izquierda. Debe 	encontrar tres llaves para poder abrir la puerta y pasar.
-	- Enemigos: Espantapájaros y Jefe Espantapájaros.
+	- Enemigos: Espantapájaros y Mr Lion.
 	- Objetos: poción curativa, llave y gema naranja.
 
 - Nivel 6- Bosque Oscuro:
 	- Descripción: Atravesado el laberinto nuestro personaje se adentra en el bosque oscuro, guiándose por sus instintos hacia 	la próxima gema.
 	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
-	- Enemigos: Arañas y Jefe Araña.
+	- Enemigos: Arañas y Mr Lion.
 	- Objetos: poción curativa, llave y gema verde.
 
 - Nivel 7- Lago negro
@@ -194,19 +195,14 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 - Avatar del protagonista: Una bruja.
 
 - Enemigos: Las criaturas que han atravesado el portal y están destruyendo el reino. Los enemigos que hay que ir derrotando en cada nivel. 
-	- Zombies:
-	- Jefe Zombie:
-	- Trolls:
-	- Jefe Troll:
-	- Dragones:
-	- Jefe Dragón:
-	- Espantapájaros:
-	- Jefe Espantapájaro:
-	- Arañas:
-	- Jefe Araña:
-	- Medusas:
+	- Zombies.
+	- Trolls.
+	- Dragones.
+	- Espantapájaros.
+	- Arañas.
+	- Medusas.
 	
-- Mr Lion: El antagonista del juego. El malvado hechicero que ha abierto el portal, que ha traído a todos los enemigos y el caos al reino. El jefe final que hay que derrotar en el último nivel.
+- Mr Lion: El antagonista del juego. El malvado hechicero que ha abierto el portal, que ha traído a todos los enemigos y el caos al reino. El jefe final que hay que derrotar en los niveles.
 
 **4.4.Objetos**
  
