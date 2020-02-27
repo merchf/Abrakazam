@@ -47,6 +47,9 @@ Además, al final de cada nivel, el jugador se enfrentará a un enemigo final pa
  **Vista general**
  
  ![Portada Juego]()
+  
+ ![MAPA]()
+ 
  |--|
  
 **1.1 Relato breve y parcial de una partida típica**
@@ -193,7 +196,9 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 **4.3.Personajes**
 
 - Avatar del protagonista: Una bruja.
- ![Brujita]()
+
+ ![Brujita](https://github.com/merchf/Abrakazam/blob/master/public/images/Brujita.png)
+ 
 - Enemigos: Las criaturas que han atravesado el portal y están destruyendo el reino. Los enemigos que hay que ir derrotando en cada nivel. 
 	- Zombies. ![Zombies]()
 	- Trolls.
