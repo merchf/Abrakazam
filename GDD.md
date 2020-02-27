@@ -216,6 +216,9 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 **4.4.Objetos**
  
 - Llaves: Para abrir puertas cerradas. Colocadas en los niveles para abrir la puerta que llevará al jefe final de cada nivel.
+
+ ![Llaves](https://github.com/merchf/Abrakazam/blob/master/public/images/llave.gif)
+ 
 - Pociones curativas: Para recuperar vida del personaje. Colocadas aleatoriamente en cada nivel.
 - Gemas: Entregada al final de cada nivel. Cada una tiene un color diferente y son necesarias para cerrar el portal final.
 
