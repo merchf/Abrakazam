@@ -193,9 +193,9 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 **4.3.Personajes**
 
 - Avatar del protagonista: Una bruja.
-
+ ![Brujita]()
 - Enemigos: Las criaturas que han atravesado el portal y están destruyendo el reino. Los enemigos que hay que ir derrotando en cada nivel. 
-	- Zombies.
+	- Zombies. ![Zombies]()
 	- Trolls.
 	- Dragones.
 	- Espantapájaros.
@@ -204,6 +204,8 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 	
 - Mr Lion: El antagonista del juego. El malvado hechicero que ha abierto el portal, que ha traído a todos los enemigos y el caos al reino. El jefe final que hay que derrotar en los niveles.
 
+ ![Mr Lion]()
+ 
 **4.4.Objetos**
  
 - Llaves: Para abrir puertas cerradas. Colocadas en los niveles para abrir la puerta que llevará al jefe final de cada nivel.
