@@ -1,8 +1,8 @@
-import Star from './star.js'
+//import Star from './star.js'
 
 export default class Player extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y) {
-    super(scene, x, y, 'player');
+    super(scene, x, y, 'bruja');
     this.score = 0;
     this.scene.add.existing(this);
     this.scene.physics.add.existing(this);
@@ -37,4 +37,6 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
     }
   }
+  
+
 }

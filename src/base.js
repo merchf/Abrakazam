@@ -1,7 +1,7 @@
-import Star from './star.js'
+//import Star from './star.js'
 
 export default class Base extends Phaser.GameObjects.Sprite {
-  constructor(scene, platform, x, y, baseGroup) {
+ /* constructor(scene, platform, x, y, baseGroup) {
     super(scene, x, y, 'base');
     this.scene.add.existing(this);
 
@@ -14,4 +14,5 @@ export default class Base extends Phaser.GameObjects.Sprite {
   spawn() {
     this.scene.add.existing(new Star(this.scene, this, this.x, this.y));
   }
+*/
 }
