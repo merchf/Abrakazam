@@ -7,15 +7,15 @@ export default class Preloader extends Phaser.Scene {
 
 
         //carga de imagenes
-        this.load.image("menu_fondo", 'assets/menu/menu_fondo.png');
-        this.load.image("play_button", 'assets/menu/play_button.png');
-        this.load.image("rules_button", 'assets/menu/rules_button.png');
-        this.load.image("credits_button", 'assets/menu/credits_button.png');
-        this.load.image("logo", 'assets/menu/logo.png');
-        this.load.image("bruja", 'assets/bruja/Brujita.png');
+        this.load.image("menu_fondo", '/assets/menu/menu_fondo.png');
+        this.load.image("play_button", '/assets/menu/play_button.png');
+        this.load.image("rules_button", '/assets/menu/rules_button.png');
+        this.load.image("credits_button", '/assets/menu/credits_button.png');
+        this.load.image("logo", '/assets/menu/logo.png');
+        this.load.image("bruja", '/assets/bruja/Brujita.png');
 
       //carga de sprites
-       this.load.spritesheet("brujaSaltoDer", 'assets/bruja/BrujitaSaltoDer.png',{
+       this.load.spritesheet("brujaDcha", '/assets/bruja/BrujitaAndandoDer.png',{
            frameHeight:32,
            frameWidth:32
        });

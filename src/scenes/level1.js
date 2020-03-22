@@ -3,8 +3,8 @@ export default class Level1 extends Phaser.Scene {
       super({ key: 'level1' });
     }
     preload() {
-      this.load.image('background', 'assets/background/mapaNivel1.json');
-      this.load.image('bruja', 'assets/bruja/Brujita.png');
+      this.load.image('background', '/assets/background/mapaNivel1.json');
+      this.load.image('bruja', '/assets/bruja/Brujita.png');
   
     }
   
