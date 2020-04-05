@@ -40,8 +40,8 @@ export default class Level1 extends Phaser.Scene {
     }
     update(time,delta){
       //simular movimiento
-      luna.tilePositionX -= 1;
-      console.log(luna.tilePositionX );
+      //luna.tilePositionX -= 1;
+      //console.log(luna.tilePositionX );
       console.log("update");
     }
   }
