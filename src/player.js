@@ -27,7 +27,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
       key: 'walkDchaBruja',
       frames: this.scene.anims.generateFrameNames('walkDB', {
         start: 0,
-        end: 4
+        end: 3
       }),
       frameRate: 10,
     });
