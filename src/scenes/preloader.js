@@ -12,14 +12,14 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("rules_button", '/assets/menu/rules_button.png');
         this.load.image("credits_button", '/assets/menu/credits_button.png');
         this.load.image("logo", '/assets/menu/logo.png');
-        this.load.image("bruja", '/assets/bruja/Brujita.png');
+      //  this.load.image("bruja", '/assets/bruja/Brujita.png');
         this.load.image("zombie", '/assets/enemies/zombie/ZombieDer.png');
 
         //carga de sprites
 
-        this.load.atlas('bruja', '/assets/bruja/atlasbruja.png', '/assets/bruja/atlasbruja_atlas.json');
+        this.load.atlas('bruja', '/assets/bruja/atlasbruja.png', '/assets/bruja/json/bruja_atlas.json');
 
-
+/*
         this.load.spritesheet('walkDB', '/assets/bruja/BrujitaAndandoDer.png', {
             frameWidth: 34,
             frameHeight: 96
@@ -65,7 +65,7 @@ export default class Preloader extends Phaser.Scene {
             frameHeight: 96
         });
 
-
+*/
         //z
 
         this.load.spritesheet('zombieD', '/assets/enemies/zombie/ZombieDer.png', {

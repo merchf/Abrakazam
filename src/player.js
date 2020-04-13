@@ -25,93 +25,123 @@ export default class Player extends Phaser.GameObjects.Sprite {
   createAnims() {
     this.scene.anims.create({
       key: 'walkDchaBruja',
-      frames: this.scene.anims.generateFrameNames('walkDB', {
-        start: 0,
-        end: 3
+      frames: this.scene.anims.generateFrameNames('bruja', {
+        prefix: 'Brujita_',
+        suffix: '.png',
+        start: 1,
+        end: 4
       }),
       frameRate: 10,
     });
     this.scene.anims.create({
       key: 'walkIzqBruja',
-      frames: this.scene.anims.generateFrameNames('walkIB', {
-        start: 0,
-        end: 3
+      frames: this.scene.anims.generateFrameNames('bruja', {
+        prefix: 'Brujita_',
+        suffix: '.png',
+        start: 5,
+        end: 8
       }),
       frameRate: 10,
     });
     this.scene.anims.create({
       key: 'climbBruja',
-      frames: this.scene.anims.generateFrameNames('climbB', {
-        start: 0,
-        end: 2
+      frames: this.scene.anims.generateFrameNames('bruja', {
+        prefix: 'Brujita_',
+        suffix: '.png',
+        start: 9,
+        end: 11
       }),
       frameRate: 10,
     });
     this.scene.anims.create({
       key: 'attackFireDB',
-      frames: this.scene.anims.generateFrameNames('fireDBruja', {
-        start: 0,
-        end: 1
+      frames: this.scene.anims.generateFrameNames('bruja', {
+        prefix: 'Brujita_',
+        suffix: '.png',
+        start: 12,
+        end: 13
       }),
       frameRate: 10,
     });
     this.scene.anims.create({
       key: 'attackFireIB',
-      frames: this.scene.anims.generateFrameNames('fireIBruja', {
-        start: 0,
-        end: 1
+      frames: this.scene.anims.generateFrameNames('bruja', {
+        prefix: 'Brujita_',
+        suffix: '.png',
+        start: 14,
+        end: 15
       }),
       frameRate: 10,
     });
     this.scene.anims.create({
       key: 'attackIceDB',
-      frames: this.scene.anims.generateFrameNames('iceDBruja', {
-        start: 0,
-        end: 1
+      frames: this.scene.anims.generateFrameNames('bruja', {
+        prefix: 'Brujita_',
+        suffix: '.png',
+        start: 16,
+        end: 17
       }),
       frameRate: 10,
     });
     this.scene.anims.create({
       key: 'attackFireIB',
-      frames: this.scene.anims.generateFrameNames('iceIBruja', {
-        start: 0,
-        end: 1
+      frames: this.scene.anims.generateFrameNames('bruja', {
+        prefix: 'Brujita_',
+        suffix: '.png',
+        start: 18,
+        end: 19
       }),
       frameRate: 10,
     });
     this.scene.anims.create({
       key: 'attackThunderDB',
-      frames: this.scene.anims.generateFrameNames('thunderDBruja', {
-        start: 0,
-        end: 1
+      frames: this.scene.anims.generateFrameNames('bruja', {
+        prefix: 'Brujita_',
+        suffix: '.png',
+        start: 20,
+        end: 21
       }),
       frameRate: 10,
     });
     this.scene.anims.create({
       key: 'attackThunderIB',
-      frames: this.scene.anims.generateFrameNames('thunderIBruja', {
-        start: 0,
-        end: 1
+      frames: this.scene.anims.generateFrameNames('bruja', {
+        prefix: 'Brujita_',
+        suffix: '.png',
+        start: 22,
+        end: 23
       }),
       frameRate: 10,
     });
     this.scene.anims.create({
-      key: 'jumpBruja',
-      frames: this.scene.anims.generateFrameNames('jumpDBruja', {
-        start: 0,
-        end: 1
+      key: 'jumpBrujaD',
+      frames: this.scene.anims.generateFrameNames('bruja', {
+        prefix: 'Brujita_',
+        suffix: '.png',
+        start: 24,
+        end: 25
+      }),
+      frameRate: 2,
+    });
+    this.scene.anims.create({
+      key: 'jumpBrujaI',
+      frames: this.scene.anims.generateFrameNames('bruja', {
+        prefix: 'Brujita_',
+        suffix: '.png',
+        start: 26,
+        end: 27
       }),
       frameRate: 2,
     });
   }
 
-  preUpdate() {
+  update() {
     this.body.setSize(0, 85);
     //saltar
     if (this.cursorsExtra.jump.isDown && this.body.onFloor()) {
       this.body.setVelocityY(this.jumpSpeed);
-      this.play('jumpBruja', true);
-      //cuando tengamos los audios aqui habría que meterlo
+      this.play('jumpBrujaD', true);
+      //cuando tengamos lods audios aqui habría que meterlo
 
     }
     //escalar
@@ -121,7 +151,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
       //cuando tengamos los audios aqui habría que meterlo
     } else if (this.cursors.down.isDown && this.onLadder == true) {
       this.body.setVelocityY(100);
-      this.play('clumbBruja', true);
+      this.play('climbBruja', true);
       //cuando tengamos los audios aqui habría que meterlo
     }
 
@@ -148,7 +178,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
       this.body.setVelocityX(0);
       this.play('attackIceDB', true);
       //meter audio hielo
-    }else if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.thunderAttack) && this.body.onFloor()) {
+    } else if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.thunderAttack) && this.body.onFloor()) {
       this.body.setVelocityX(0);
       this.play('attackThunderDB', true);
       //meter audio trueno

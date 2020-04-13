@@ -1,0 +1,369 @@
+{
+    "frames": {
+        "Brujita_1.png": {
+            "frame": {
+                "w": 34,
+                "h": 96,
+                "x": 0,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_2.png": {
+            "frame": {
+                "w": 34,
+                "h": 96,
+                "x": 82,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_3.png": {
+            "frame": {
+                "w": 34,
+                "h": 96,
+                "x": 0,
+                "y": 96
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_4.png": {
+            "frame": {
+                "w": 34,
+                "h": 96,
+                "x": 34,
+                "y": 96
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_5.png": {
+            "frame": {
+                "w": 32,
+                "h": 96,
+                "x": 68,
+                "y": 96
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_6.png": {
+            "frame": {
+                "w": 32,
+                "h": 96,
+                "x": 100,
+                "y": 96
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_7.png": {
+            "frame": {
+                "w": 32,
+                "h": 96,
+                "x": 116,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_8.png": {
+            "frame": {
+                "w": 32,
+                "h": 96,
+                "x": 132,
+                "y": 96
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_9.png": {
+            "frame": {
+                "w": 33,
+                "h": 96,
+                "x": 148,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_10.png": {
+            "frame": {
+                "w": 33,
+                "h": 96,
+                "x": 164,
+                "y": 96
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_11.png": {
+            "frame": {
+                "w": 33,
+                "h": 96,
+                "x": 0,
+                "y": 192
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_12.png": {
+            "frame": {
+                "w": 57,
+                "h": 89,
+                "x": 225,
+                "y": 288
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_13.png": {
+            "frame": {
+                "w": 57,
+                "h": 89,
+                "x": 282,
+                "y": 288
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_14.png": {
+            "frame": {
+                "w": 64,
+                "h": 96,
+                "x": 33,
+                "y": 192
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_15.png": {
+            "frame": {
+                "w": 64,
+                "h": 96,
+                "x": 97,
+                "y": 192
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_16.png": {
+            "frame": {
+                "w": 64,
+                "h": 96,
+                "x": 181,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_17.png": {
+            "frame": {
+                "w": 64,
+                "h": 96,
+                "x": 161,
+                "y": 192
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_18.png": {
+            "frame": {
+                "w": 64,
+                "h": 94,
+                "x": 97,
+                "y": 288
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_19.png": {
+            "frame": {
+                "w": 64,
+                "h": 94,
+                "x": 161,
+                "y": 288
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_20.png": {
+            "frame": {
+                "w": 65,
+                "h": 96,
+                "x": 197,
+                "y": 96
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_21.png": {
+            "frame": {
+                "w": 65,
+                "h": 96,
+                "x": 245,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_22.png": {
+            "frame": {
+                "w": 64,
+                "h": 96,
+                "x": 225,
+                "y": 192
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_23.png": {
+            "frame": {
+                "w": 64,
+                "h": 96,
+                "x": 262,
+                "y": 96
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_24.png": {
+            "frame": {
+                "w": 49,
+                "h": 96,
+                "x": 289,
+                "y": 192
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_25.png": {
+            "frame": {
+                "w": 49,
+                "h": 96,
+                "x": 0,
+                "y": 288
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_26.png": {
+            "frame": {
+                "w": 48,
+                "h": 96,
+                "x": 49,
+                "y": 288
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_27.png": {
+            "frame": {
+                "w": 48,
+                "h": 96,
+                "x": 34,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_28.png": {
+            "frame": {
+                "w": 33,
+                "h": 33,
+                "x": 339,
+                "y": 66
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_29.png": {
+            "frame": {
+                "w": 33,
+                "h": 33,
+                "x": 339,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Brujita_30.png": {
+            "frame": {
+                "w": 33,
+                "h": 33,
+                "x": 339,
+                "y": 33
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    },
+    "meta": {
+        "image": "atlasbruja.png",
+        "description": "Atlas generado con Atlas Packer Gamma V2",
+        "web": "https://gammafp.github.io/atlas-packer-phaser/"
+    }
+}

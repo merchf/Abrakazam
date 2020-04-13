@@ -23,20 +23,21 @@ export default class Level1 extends Phaser.Scene {
     let trees1 = map.addTilesetImage('1trees', "1trees");
     let luna = map.addTilesetImage('luna', "luna");
     let Stalin_without_bg = map.addTilesetImage('Stalin_without_bg', "Stalin_without_bg");
+    let finalDoor = map.addTilesetImage('tile_castle_grey', "tile_castle_grey");
+
 
     //capas
-    // tileset = map.addTilesetImage('tilesetNameInTiled', 'tilesetNameInPhaser');
+   // this.tileset = map.addTilesetImage('tilesetNameInTiled', 'tilesetNameInPhaser');
     this.fondo = map.createStaticLayer("Capa del fondo atardecer", [luna], 0, 0, 17, 291);
     this.tren = map.createStaticLayer("Capa del tren ", [trainBack, trainFull, Stalin_without_bg], 0, 0);
     this.suelo = map.createStaticLayer("suelo", [trainBack, trainFull, Stalin_without_bg], 0, 0);
     this.paredes = map.createStaticLayer("paredes", [trainBack, trainFull, Stalin_without_bg], 0, 0);
     this.arboles = map.createStaticLayer("Capa fondo arboles oscuros alante", [trees1], 0, 0);
     this.arboles1 = map.createStaticLayer("Capa de fondo arboles alante", [trees], 0, 0);
-    this.escalar = map.createStaticLayer("escalar", [trainBack, trainFull, Stalin_without_bg], 0, 0);
+    this.escalar = map.createStaticLayer("escalar", [trainBack,finalDoor], 0, 0);
+    this.door = map.createStaticLayer("escalar", [finalDoor], 0, 0);
     this.suelo.setCollisionByExclusion(-1, true);
 
-    //Ajustamos la camara a que no se salga de los limites del mapa
-    // this.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
 
     //player
     this.witch = new Player(this, 200, 300);
@@ -45,7 +46,7 @@ export default class Level1 extends Phaser.Scene {
     this.physics.add.overlap(this.witch, this.escalar);
     this.witch.body.debugBodyColor = 0x09b500;
     //enemies
-  
+
     this.enemies = this.physics.add.group();
     //esto habria que meterlo como una funcion
     //colocarlos bien
@@ -68,11 +69,14 @@ export default class Level1 extends Phaser.Scene {
       item.create();
     }, this);
 
-    
-		this.physics.add.collider(this.enemies, this.suelo);
-		this.physics.add.collider(this.enemies, this.enemies);
+
+    this.physics.add.collider(this.enemies, this.suelo);
+    this.physics.add.collider(this.enemies, this.enemies);
 
     //this.cameras.main.setBackgroundColor("#4488AA");
+    //Ajustamos la camara a que no se salga de los limites del mapa
+    this.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
+
     this.cameras.main.startFollow(this.witch);
 
   }
@@ -80,15 +84,15 @@ export default class Level1 extends Phaser.Scene {
     //simular movimiento
     // this.botLayer5.tilePositionX -= 1;
     //console.log(luna.tilePositionX );
-    this.witch.preUpdate();
+    this.witch.update();
     //update de los enemigos
     this.enemies.getChildren().forEach(function (item) {
       item.preUpdate();
     }, this);
 
-    if(this.physics.overlap(this.witch, this.escalar)) {
+    if (this.physics.overlap(this.witch, this.escalar)) {
       this.onLadder = true;
-  }
+    }
     this.physics.add.collider(this.witch, this.suelo);
     this.physics.add.collider(this.witch, this.paredes);
     console.log("update");
