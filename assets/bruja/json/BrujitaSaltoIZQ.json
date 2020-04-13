@@ -1,0 +1,34 @@
+{ "frames": {
+   "BrujitaSaltoIZQ 0.aseprite": {
+    "frame": { "x": 0, "y": 0, "w": 48, "h": 96 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 48, "h": 96 },
+    "sourceSize": { "w": 48, "h": 96 },
+    "duration": 300
+   },
+   "BrujitaSaltoIZQ 1.aseprite": {
+    "frame": { "x": 48, "y": 0, "w": 48, "h": 96 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 48, "h": 96 },
+    "sourceSize": { "w": 48, "h": 96 },
+    "duration": 300
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.3-dev",
+  "image": "BrujitaSaltoIZQ.png",
+  "format": "RGBA8888",
+  "size": { "w": 96, "h": 96 },
+  "scale": "1",
+  "frameTags": [
+  ],
+  "layers": [
+   { "name": "Layer 1", "opacity": 255, "blendMode": "normal" }
+  ],
+  "slices": [
+  ]
+ }
+}

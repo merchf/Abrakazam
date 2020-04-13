@@ -15,49 +15,53 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("bruja", '/assets/bruja/Brujita.png');
 
         //carga de sprites
-       this.load.spritesheet('brujaDcha', '/assets/bruja/BrujitaAndandoDer.png', { 
-            frameWidth: 100, 
-            frameHeight: 100
+
+        this.load.atlas('bruja', '/assets/bruja/atlasbruja.png', '/assets/bruja/atlasbruja_atlas.json');
+        
+
+       this.load.spritesheet('walkDB', '/assets/bruja/BrujitaAndandoDer.png', { 
+            frameWidth: 34, 
+            frameHeight: 96
         });
-        this.load.spritesheet('brujaIzq', '/assets/bruja/BrujitaAndandoIzq.png', { 
-            frameWidth: 100, 
-            frameHeight: 100
+        this.load.spritesheet('walkIB', '/assets/bruja/BrujitaAndandoIzq.png', { 
+            frameWidth: 32, 
+            frameHeight: 96
         });
-        this.load.spritesheet('brujaEsc', '/assets/bruja/BrujitaEspaldasEscalar.png', { 
-            frameWidth: 100, 
-            frameHeight: 100
+        this.load.spritesheet('climbB', '/assets/bruja/BrujitaEspaldasEscalar.png', { 
+            frameWidth: 33, 
+            frameHeight: 96
         });
-        this.load.spritesheet('brujaFDcha', '/assets/bruja/BrujitaFuego.png', { 
-            frameWidth: 100, 
-            frameHeight: 100
+        this.load.spritesheet('fireDBruja', '/assets/bruja/BrujitaFuego.png', { 
+            frameWidth: 57, 
+            frameHeight: 89
         });
-        this.load.spritesheet('brujaFIzq', '/assets/bruja/BrujitaFuegoIzq.png', { 
-            frameWidth: 100, 
-            frameHeight: 100
+        this.load.spritesheet('fireIBruja', '/assets/bruja/BrujitaFuegoIzq.png', { 
+            frameWidth: 64, 
+            frameHeight: 96
         });
-        this.load.spritesheet('brujaHDcha', '/assets/bruja/BrujitaHielo.png', { 
-            frameWidth: 100, 
-            frameHeight: 100
+        this.load.spritesheet('iceDBruja', '/assets/bruja/BrujitaHielo.png', { 
+            frameWidth: 64, 
+            frameHeight: 96
         });
-        this.load.spritesheet('brujaHIzq', '/assets/bruja/BrujitaHieloIzq.png', { 
-            frameWidth: 100, 
-            frameHeight: 100
+        this.load.spritesheet('iceIBruja', '/assets/bruja/BrujitaHieloIzq.png', { 
+            frameWidth: 64, 
+            frameHeight: 94
         });
-        this.load.spritesheet('brujaRDcha', '/assets/bruja/BrujitaRayo.png', { 
-            frameWidth: 100, 
-            frameHeight: 100
+        this.load.spritesheet('thunderDBruja', '/assets/bruja/BrujitaRayo.png', { 
+            frameWidth: 65, 
+            frameHeight: 96
         });
-        this.load.spritesheet('brujaRIzq', '/assets/bruja/BrujitaRayoIzq.png', { 
-            frameWidth: 100, 
-            frameHeight: 100
+        this.load.spritesheet('thunderIBruja', '/assets/bruja/BrujitaRayoIzq.png', { 
+            frameWidth: 64, 
+            frameHeight: 96
         });
-        this.load.spritesheet('brujaSaltoDcha', '/assets/bruja/BrujitaSaltoDer.png', { 
-            frameWidth: 100, 
-            frameHeight: 100
+        this.load.spritesheet('jumpDBruja', '/assets/bruja/BrujitaSaltoDer.png', { 
+            frameWidth: 49, 
+            frameHeight: 96
         });
-        this.load.spritesheet('brujaSaltoIzq', '/assets/bruja/BrujitaSaltoIzq.png', { 
-            frameWidth: 100, 
-            frameHeight: 100
+        this.load.spritesheet('jumpIBruja', '/assets/bruja/BrujitaSaltoIZQ.png', { 
+            frameWidth: 48, 
+            frameHeight: 96
         });
         // barras de carga, una sobre otra (rosa sobre morado o algo asi)
 

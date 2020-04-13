@@ -11,7 +11,6 @@ export default class MainMenu extends Phaser.Scene {
     this.load.image("back_button", '/assets/menu/back_button.png');
     this.load.image("TrainBack", '/assets/background/TrainBack.png');
     this.load.image("TrainFulll", '/assets/background/TrainFulll.png');
-    this.load.image("montañas", '/assets/background/montañas.png');
     this.load.image("trees", '/assets/background/trees.png');
     this.load.image("1trees", '/assets/background/1trees.png');
     this.load.image("luna", '/assets/background/luna.png');
@@ -39,8 +38,8 @@ export default class MainMenu extends Phaser.Scene {
     let creditsButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 160, "credits_button").setDepth(1);
 
     //hover botones
-    let hoverSprite = this.add.sprite(100, 100, "brujaDcha");
-    //hoverSprite.setScale(0.5);
+    let hoverSprite = this.add.sprite(100, 100, "bruja");
+    hoverSprite.setScale(0.5);
     hoverSprite.setVisible(false);
 
 
@@ -76,7 +75,7 @@ export default class MainMenu extends Phaser.Scene {
 
     //acciones al clicar
 
-    
+
    // pointerUp(playButton, 'level1');
    // pointerUp(rulesButton, 'rules');
     //pointerUp(creditsButton, 'credits');

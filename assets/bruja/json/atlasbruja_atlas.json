@@ -1,0 +1,164 @@
+{
+    "frames": [
+        {
+            "filename": "brujitaespaldasescalar",
+            "frame": {
+                "w": 33,
+                "h": 288,
+                "x": 0,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "personajepoderes1",
+            "frame": {
+                "w": 260,
+                "h": 96,
+                "x": 33,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "brujitaandandoder",
+            "frame": {
+                "w": 136,
+                "h": 96,
+                "x": 33,
+                "y": 96
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "brujitarayo",
+            "frame": {
+                "w": 130,
+                "h": 96,
+                "x": 33,
+                "y": 192
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "brujitaandandoizq",
+            "frame": {
+                "w": 128,
+                "h": 96,
+                "x": 163,
+                "y": 192
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "brujitafuegoizq",
+            "frame": {
+                "w": 128,
+                "h": 96,
+                "x": 0,
+                "y": 288
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "brujitahielo",
+            "frame": {
+                "w": 128,
+                "h": 96,
+                "x": 128,
+                "y": 288
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "brujitahieloizq",
+            "frame": {
+                "w": 128,
+                "h": 94,
+                "x": 293,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "brujitarayoizq",
+            "frame": {
+                "w": 128,
+                "h": 96,
+                "x": 169,
+                "y": 96
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "brujitafuego",
+            "frame": {
+                "w": 114,
+                "h": 89,
+                "x": 256,
+                "y": 288
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "brujitasaltoder",
+            "frame": {
+                "w": 98,
+                "h": 96,
+                "x": 291,
+                "y": 192
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        {
+            "filename": "brujitasaltoizq",
+            "frame": {
+                "w": 96,
+                "h": 96,
+                "x": 297,
+                "y": 94
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    ],
+    "meta": {
+        "description": "Atlas generado con Atlas Packer Gamma V2",
+        "web": "https://gammafp.github.io/atlas-packer-phaser/"
+    }
+}
