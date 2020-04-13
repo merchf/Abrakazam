@@ -7,17 +7,17 @@ export default class Preloader extends Phaser.Scene {
 
 
         //carga de imagenes
-        this.load.image("menu_fondo", '/assets/menu/menu_fondo.png');
-        this.load.image("play_button", '/assets/menu/play_button.png');
-        this.load.image("rules_button", '/assets/menu/rules_button.png');
-        this.load.image("credits_button", '/assets/menu/credits_button.png');
-        this.load.image("logo", '/assets/menu/logo.png');
+        this.load.image("menu_fondo", './assets/menu/menu_fondo.png');
+        this.load.image("play_button", './assets/menu/play_button.png');
+        this.load.image("rules_button", './assets/menu/rules_button.png');
+        this.load.image("credits_button", './assets/menu/credits_button.png');
+        this.load.image("logo", './assets/menu/logo.png');
       //  this.load.image("bruja", '/assets/bruja/Brujita.png');
-        this.load.image("zombie", '/assets/enemies/zombie/ZombieDer.png');
+        this.load.image("zombie", './assets/enemies/zombie/ZombieDer.png');
 
         //carga de sprites
 
-        this.load.atlas('bruja', '/assets/bruja/atlasbruja.png', '/assets/bruja/json/bruja_atlas.json');
+        this.load.atlas('bruja', './assets/bruja/atlasbruja.png', './assets/bruja/json/bruja_atlas.json');
 
 /*
         this.load.spritesheet('walkDB', '/assets/bruja/BrujitaAndandoDer.png', {
@@ -68,11 +68,11 @@ export default class Preloader extends Phaser.Scene {
 */
         //z
 
-        this.load.spritesheet('zombieD', '/assets/enemies/zombie/ZombieDer.png', {
+        this.load.spritesheet('zombieD', './assets/enemies/zombie/ZombieDer.png', {
             frameWidth: 200,
             frameHeight: 200
         });
-        this.load.spritesheet('zombieD', '/assets/enemies/zombie/ZombieIzq.png', {
+        this.load.spritesheet('zombieD', './assets/enemies/zombie/ZombieIzq.png', {
             frameWidth: 200,
             frameHeight: 200
         });

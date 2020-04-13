@@ -4,17 +4,17 @@ export default class MainMenu extends Phaser.Scene {
   }
   preload() {
 
-    this.load.tilemapTiledJSON('mapaLevel1', '/assets/mapas/mapaNivel1.json');
+    this.load.tilemapTiledJSON('mapaLevel1', './assets/mapas/mapaNivel1.json');
 
-    this.load.image("rules_fondo", '/assets/menu/rules.png');
-    this.load.image("credits_fondo", '/assets/menu/credits.png');
-    this.load.image("back_button", '/assets/menu/back_button.png');
-    this.load.image("TrainBack", '/assets/background/TrainBack.png');
-    this.load.image("TrainFulll", '/assets/background/TrainFulll.png');
-    this.load.image("trees", '/assets/background/trees.png');
-    this.load.image("1trees", '/assets/background/1trees.png');
-    this.load.image("luna", '/assets/background/luna.png');
-    this.load.image("Stalin_without_bg", '/assets/background/Stalin_without_bg.png');
+    this.load.image("rules_fondo", './assets/menu/rules.png');
+    this.load.image("credits_fondo", './assets/menu/credits.png');
+    this.load.image("back_button", './assets/menu/back_button.png');
+    this.load.image("TrainBack", './assets/background/TrainBack.png');
+    this.load.image("TrainFulll", './assets/background/TrainFulll.png');
+    this.load.image("trees", './assets/background/trees.png');
+    this.load.image("1trees", './assets/background/1trees.png');
+    this.load.image("luna", './assets/background/luna.png');
+    this.load.image("Stalin_without_bg", './assets/background/Stalin_without_bg.png');
 
   }
 
