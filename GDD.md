@@ -1,10 +1,8 @@
 # ABRAKAZAM
 
-
 Desarrollado por: 
 
-| Esther Peñas Martinez |Mercedes Herrero Fernández|
-
+|Esther Peñas Martinez | Mercedes Herrero Fernández|
 
 **Resumen**:
 El juego transcurre en el reino mágico de Abrakazam, donde un malvado hechicero, Mr Lion, ha abierto un portal, que ha traído varias criaturas desatando el caos.
@@ -34,6 +32,8 @@ Sólo consiguiendo el poder de las siete gemas astrales, nacidas de las mismísi
 |16/02/2020| 1.0 |
 |20/02/2020| 2.0 |
 |27/02/2020| 3.0 |
+|14/04/2020| 4.0 |
+
  **1. Aspectos generales**
  
 A través de Abrakazam se pretende que el jugador pase un buen rato y se entretenga. 
@@ -48,11 +48,11 @@ Además, al final de cada nivel, el jugador se enfrentará a un enemigo final pa
  
  ![Portada Juego]()
   
+    
   **MAPA**
   
  ![MAPA](https://github.com/merchf/Abrakazam/blob/master/public/images/AbrakazamMapa.png)
- 
- |--|
+
  
 **1.1 Relato breve y parcial de una partida típica**
 
@@ -74,9 +74,21 @@ Además, al final de cada nivel, el jugador se enfrentará a un enemigo final pa
 
 El juego contará con un menú inicial simple e intuitivo con:
 
-- Botón JUGAR: iniciará el juego. Se tendrá que ingresar antes el nombre del personaje.
-- Botón CRÉDITOS: mostrará los nombres de los creadores.
-- Espacio para ingresar el nombre del personaje a gusto del jugador.
+![FondoMenu](https://github.com/merchf/Abrakazam/blob/master/assets/menu/menu_fondo.png)
+
+- Botón JUGAR: iniciará el juego.
+
+![play](https://github.com/merchf/Abrakazam/blob/master/assets/menu/play_button.png)
+
+- Botón CRÉDITOS: mostrará los nombres de los creadores y las herramientas utilizadas en el desarrollo del juego.
+
+![credits](https://github.com/merchf/Abrakazam/blob/master/assets/menu/credits_button.png)
+![CRÉDITOS](https://github.com/merchf/Abrakazam/blob/master/assets/menu/credits.png)
+
+- Botón REGLAS: Para mostrás las instruccones del juego y los movimientos del personaje.
+
+![reglas](https://github.com/merchf/Abrakazam/blob/master/assets/menu/rules_button.png)
+![RULES](https://github.com/merchf/Abrakazam/blob/master/assets/menu/rules.png)
 
 La temática del menú será fantástica, mostrando las siete gemas y el portal mágico. Además de poner a algún personaje.
 
@@ -153,10 +165,12 @@ El protagonista comenzará su aventura en un tren lleno de zombies, llegará a u
 Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedra, papel o tijera).
 
 - Nivel 1-Tren:
-	- Descripción: Al inicio el protagonista está en un tren camino a su destino, tendrá que atravesar los vagones hasta 		llegar a la locomotora.
+	- Descripción: Al inicio el protagonista está en un tren camino a su destino, tendrá que atravesar los vagones hasta 		llegar a la locomotora, donde encontrará la puerta de salida.
 	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
 	- Enemigos: Zombies y Mr Lion.
 	- Objetos: poción curativa, llave y gema amarilla.
+	
+	![Level1](https://github.com/merchf/Abrakazam/blob/master/assets/background/mapaNivel1.png)
 
 - Nivel 2-Castillo:
 	- Descripción: Tras el viaje en tren nuestro protagonista llega al castillo, ahora en ruinas y entra en él en busca del 	malvado Mr Lion y la gema.
@@ -202,7 +216,10 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
  ![Brujita](https://github.com/merchf/Abrakazam/blob/master/public/images/Brujita.png)
  
 - Enemigos: Las criaturas que han atravesado el portal y están destruyendo el reino. Los enemigos que hay que ir derrotando en cada nivel. 
-	- Zombies. ![Zombies]()
+	- Zombies: Perseguirán a la brujita y si la tocan la dañan. 
+	
+	![Zombies](https://github.com/merchf/Abrakazam/blob/master/assets/enemies/zombie/ZombieDer.png)
+	
 	- Trolls.
 	- Dragones.
 	- Espantapájaros.
