@@ -6,11 +6,12 @@ export default class Player extends Phaser.GameObjects.Sprite {
     this.scene.add.existing(this);
     this.scene.physics.add.existing(this);
     this.body.setCollideWorldBounds();
-    this.speed = 300;
-    this.jumpSpeed = -400;
+    this.speed = 230;
+    this.jumpSpeed = -250;
     this.health = 5;
     //la llave tiene que estar a true para acabar cada nivel
     this.keyDoor = false;
+    this.onLadder = false;
     this.label = this.scene.add.text(10, 10);
     this.cursors = this.scene.input.keyboard.createCursorKeys();
     //ataques y salto
@@ -20,9 +21,15 @@ export default class Player extends Phaser.GameObjects.Sprite {
       thunderAttack: Phaser.Input.Keyboard.KeyCodes.E,
       jump: Phaser.Input.Keyboard.KeyCodes.SPACE
     });
+
   }
 
   createAnims() {
+    this.scene.anims.create({
+      key: 'default',
+      frames: [{ key: 'bruja', frame: 'Brujita_1' }],
+      frameRate: 10,
+    });
     this.scene.anims.create({
       key: 'walkDchaBruja',
       frames: this.scene.anims.generateFrameNames('bruja', {
@@ -121,7 +128,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
         start: 24,
         end: 25
       }),
-      frameRate: 2,
+      frameRate: 10,
     });
     this.scene.anims.create({
       key: 'jumpBrujaI',
@@ -131,19 +138,31 @@ export default class Player extends Phaser.GameObjects.Sprite {
         start: 26,
         end: 27
       }),
-      frameRate: 2,
+      frameRate: 10,
     });
   }
 
   update() {
     this.body.setSize(0, 85);
-    //saltar
-    if (this.cursorsExtra.jump.isDown && this.body.onFloor()) {
-      this.body.setVelocityY(this.jumpSpeed);
-      this.play('jumpBrujaD', true);
-      //cuando tengamos lods audios aqui habría que meterlo
 
+    //attack
+    if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.fireAttack) && this.body.onFloor()) {
+
+      this.body.setVelocityX(0);
+      this.play('attackFireDB', true);
+
+      //meter audio fuego
+
+    } else if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.iceAttack) && this.body.onFloor()) {
+      this.body.setVelocityX(0);
+      this.play('attackIceDB', true);
+      //meter audio hielo
+    } else if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.thunderAttack) && this.body.onFloor()) {
+      this.body.setVelocityX(0);
+      this.play('attackThunderDB', true);
+      //meter audio trueno
     }
+
     //escalar
     if (this.cursors.up.isDown && this.onLadder == true) {
       this.body.setVelocityY(-100);
@@ -158,30 +177,29 @@ export default class Player extends Phaser.GameObjects.Sprite {
     //moverse
     if (this.cursors.left.isDown) {
       this.body.setVelocityX(-this.speed);
-      this.play('walkIzqBruja', true);
+      if (this.body.onFloor()) {
+        this.play('walkIzqBruja', true);
+      }
     }
     else if (this.cursors.right.isDown) {
       this.body.setVelocityX(this.speed);
-      this.play('walkDchaBruja', true);
+      if (this.body.onFloor()) {
+        this.play('walkDchaBruja', true);
+      }
     }
-    else {
+    else if(this.cursors.right.isUp && this.cursors.left.isUp && !this.anims.isPlaying ) {
       this.body.setVelocityX(0);
+      if (this.body.onFloor()) {
+        this.play('default', true);
+      }
 
     }
+    //saltar
+    if (this.cursorsExtra.jump.isDown && this.body.onFloor()) {
+      this.body.setVelocityY(this.jumpSpeed);
+      this.play('jumpBrujaD', true);
+      //cuando tengamos lods audios aqui habría que meterlo
 
-    //attack
-    if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.fireAttack) && this.body.onFloor()) {
-      this.body.setVelocityX(0);
-      this.play('attackFireDB', true);
-      //meter audio fuego
-    } else if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.iceAttack) && this.body.onFloor()) {
-      this.body.setVelocityX(0);
-      this.play('attackIceDB', true);
-      //meter audio hielo
-    } else if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.thunderAttack) && this.body.onFloor()) {
-      this.body.setVelocityX(0);
-      this.play('attackThunderDB', true);
-      //meter audio trueno
     }
   }
 

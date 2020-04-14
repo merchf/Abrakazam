@@ -16,30 +16,24 @@ export default class MainMenu extends Phaser.Scene {
     this.load.image("luna", './assets/background/luna.png');
     this.load.image("Stalin_without_bg", './assets/background/Stalin_without_bg.png');
 
+    //zombie
+    this.load.atlas('zombie', './assets/enemies/zombie/zombie_atlas.png', './assets/enemies/zombie/zombie_atlas.json');
+
+
   }
 
   create() {
     // this.add.image(this.game.renderer.width / 1.81, this.game.renderer.height * 0.21, "logo").setDepth(1);
     this.add.image(0, 0, "menu_fondo").setOrigin(0).setDepth(0);
 
-    /*
-        this.anims.create({
-          key:"walkDcha",
-          frameRate: 4,
-          repeat: -1,
-          frames:this.anims.generateFrameNumbers("brujaDcha", {
-            frames: [0,1,2,3]
-          })
-        })
-    */
     //botones
     let playButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2, "play_button").setDepth(1);
     let rulesButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 80, "rules_button").setDepth(1);
     let creditsButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 160, "credits_button").setDepth(1);
 
     //hover botones
-    let hoverSprite = this.add.sprite(100, 100, "bruja");
-    hoverSprite.setScale(0.5);
+    let hoverSprite = this.add.sprite(90, 100, "bruja");
+    // hoverSprite.setScale(0.5);
     hoverSprite.setVisible(false);
 
 
@@ -76,8 +70,8 @@ export default class MainMenu extends Phaser.Scene {
     //acciones al clicar
 
 
-   // pointerUp(playButton, 'level1');
-   // pointerUp(rulesButton, 'rules');
+    // pointerUp(playButton, 'level1');
+    // pointerUp(rulesButton, 'rules');
     //pointerUp(creditsButton, 'credits');
     playButton.on("pointerup", () => {
       this.scene.start('level1');
@@ -88,7 +82,7 @@ export default class MainMenu extends Phaser.Scene {
     creditsButton.on("pointerup", () => {
       this.scene.start('credits');
     });
-    
+
 
   }
   update() {

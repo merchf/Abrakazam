@@ -1,0 +1,105 @@
+{
+    "frames": {
+        "Zombie_1.png": {
+            "frame": {
+                "w": 81,
+                "h": 144,
+                "x": 0,
+                "y": 289
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Zombie_2.png": {
+            "frame": {
+                "w": 97,
+                "h": 145,
+                "x": 0,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Zombie_3.png": {
+            "frame": {
+                "w": 112,
+                "h": 144,
+                "x": 193,
+                "y": 145
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Zombie_4.png": {
+            "frame": {
+                "w": 97,
+                "h": 144,
+                "x": 0,
+                "y": 145
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Zombie_5.png": {
+            "frame": {
+                "w": 96,
+                "h": 144,
+                "x": 97,
+                "y": 145
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Zombie_6.png": {
+            "frame": {
+                "w": 96,
+                "h": 143,
+                "x": 81,
+                "y": 289
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Zombie_7": {
+            "frame": {
+                "w": 112,
+                "h": 145,
+                "x": 97,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        },
+        "Zombie_8": {
+            "frame": {
+                "w": 96,
+                "h": 144,
+                "x": 209,
+                "y": 0
+            },
+            "anchor": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }
+    },
+    "meta": {
+        "image": "zombie_atlas.png",
+        "description": "Atlas generado con Atlas Packer Gamma V2",
+        "web": "https://gammafp.github.io/atlas-packer-phaser/"
+    }
+}
