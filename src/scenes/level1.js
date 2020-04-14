@@ -104,8 +104,6 @@ export default class Level1 extends Phaser.Scene {
       this.witch.onLadder = false;
     }
 
-  // if(this.physics.add.overlap(this.wolf, this.enemies, this.resetPlayer(), this)){}
-
     console.log("update");
   }
 
