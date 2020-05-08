@@ -1,7 +1,8 @@
-import Player from '../player.js'
+import Player from '../player.js';
 import Zombie from '../enemies/zombie.js';
-let botLayer5;
-let luna;
+
+import CharmFire from '../CharmFire.js';
+
 export default class Level1 extends Phaser.Scene {
 
   constructor() {
@@ -13,6 +14,9 @@ export default class Level1 extends Phaser.Scene {
   }
 
   create() {
+
+    this.scene.run('gameUI');
+    this.state = this.scene.get('State');
     //mapa
     let map = this.add.tilemap("mapaLevel1");
     //Tilesets para el mapa
@@ -36,18 +40,39 @@ export default class Level1 extends Phaser.Scene {
     this.arboles1 = map.createStaticLayer("Capa de fondo arboles alante", [trees], 0, 0);
     this.escalar = map.createStaticLayer("escalar", [trainBack, finalDoor], 0, 0);
     this.door = map.createStaticLayer("puerta", [finalDoor], 0, 0);
+    this.objects = map.getObjectLayer["Capa de Objetos "];
 
+    //setCollisionByExclusionle dice a Phaser que habilite las colisiones 
+    //para cada mosaico cuyo índice no sea -1, por lo tanto, todos los mosaicos.
+    this.topeZ.setCollisionByExclusion(-1, true);
     this.suelo.setCollisionByExclusion(-1, true);
-    this.topeZ
+    this.muerte.setCollisionByExclusion(-1, true);
+    this.door.setCollisionByExclusion(-1, true);
+    this.escalar.setCollisionByExclusion(-1, true);
+
+    /*
+        let start = this.objects.create["Capa de Objetos "][0];
+        let endDoor = this.map.objects["Capa de Objetos "][1];
+        let death = this.map.objects["Capa de Objetos "][2];
+        let keyPosition = this.map.objects["Capa de Objetos "][3];
+    */
+
+
+    //añadiosObjeto
+    // this.keyObject = this.add.sprite(4354, 414, "keyDoor");
+    this.keyObject = this.physics.add.sprite(4354, 414, "keyDoor");
+
+
 
     //player
     this.witch = new Player(this, 200, 400);
     this.witch.createAnims();
-    this.collider = this.physics.add.collider(this.witch, this.suelo);
+    //  this.collider = this.physics.add.collider(this.witch, this.suelo);
     this.witch.body.debugBodyColor = 0x09b500;
 
     //colisiones playes
     this.physics.add.collider(this.witch, this.suelo);
+    this.physics.add.collider(this.keyObject, this.suelo);
 
     //enemies(zombie)
     this.enemies = this.physics.add.group();
@@ -58,11 +83,6 @@ export default class Level1 extends Phaser.Scene {
     let z3 = new Zombie(this, 1400, 250);
     let z4 = new Zombie(this, 1600, 250);
     let z5 = new Zombie(this, 2300, 400);
-    z1.createAnims();
-    z2.createAnims();
-    z3.createAnims();
-    z4.createAnims();
-    z5.createAnims();
     this.enemies.add(z1);
     this.enemies.add(z2);
     this.enemies.add(z3);
@@ -70,32 +90,53 @@ export default class Level1 extends Phaser.Scene {
     this.enemies.add(z5);
     this.enemies.getChildren().forEach(function (item) { //necesario para crear cada enemigo con sus propiedades. Hacerlo antes de añadirlo al grupo no funciona
       item.create();
+      item.createAnims();
     }, this);
 
     //colisiones enemigos
-    this.physics.add.collider(this.enemies, this.suelo);
-    this.physics.add.collider(this.enemies, this.enemies);
     this.physics.add.collider(this.enemies, this.topeZ);
+    this.physics.add.collider(this.enemies, this.suelo);
+    //this.physics.add.collider(this.enemies, this.enemies);
 
-    //this.cameras.main.setBackgroundColor("#4488AA");
+
+    //disparos
+    this.charms = this.add.group();
+    //colisiones hechizos
+    this.physics.add.collider(this.charms, this.suelo);
 
     //Ajustamos la camara a que no se salga de los limites del mapa
     this.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.witch);
 
   }
+
+  colisionCharmvsZ(charm, enemie) {
+
+  }
+
   update(time, delta) {
 
     //simular movimiento del fondo
     // this.botLayer5.tilePositionX -= 1;
-
+    this.checkLife(this.witch);
     //updates de personajes
-    this.witch.update();
+    this.witch.preUpdate(time, delta, this.bullets);
     this.enemies.getChildren().forEach(function (item) {
-      item.update();
+      item.preUpdate(time, delta);
     }, this);
-    //controla que si caes en la capa muerte se resetee
-   // this.physics.add.collider(this.witch, this.muerte, this.resetPlayer(), null, this);
+
+
+    //Si el ataque colisiona con el Z
+    this.physics.add.overlap(this.charms, this.enemies, this.attackZ);
+    //Si el z nos toa
+    this.physics.add.collider(this.witch, this.enemies, this.hurtPlayer);
+
+
+    //controla coger la llave
+    this.physics.add.overlap(this.witch, this.keyObject, this.catchKeyDoor, null, this);
+    //si te caes del tren se resetea el nivel
+    this.physics.add.collider(this.witch, this.muerte, this.resetPlayer, null, this);
+    this.physics.add.collider(this.witch, this.door, this.nextScene);
 
     //Si está en la escalera permite escalar al jugador
     if (this.physics.add.overlap(this.witch, this.escalar)) {
@@ -107,24 +148,55 @@ export default class Level1 extends Phaser.Scene {
     console.log("update");
   }
 
-
-  
-  checkLadder() {
-    this.witch.onLadder = true;
+  hurtPlayer(player, enemie) {
+    player.health -= 1;
+    player.play('deadWitch', false);
   }
-  //cada vez que toque la capa suelo reseteo y resto vida
-  resetPlayer() {
-    this.witch.body.setVelocity(0, 0);
-    this.witch.setX(50);
-    this.witch.setY(300);
-    this.witch.play('default', true);
-  //  this.witch.setAlpha(0);
+  attackZ(bala, z) {
+    bala.destroy();
+      z.health -= 3;
+      z.play('burnedDZ', true);
+    
+  }
+
+  checkLife(player) {
+    if (player.health <= 0) {
+      this.scene.start("level1");
+    }
+  }
+  checkLadder(player) {
+
+    player.onLadder = true;
+  }
+  //cada vez que toque la capa suelo reseteo 
+  resetPlayer(player, obj2) {
+
+    console.log("MUERTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+    player.body.setVelocity(0, 0);
+    player.setX(100);
+    player.setY(400);
+    player.play('default', true);
+    //  this.witch.setAlpha(0);
     let tw = this.tweens.add({
-      targets: this.witch,
+      targets: player,
       alpha: 1,
       duration: 100,
       ease: 'Linear',
       repeat: 5,
     });
   }
+  catchKeyDoor(player, object1) {
+
+    console.log("COGE LLAVEEEEEEEEEEEEEEEEEEEEEEE");
+    player.keyDoor = true;
+    //quiza es mejor hacer object1.kill();
+    object1.setVisible(false);
+  }
+  nextScene(player, obj) {
+    if (player.keyDoor === true) {
+      this.scene.start('beforeFigthMrLion');
+    }
+  }
+
+
 }

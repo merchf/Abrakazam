@@ -1,15 +1,16 @@
-//import Star from './star.js'
 
 export default class Zombie extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y) {
     super(scene, x, y, 'zombie');
-    this.health = 2;
+    this.health = 5;
+    this.speed=30;
   }
   create() {
     this.scene.add.existing(this);
     this.scene.physics.add.existing(this);
     this.body.setCollideWorldBounds(true);
-    this.setScale(0.75);
+    this.body.setVelocityX(this.speed);
+    this.setScale(0.65);
   }
   createAnims() {
     this.scene.anims.create({
@@ -54,17 +55,27 @@ export default class Zombie extends Phaser.GameObjects.Sprite {
   }
 
 
-  update() {
-    //izq
-    console.log("zzzzzzzzzzzzzzzzzzzzzzzz")
+  preUpdate(t, dt) {
+    super.preUpdate(t, dt)
+    if(this.health<=0){
+      this.destroy();
+      return
+    }
+    //mirror para los sprites
+    if (this.body.velocity.x > 0){
+      this.setFlipX(false); 
+    }else if (this.body.velocity.x < 0){
+      this.setFlipX(true);
+    }
+    //girar a la izq si toca limites
     if (this.body.touching.right || this.body.blocked.right) {
-      this.body.setVelocityX(-20);
-     // this.play("walkIzqZ", true);
+      this.body.setVelocityX(-this.speed);
+      console.log("gira a la izq")
     }
     //dcha
     else if (this.body.touching.left || this.body.blocked.left) {
-      this.body.setVelocityX(20);
-      //this.play("walkDchaZ", true);
-    }
+      this.body.setVelocityX(this.speed);
+      console.log("gira a la chaaaaaaaaaaa")
+    }  
   }
 }

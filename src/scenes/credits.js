@@ -10,8 +10,8 @@ export default class Credits extends Phaser.Scene {
     create() {
         this.add.image(0, 0, "credits_fondo").setOrigin(0).setDepth(0);
         //botones
-        let backButton = this.add.image(0, 0, "back_button").setDepth(1);
-
+        let backButton = this.add.image(50,60, "back_button").setDepth(1);
+        backButton.setScale(2.5);
         backButton.setInteractive();
         backButton.on("pointerup", () => {
             this.scene.start('mainMenu');

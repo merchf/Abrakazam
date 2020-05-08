@@ -6,17 +6,44 @@ export default class Preloader extends Phaser.Scene {
     preload() {
 
 
-        //carga de imagenes
+        //carga de imagenes menu
         this.load.image("menu_fondo", './assets/menu/menu_fondo.png');
         this.load.image("play_button", './assets/menu/play_button.png');
         this.load.image("rules_button", './assets/menu/rules_button.png');
         this.load.image("credits_button", './assets/menu/credits_button.png');
         this.load.image("logo", './assets/menu/logo.png');
- 
-        //carga de sprites
+        this.load.image("rules_fondo", './assets/menu/rules.png');
+        this.load.image("credits_fondo", './assets/menu/credits.png');
+        this.load.image("back_button", './assets/menu/back_button.png');
 
+        //mapa
+        this.load.tilemapTiledJSON('mapaLevel1', './assets/mapas/mapaNivel1.json');
+
+        this.load.image("TrainBack", './assets/background/TrainBack.png');
+        this.load.image("TrainFulll", './assets/background/TrainFulll.png');
+        this.load.image("trees", './assets/background/trees.png');
+        this.load.image("1trees", './assets/background/1trees.png');
+        this.load.image("luna", './assets/background/luna.png');
+        this.load.image("Stalin_without_bg", './assets/background/Stalin_without_bg.png');
+        this.load.image("tile_castle_grey", './assets/background/tile_castle_grey.png');
+
+        //objetos
+        this.load.image("keyDoor", './assets/objects/llaveobjeto.png');
+        this.load.image("hearthUI", './assets/objects/PocionCuracionobjeto.png');
+
+
+        //ataques
+        this.load.image('fireCharm', './assets/bruja/Brujita_28.png');
+        this.load.image('iceCharm', './assets/bruja/Brujita_29.png');
+        this.load.image('thunderCharm', './assets/bruja/Brujita_30.png');
+
+
+
+        //carga de sprites
         this.load.atlas('bruja', './assets/bruja/atlasbruja.png', './assets/bruja/json/bruja_atlas.json');
 
+        //zombie
+        this.load.atlas('zombie', './assets/enemies/zombie/zombie_atlas.png', './assets/enemies/zombie/zombie_atlas.json');
 
         // barras de carga, una sobre otra (rosa sobre morado o algo asi)
 

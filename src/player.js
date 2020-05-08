@@ -1,4 +1,6 @@
-//import Star from './star.js'
+import CharmFire from './charmFire.js'
+import CharmIce from './charmIce.js'
+import CharmThunder from './charmThunder.js'
 
 export default class Player extends Phaser.GameObjects.Sprite {
   constructor(scene, x, y) {
@@ -8,12 +10,18 @@ export default class Player extends Phaser.GameObjects.Sprite {
     this.body.setCollideWorldBounds();
     this.speed = 230;
     this.jumpSpeed = -250;
-    this.health = 5;
+    this.health = 3;
+    this.lastFired = 0;
+    this.timeFire = 5;
+    this.timeIce = 10;
+    this.timeThunder = 2;
     //la llave tiene que estar a true para acabar cada nivel
     this.keyDoor = false;
     this.onLadder = false;
-    this.label = this.scene.add.text(10, 10);
+    this.labelHealth = this.scene.add.text(10, 10);
+    this.labelKey = this.scene.add.text(10, 30);
     this.cursors = this.scene.input.keyboard.createCursorKeys();
+
     //ataques y salto
     this.cursorsExtra = this.scene.input.keyboard.addKeys({
       fireAttack: Phaser.Input.Keyboard.KeyCodes.Q,
@@ -21,9 +29,19 @@ export default class Player extends Phaser.GameObjects.Sprite {
       thunderAttack: Phaser.Input.Keyboard.KeyCodes.E,
       jump: Phaser.Input.Keyboard.KeyCodes.SPACE
     });
-
+    this.updateKey();
+    this.updateLife();
   }
-
+  updateLife() {
+    this.labelHealth.text = 'Vidas restantes:' + this.health;
+  }
+  updateKey() {
+    if (this.keyDoor) {
+      this.labelKey.text = 'Llave encontrada! Ya puedes abrir la puerta.';
+    } else {
+      this.labelKey.text = 'Encuentra la llave para poder abrir la última puerta.';
+    }
+  }
   createAnims() {
     this.scene.anims.create({
       key: 'default',
@@ -140,9 +158,15 @@ export default class Player extends Phaser.GameObjects.Sprite {
       }),
       frameRate: 10,
     });
+    this.scene.anims.create({
+      key: 'deadWitch',
+      frames: [{ key: 'bruja', frame: 'Brujita_31' }],
+      frameRate: 10,
+    });
   }
 
-  update() {
+  preUpdate(t, dt, bullets) {
+    super.preUpdate(t, dt)
     this.body.setSize(0, 85);
 
     //attack
@@ -151,15 +175,18 @@ export default class Player extends Phaser.GameObjects.Sprite {
       this.body.setVelocityX(0);
       this.play('attackFireDB', true);
 
+      this.throwCharmFire();
       //meter audio fuego
 
     } else if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.iceAttack) && this.body.onFloor()) {
       this.body.setVelocityX(0);
       this.play('attackIceDB', true);
+      this.throwCharmIce();
       //meter audio hielo
     } else if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.thunderAttack) && this.body.onFloor()) {
       this.body.setVelocityX(0);
       this.play('attackThunderDB', true);
+      this.throwCharmThunder();
       //meter audio trueno
     }
 
@@ -173,6 +200,21 @@ export default class Player extends Phaser.GameObjects.Sprite {
       this.play('climbBruja', true);
       //cuando tengamos los audios aqui habría que meterlo
     }
+    if (this.anims.isPlaying && this.anims.currentAnim.key === 'deadWitch') {
+      if (this.body.touching.down) {
+        this.body.setVelocityY(-800);
+      }
+      else if (this.body.touching.left) {
+        this.body.setVelocityX(+800);
+      }
+      else if (this.body.touching.right) {
+        this.body.setVelocityX(-800);
+      }
+      else if (this.body.touching.up) {
+        this.body.setVelocityY(+800);
+      }
+    }
+
 
     //moverse
     if (this.cursors.left.isDown) {
@@ -187,7 +229,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
         this.play('walkDchaBruja', true);
       }
     }
-    else if(this.cursors.right.isUp && this.cursors.left.isUp && !this.anims.isPlaying ) {
+    else if (this.cursors.right.isUp && this.cursors.left.isUp && !this.anims.isPlaying) {
       this.body.setVelocityX(0);
       if (this.body.onFloor()) {
         this.play('default', true);
@@ -203,5 +245,15 @@ export default class Player extends Phaser.GameObjects.Sprite {
     }
   }
 
+  throwCharmFire() {
+    let charm = new CharmFire(this.scene, this.x, this.y, this);
+    console.log("lanzo fuedooooooooooooooooooooooooooooooooo)")
+  }
+  throwCharmIce() {
+    let charm = new CharmIce(this.scene, this.x, this.y, this);
+  }
+  throwCharmThunder() {
+    let charm = new CharmThunder(this.scene, this.x, this.y, this);
 
+  }
 }
