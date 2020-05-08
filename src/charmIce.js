@@ -13,7 +13,7 @@ export default class CharmIce extends Phaser.GameObjects.Sprite {
             this.body.setVelocityX(this.speed);
         }
 
-        scene.charms.add(this);
+        scene.charmIce.add(this);
     }
     preUpdate(t, dt) {
         super.preUpdate(t, dt);

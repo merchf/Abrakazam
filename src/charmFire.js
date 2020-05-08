@@ -15,7 +15,7 @@ export default class CharmFire extends Phaser.GameObjects.Sprite {
             this.body.setVelocityX(this.speed);
         }
 
-        scene.charms.add(this);
+        scene.charmFire.add(this);
     }
 
     preUpdate(t, dt) {

@@ -100,9 +100,16 @@ export default class Level1 extends Phaser.Scene {
 
 
     //disparos
-    this.charms = this.add.group();
+    this.charmFire = this.add.group();
+    this.charmIce = this.add.group();
+    this.charmThunder = this.add.group();
+    /*this.charms = this.add.group();
+    this.charms.add(this.charmFire);
+    this.charms.add(this.charmIce);
+    this.charms.add(this.charmThunder);
+    */
     //colisiones hechizos
- 
+
     //Ajustamos la camara a que no se salga de los limites del mapa
     this.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.witch);
@@ -125,14 +132,19 @@ export default class Level1 extends Phaser.Scene {
     }, this);
 
 
-    //Si el ataque colisiona con el Z
-    this.physics.add.overlap(this.charms, this.enemies, this.attackZ);
+    //Si el fuego toca a un zombie
+    this.physics.add.overlap(this.charmFire, this.enemies, this.attackZFire);
+    //Si el hielo toca a un zombie
+    this.physics.add.overlap(this.charmIce, this.enemies, this.attackZIce);
+    //Si el rayo toca a un zombie
+    this.physics.add.overlap(this.charmThunder, this.enemies, this.attackZThunder);
     //Si el z nos toa
     this.physics.add.collider(this.witch, this.enemies, this.hurtPlayer);
 
-    this.physics.add.collider(this.charms, this.suelo,(obj1,obj2)=>{
+    //si los hechizos chocasn con la pared desaparecen
+    this.physics.add.collider(this.charmFire, this.suelo, (obj1, obj2) => {
       obj1.destroy();
-    },null,this);
+    }, null, this);
 
 
     //controla coger la llave
@@ -155,11 +167,22 @@ export default class Level1 extends Phaser.Scene {
     player.health -= 1;
     player.play('deadWitch', false);
   }
-  attackZ(bala, z) {
-    bala.destroy();
-      z.health -= 3;
-      z.play('burnedDZ', true);
-    
+  attackZFire(charm, z) {
+    charm.destroy();
+    z.health -= 3;
+    z.play('burnedDZ', true);
+
+  }
+  attackZIce(charm, z) {
+    charm.destroy();
+    z.body.setVelocityX(0);
+    z.play('frozenDZ', true);
+
+  }
+  attackZThunder(charm, z) {
+    charm.destroy();
+    z.play('electrocutedDZ', true);
+
   }
 
   checkLife(player) {
