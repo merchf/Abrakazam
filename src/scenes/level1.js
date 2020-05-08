@@ -102,8 +102,7 @@ export default class Level1 extends Phaser.Scene {
     //disparos
     this.charms = this.add.group();
     //colisiones hechizos
-    this.physics.add.collider(this.charms, this.suelo);
-
+ 
     //Ajustamos la camara a que no se salga de los limites del mapa
     this.physics.world.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
     this.cameras.main.startFollow(this.witch);
@@ -130,6 +129,10 @@ export default class Level1 extends Phaser.Scene {
     this.physics.add.overlap(this.charms, this.enemies, this.attackZ);
     //Si el z nos toa
     this.physics.add.collider(this.witch, this.enemies, this.hurtPlayer);
+
+    this.physics.add.collider(this.charms, this.suelo,(obj1,obj2)=>{
+      obj1.destroy();
+    },null,this);
 
 
     //controla coger la llave
@@ -190,7 +193,7 @@ export default class Level1 extends Phaser.Scene {
     console.log("COGE LLAVEEEEEEEEEEEEEEEEEEEEEEE");
     player.keyDoor = true;
     //quiza es mejor hacer object1.kill();
-    object1.setVisible(false);
+    object1.destroy();
   }
   nextScene(player, obj) {
     if (player.keyDoor === true) {

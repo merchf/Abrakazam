@@ -231,11 +231,12 @@ export default class Player extends Phaser.GameObjects.Sprite {
     }
     else if (this.cursors.right.isUp && this.cursors.left.isUp && !this.anims.isPlaying) {
       this.body.setVelocityX(0);
-      if (this.body.onFloor()) {
+     /* if (this.body.onFloor()) {
         this.play('default', true);
       }
-
+*/
     }
+    
     //saltar
     if (this.cursorsExtra.jump.isDown && this.body.onFloor()) {
       this.body.setVelocityY(this.jumpSpeed);
