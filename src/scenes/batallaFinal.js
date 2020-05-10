@@ -12,30 +12,61 @@ export default class BatallaFinal extends Phaser.Scene {
       let fuegoButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2-50, "fuegoButton").setDepth(1);
       let hieloButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2+50, "hieloButton").setDepth(1);
       let rayoButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 +150, "rayoButton").setDepth(1);
-      
-      this.add.image(this.game.renderer.width/2-250, this.game.renderer.height / 2 + 80, "brujafinal").setDepth(1);
-      this.add.image(this.game.renderer.width / 2+250, this.game.renderer.height / 2 +80, "mrLion").setDepth(1);
-  
-      //hover botones
-   
-      fuegoButton.setInteractive();
     
+      //hover botones
+      let hoverBruja=this.add.image(this.game.renderer.width/2-250, this.game.renderer.height / 2 + 80, "brujafinal").setDepth(1);
+      let hoverBrujaF=this.add.image(this.game.renderer.width/2-250, this.game.renderer.height / 2 + 80, "brujaF").setDepth(1);
+      let hoverBrujaH=this.add.image(this.game.renderer.width/2-250, this.game.renderer.height / 2 + 80, "brujaH").setDepth(1);
+      let hoverBrujaR=this.add.image(this.game.renderer.width/2-250, this.game.renderer.height / 2 + 80, "brujaR").setDepth(1);
+      this.add.image(this.game.renderer.width / 2+250, this.game.renderer.height / 2 +80, "mrLion").setDepth(1);
+      
+      hoverBruja.setVisible(true);
+      hoverBrujaF.setVisible(false);
+      hoverBrujaH.setVisible(false);
+      hoverBrujaR.setVisible(false);
+
+      //fuego
+      fuegoButton.setInteractive();
+      fuegoButton.on("pointerover", () => {
+      hoverBruja.setVisible(false);
+      hoverBrujaF.setVisible(true);
+      });
+      fuegoButton.on("pointerout", () => {
+        hoverBruja.setVisible(true);
+        hoverBrujaF.setVisible(false);
+      });
+      
+      //hielo
       hieloButton.setInteractive();
-  
+      hieloButton.on("pointerover", () => {
+        hoverBruja.setVisible(false);
+        hoverBrujaH.setVisible(true);
+      });
+      hieloButton.on("pointerout", () => {
+        hoverBruja.setVisible(true);
+        hoverBrujaH.setVisible(false);
+      });
+
+      //rayo
       rayoButton.setInteractive();
-  
+      rayoButton.on("pointerover", () => {
+        hoverBruja.setVisible(false);
+        hoverBrujaR.setVisible(true);
+      });
+      rayoButton.on("pointerout", () => {
+        hoverBruja.setVisible(true);
+        hoverBrujaR.setVisible(false);
+      });
+
       //acciones al clicar
 
       fuegoButton.on("pointerup", () => {
-        this.add.image(this.game.renderer.width/2-250, this.game.renderer.height / 2 + 80, "brujaF").setDepth(1);
         usuario('0');
             });
       hieloButton.on("pointerup", () => {
-        this.add.image(this.game.renderer.width/2-250, this.game.renderer.height / 2 + 80, "brujaH").setDepth(1);
         usuario('1');
             });
       rayoButton.on("pointerup", () => {
-        this.add.image(this.game.renderer.width/2-250, this.game.renderer.height / 2 + 80, "brujaR").setDepth(1);
         usuario('2');
       });
   }
