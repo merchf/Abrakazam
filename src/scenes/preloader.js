@@ -5,7 +5,6 @@ export default class Preloader extends Phaser.Scene {
     }
     preload() {
 
-
         //carga de imagenes menu
         this.load.image("menu_fondo", './assets/menu/menu_fondo.png');
         this.load.image("play_button", './assets/menu/play_button.png');
@@ -15,7 +14,21 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("rules_fondo", './assets/menu/rules.png');
         this.load.image("credits_fondo", './assets/menu/credits.png');
         this.load.image("back_button", './assets/menu/back_button.png');
-
+        
+        //carga de imagenes batalla final
+        this.load.image("fondobatallafinal", './assets/batallaFinal/fondobatallafinal.png');
+        this.load.image("fuegoButton", './assets/batallaFinal/botonesbatallafinal1.png');
+        this.load.image("hieloButton", './assets/batallaFinal/botonesbatallafinal2.png');
+        this.load.image("rayoButton", './assets/batallaFinal/botonesbatallafinal3.png');
+        this.load.image("brujafinal", './assets/bruja/Bruja_1.png');
+        this.load.image("brujaF", './assets/bruja/Bruja_2.png');
+        this.load.image("brujaH", './assets/bruja/Bruja_3.png');
+        this.load.image("brujaR", './assets/bruja/Bruja_4.png');
+        this.load.image("mrLion", './assets/enemies/mrLion/MrLion.png');
+        this.load.image("MrLionFuego", './assets/enemies/mrLion/MrLionFuego.png');
+        this.load.image("MrLionHielo", './assets/enemies/mrLion/MrLionHielo.png');
+        this.load.image("MrLionRayo", './assets/enemies/mrLion/MrLionRayo.png');
+        
         //mapa
         this.load.tilemapTiledJSON('mapaLevel1', './assets/mapas/mapaNivel1.json');
 
@@ -68,7 +81,8 @@ export default class Preloader extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start('mainMenu');
+        //this.scene.start('mainMenu');
+        this.scene.start('batallaFinal');
     }
     update() {
         console.log("menu");

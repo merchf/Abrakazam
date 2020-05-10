@@ -5,13 +5,19 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" href="player.png" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=2.0">
-    <link rel="stylesheet" href="public/css/game.css">
+	<link rel="stylesheet" type="text/css" href="estilo.css">
+	<link rel="stylesheet" href="public/css/game.css">
+	<link rel="stylesheet" href="public/css/estilo.css">
     <script src="src/phaser.min.js"></script>
 
-    <title>Abrakazam</title>
+    <title>BatallaFinal</title>
 </head>
 
 <body>
+	<div id="juego">
+		<h1>¡GANA A MR LION!</h1> 
+	</div>
+
     <script type="module">
         import Boot from './src/scenes/boot.js'
         import Preloader from './src/scenes/preloader.js'
@@ -35,8 +41,9 @@
             pixelArt: true,
             scene: [Boot, Preloader, MainMenu, Rules, Credits, GameUI, Level1,BatallaFinal],
             physics: { default: 'arcade', arcade: { gravity: { y: 400 }, debug: false } }
-        };
-
+		};
+		
+		<div id="efecto" style="display:none" onclick="quitarEfecto();"></div>
         new Phaser.Game(config);
     </script>
 </body>
