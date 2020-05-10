@@ -22,6 +22,14 @@ export default class BatallaFinal extends Phaser.Scene {
       this.add.image(this.game.renderer.width/2-250, this.game.renderer.height / 2 + 80, "brujafinal").setDepth(1);
       this.add.image(this.game.renderer.width / 2+250, this.game.renderer.height / 2 +80, "mrLion").setDepth(1);
   
+      //hover botones
+   
+    fuegoButton.setInteractive();
+   
+    hieloButton.setInteractive();
+ 
+    rayoButton.setInteractive();
+  
       //acciones al clicar
 
       fuegoButton.on("pointerup", () => {
