@@ -18,12 +18,14 @@ export default class BatallaFinal extends Phaser.Scene {
       let hoverBrujaF=this.add.image(this.game.renderer.width/2-250, this.game.renderer.height / 2 + 80, "brujaF").setDepth(1);
       let hoverBrujaH=this.add.image(this.game.renderer.width/2-250, this.game.renderer.height / 2 + 80, "brujaH").setDepth(1);
       let hoverBrujaR=this.add.image(this.game.renderer.width/2-250, this.game.renderer.height / 2 + 80, "brujaR").setDepth(1);
-      this.add.image(this.game.renderer.width / 2+250, this.game.renderer.height / 2 +80, "mrLion").setDepth(1);
+      let hoverMrLion= this.add.image(this.game.renderer.width / 2+250, this.game.renderer.height / 2 +80, "mrLion").setDepth(1);
+      //let hoverMrLionH=this.add.image(this.game.renderer.width / 2+250, this.game.renderer.height / 2 + 80, "MrLionHielo").setDepth(1); 
       
       hoverBruja.setVisible(true);
       hoverBrujaF.setVisible(false);
       hoverBrujaH.setVisible(false);
       hoverBrujaR.setVisible(false);
+      hoverMrLion.setVisible(true);
 
       //fuego
       fuegoButton.setInteractive();
@@ -88,7 +90,7 @@ var eleccionMaquina;
 //Función para generar la respuesta aleatoria de la máquina
 function aleatorio(minimo, maximo){
   var numero = Math.floor(Math.random() * (maximo - minimo +1) + minimo);
-  return numero;
+  return numero; 
 }
 
 //Función para controlar el juego
@@ -98,7 +100,7 @@ function usuario(eleccionUsuario){
   eleccionUsuario = parseInt(eleccionUsuario);
   eleccionMaquina = aleatorio(0,2);
       if(eleccionUsuario == 0){//el usuario eligio fuego 
-          if(opciones[eleccionMaquina] == 1){//si la maquina eligio hielo
+          if(opciones[eleccionMaquina] == 1){//si la maquina eligio hielo 
               //this.add.image(this.game.renderer.width / 2+250, this.game.renderer.height / 2 + 80, "MrLionHielo").setDepth(1);
               vidaMaquina=vidaMaquina-1;
           }else{
