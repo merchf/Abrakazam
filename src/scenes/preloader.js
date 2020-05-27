@@ -5,6 +5,10 @@ export default class Preloader extends Phaser.Scene {
     }
     preload() {
 
+        //prologo
+        this.load.image("prologo", './assets/cambioEscenarios/Inicio.png');
+      
+
         //carga de imagenes menu
         this.load.image("menu_fondo", './assets/menu/menu_fondo.png');
         this.load.image("play_button", './assets/menu/play_button.png');
@@ -14,7 +18,9 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("rules_fondo", './assets/menu/rules.png');
         this.load.image("credits_fondo", './assets/menu/credits.png');
         this.load.image("back_button", './assets/menu/back_button.png');
-        
+        this.load.image("next_button", './assets/menu/next_button.png');
+
+
         //carga de imagenes batalla final
         this.load.image("fondobatallafinal", './assets/batallaFinal/fondobatallafinal.png');
         this.load.image("fuegoButton", './assets/batallaFinal/botonesbatallafinal1.png');
@@ -28,7 +34,7 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("MrLionFuego", './assets/enemies/mrLion/MrLionFuego.png');
         this.load.image("MrLionHielo", './assets/enemies/mrLion/MrLionHielo.png');
         this.load.image("MrLionRayo", './assets/enemies/mrLion/MrLionRayo.png');
-        
+
         //mapa
         this.load.tilemapTiledJSON('mapaLevel1', './assets/mapas/mapaNivel1.json');
 
@@ -43,6 +49,16 @@ export default class Preloader extends Phaser.Scene {
         //objetos
         this.load.image("keyDoor", './assets/objects/llaveobjeto.png');
         this.load.image("hearthUI", './assets/objects/PocionCuracionobjeto.png');
+
+        //vidas
+        this.load.image("Life3", './assets/objects/VidaBruja1.png');
+        this.load.image("Life2", './assets/objects/VidaBruja2.png');
+        this.load.image("Life1", './assets/objects/VidaBruja3.png');
+        this.load.image("Life0", './assets/objects/VidaBruja4.png');
+        this.load.image("LifeMrLion3", './assets/objects/VidasMrLion1.png');
+        this.load.image("LifeMrLion2", './assets/objects/VidasMrLion2.png');
+        this.load.image("LifeMrLion1", './assets/objects/VidasMrLion3.png');
+        this.load.image("LifeMrLion0", './assets/objects/VidasMrLion4.png');
 
 
         //ataques
@@ -81,7 +97,7 @@ export default class Preloader extends Phaser.Scene {
     }
 
     create() {
-       this.scene.start('mainMenu');
+        this.scene.start('mainMenu');
         //this.scene.start('batallaFinal');
     }
     update() {

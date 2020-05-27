@@ -9,10 +9,10 @@ export default class CharmFire extends Phaser.GameObjects.Sprite {
         this.distance=50;
 
         if (witch.flipX) {
-            this.body.setVelocityX(-this.speed);
+            this.body.setVelocityX(this.speed);
         }
         else {
-            this.body.setVelocityX(this.speed);
+            this.body.setVelocityX(-this.speed);
         }
 
         scene.charmFire.add(this);

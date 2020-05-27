@@ -58,7 +58,7 @@ export default class MainMenu extends Phaser.Scene {
     // pointerUp(rulesButton, 'rules');
     //pointerUp(creditsButton, 'credits');
     playButton.on("pointerup", () => {
-      this.scene.start('level1');
+      this.scene.start('prologo');
     });
     rulesButton.on("pointerup", () => {
       this.scene.start('rules');

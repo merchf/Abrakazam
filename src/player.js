@@ -21,7 +21,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
     this.labelHealth = this.scene.add.text(10, 10);
     this.labelKey = this.scene.add.text(10, 30);
     this.cursors = this.scene.input.keyboard.createCursorKeys();
-
+    this.setFlipX(true);
     //ataques y salto
     this.cursorsExtra = this.scene.input.keyboard.addKeys({
       fireAttack: Phaser.Input.Keyboard.KeyCodes.Q,
@@ -173,19 +173,19 @@ export default class Player extends Phaser.GameObjects.Sprite {
     if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.fireAttack) && this.body.onFloor()) {
 
       this.body.setVelocityX(0);
-      this.play('attackFireDB', true);
+      this.play('attackFireIB', true);
 
       this.throwCharmFire();
       //meter audio fuego
 
     } else if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.iceAttack) && this.body.onFloor()) {
       this.body.setVelocityX(0);
-      this.play('attackIceDB', true);
+      this.play('attackIceIB', true);
       this.throwCharmIce();
       //meter audio hielo
     } else if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.thunderAttack) && this.body.onFloor()) {
       this.body.setVelocityX(0);
-      this.play('attackThunderDB', true);
+      this.play('attackThunderIB', true);
       this.throwCharmThunder();
       //meter audio trueno
     }
@@ -226,24 +226,31 @@ export default class Player extends Phaser.GameObjects.Sprite {
     else if (this.cursors.right.isDown) {
       this.body.setVelocityX(this.speed);
       if (this.body.onFloor()) {
-        this.play('walkDchaBruja', true);
+        this.play('walkIzqBruja', true);
       }
     }
     else if (this.cursors.right.isUp && this.cursors.left.isUp && !this.anims.isPlaying) {
       this.body.setVelocityX(0);
-     /* if (this.body.onFloor()) {
-        this.play('default', true);
-      }
-*/
+      /* if (this.body.onFloor()) {
+         this.play('default', true);
+       }
+ */
     }
-    
+
     //saltar
     if (this.cursorsExtra.jump.isDown && this.body.onFloor()) {
       this.body.setVelocityY(this.jumpSpeed);
-      this.play('jumpBrujaD', true);
+      this.play('jumpBrujaI', true);
       //cuando tengamos lods audios aqui habría que meterlo
 
     }
+
+
+    if (this.body.velocity.x > 0)
+      this.setFlipX(true); //derecha
+    else if (this.body.velocity.x < 0)
+      this.setFlipX(false); //izquierda
+
   }
 
   throwCharmFire() {

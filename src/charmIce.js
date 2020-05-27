@@ -4,13 +4,12 @@ export default class CharmIce extends Phaser.GameObjects.Sprite {
         this.speed = 50;
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this);
-        
         this.body.allowGravity = false;
         if (witch.flipX) {
-            this.body.setVelocityX(-this.speed);
+            this.body.setVelocityX(this.speed);
         }
         else {
-            this.body.setVelocityX(this.speed);
+            this.body.setVelocityX(-this.speed);
         }
 
         scene.charmIce.add(this);

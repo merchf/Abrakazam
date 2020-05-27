@@ -4,6 +4,10 @@ export default class Zombie extends Phaser.GameObjects.Sprite {
     super(scene, x, y, 'zombie');
     this.health = 5;
     this.speed=30;
+    this.delay =2000;
+    this.hurtFire =false;
+    this.hurtIce =false;
+    this.hurtThunder =false;
   }
   create() {
     this.scene.add.existing(this);
@@ -54,6 +58,13 @@ export default class Zombie extends Phaser.GameObjects.Sprite {
     });
   }
 
+  someHurts(){
+    if(this.hurtFire || this.hurtIce || this.hurtThunder){
+      return true;
+    }else{
+      return false;
+    }
+  }
 
   preUpdate(t, dt) {
     super.preUpdate(t, dt)
@@ -62,20 +73,39 @@ export default class Zombie extends Phaser.GameObjects.Sprite {
       return
     }
     //mirror para los sprites
-    if (this.body.velocity.x > 0){
-      this.setFlipX(false); 
-    }else if (this.body.velocity.x < 0){
-      this.setFlipX(true);
+    if(!this.someHurts){
+      this.play("walkDchaZ");
+      if (this.body.velocity.x > 0){
+        this.setFlipX(false); 
+      }else if (this.body.velocity.x < 0){
+        this.setFlipX(true);
+      }
+      //girar a la izq si toca limites
+      if (this.body.touching.right || this.body.blocked.right) {
+        this.body.setVelocityX(-this.speed);
+        console.log("gira a la izq")
+      }
+      //dcha
+      else if (this.body.touching.left || this.body.blocked.left) {
+        this.body.setVelocityX(this.speed);
+        console.log("gira a la chaaaaaaaaaaa")
+      } 
     }
-    //girar a la izq si toca limites
-    if (this.body.touching.right || this.body.blocked.right) {
-      this.body.setVelocityX(-this.speed);
-      console.log("gira a la izq")
+    
+    
+    if(this.hurtFire){
+      this.play("burnedDZ",false);
     }
-    //dcha
-    else if (this.body.touching.left || this.body.blocked.left) {
-      this.body.setVelocityX(this.speed);
-      console.log("gira a la chaaaaaaaaaaa")
-    }  
+    if(this.hurtIce){
+      this.play("burnedDZ",false);
+      this.body.setVelocityX(0);
+    }
+    if(this.hurtThunder){
+      this.play("burnedDZ",false);
+      this.body.setVelocityX(this.speed-15);
+    }
+
+
   }
+
 }

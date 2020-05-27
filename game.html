@@ -15,10 +15,12 @@
     <script type="module">
         import Boot from './src/scenes/boot.js'
         import Preloader from './src/scenes/preloader.js'
+        import Prologo from './src/scenes/prologo.js'
         import MainMenu from './src/scenes/mainMenu.js'
         import Rules from './src/scenes/rules.js'
         import Credits from './src/scenes/credits.js'
         import GameUI from './src/scenes/gameUI.js'
+        import LogicLevels from './src/scenes/logicLevels.js'
         import Level1 from './src/scenes/level1.js'
         import BatallaFinal from './src/scenes/batallaFinal.js'
       //  import Scene from '/src/scenes/scene.js'
@@ -33,7 +35,7 @@
                 autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
             },
             pixelArt: true,
-            scene: [Boot, Preloader, MainMenu, Rules, Credits, GameUI, Level1,BatallaFinal],
+            scene: [Boot,Prologo, Preloader, MainMenu, Rules, Credits, GameUI,LogicLevels, Level1,BatallaFinal],
             physics: { default: 'arcade', arcade: { gravity: { y: 400 }, debug: false } }
         };
 
