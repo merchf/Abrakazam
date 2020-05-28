@@ -321,10 +321,11 @@ height: 100%;
 }
 
 #services {
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../img/services-bg.jpg") fixed center center;
+    background: #374054 fixed center center;
     background-size: cover;
     padding: 80px 20px 60px 20px;
-   
+    color: #a0cfee;
+   border-bottom:solid 1px #a0cfee;
   }
   #services .container{
     display: grid;
