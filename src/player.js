@@ -11,6 +11,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
     this.speed = 230;
     this.jumpSpeed = -250;
     this.health = 3;
+    this.hurtFlag =false;
     this.lastFired = 0;
     this.timeFire = 5;
     this.timeIce = 10;

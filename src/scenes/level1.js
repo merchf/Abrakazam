@@ -107,9 +107,6 @@ export default class Level1 extends Phaser.Scene {
 
   update(time, delta) {
 
-    //simular movimiento del fondo
-    // this.botLayer5.tilePositionX -= 1;
-    this.logic.checkLife(this.witch);
     //updates de personajes
     this.witch.preUpdate(time, delta, this.bullets);
     this.enemies.getChildren().forEach(function (item) {
@@ -138,6 +135,7 @@ export default class Level1 extends Phaser.Scene {
     }, null, this);
 
     this.logic.checkFlagsHurtEnemy(this, this.enemies);
+    this.logic.checkFlagsHurtPlayer(this, this.witch,this.logic);
     //controla coger la llave
     this.physics.add.overlap(this.witch, this.keyObject, this.logic.catchKeyDoor, null, this);
     //si te caes del tren se resetea el nivel
@@ -150,70 +148,7 @@ export default class Level1 extends Phaser.Scene {
     } else {
       this.witch.onLadder = false;
     }
-
+    
     console.log("update");
   }
-  /*
-    hurtPlayer(player, enemie) {
-      player.health -= 1;
-      player.play('deadWitch', false);
-    }
-    attackZFire(charm, z) {
-      charm.destroy();
-      z.health -= 3;
-      z.play('burnedDZ', true);
-  
-    }
-    attackZIce(charm, z) {
-      charm.destroy();
-      z.body.setVelocityX(0);
-      z.play('frozenDZ', true);
-  
-    }
-    attackZThunder(charm, z) {
-      charm.destroy();
-      z.play('electrocutedDZ', true);
-  
-    }
-  
-    checkLife(player) {
-      if (player.health <= 0) {
-        this.scene.start("level1");
-      }
-    }
-    checkLadder(player) {
-  
-      player.onLadder = true;
-    }
-    //cada vez que toque la capa suelo reseteo 
-    resetPlayer(player, obj2) {
-  
-      console.log("MUERTEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
-      player.body.setVelocity(0, 0);
-      player.setX(100);
-      player.setY(400);
-      player.play('default', true);
-      //  this.witch.setAlpha(0);
-      let tw = this.tweens.add({
-        targets: player,
-        alpha: 1,
-        duration: 100,
-        ease: 'Linear',
-        repeat: 5,
-      });
-    }
-    catchKeyDoor(player, object1) {
-  
-      console.log("COGE LLAVEEEEEEEEEEEEEEEEEEEEEEE");
-      player.keyDoor = true;
-      //quiza es mejor hacer object1.kill();
-      object1.destroy();
-    }
-    nextScene(player, obj) {
-      if (player.keyDoor === true) {
-        this.scene.start('beforeFigthMrLion');
-      }
-    }
-  
-  */
 }

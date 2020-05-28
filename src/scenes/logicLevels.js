@@ -16,9 +16,10 @@ export default class LogicLevels extends Phaser.Scene {
 
   //vida player
   createLifePlayer(scene) {
-    this.life = scene.add.sprite(10, 10, 'Life3');
+    this.life = scene.add.sprite(50, 20, 'Life3');
     this.life.setDepth(1);
     this.life.setTexture('Life3');
+    this.life.setScrollFactor(0);
   }
 
   updateLifePlayer(health) {
@@ -60,8 +61,12 @@ export default class LogicLevels extends Phaser.Scene {
 
   //ataques
   hurtPlayer(player, enemie) {
-    player.health -= 1;
+    player.hurtFlag=true;
     player.play('deadWitch', false);
+  }
+  updateHurtParams(player){
+    player.hurtFlag =false;
+    player.health -= 1;
   }
   attackEnemyFire(charm, e) {
     charm.destroy();
@@ -104,6 +109,15 @@ export default class LogicLevels extends Phaser.Scene {
         });
       }
     });
+  }
+  checkFlagsHurtPlayer(scene,player,logic){
+    if(player.hurtFlag){
+      logic.updateHurtParams(player);
+      logic.updateLifePlayer(player.health);
+      //ver si no se ha quedado sin vidas
+      logic.checkLife(player);
+
+    }
   }
   checkLife(player) {
     if (player.health <= 0) {
