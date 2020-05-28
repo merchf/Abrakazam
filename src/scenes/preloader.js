@@ -5,10 +5,11 @@ export default class Preloader extends Phaser.Scene {
     }
     preload() {
 
-        //prologo
+        //prologos
         this.load.image("prologo", './assets/cambioEscenarios/Inicio.png');
-      
-
+        this.load.image("beforeMrLion", './assets/cambioEscenarios/Escenarios4.png');
+        this.load.image("afterMrLion", './assets/cambioEscenarios/Escenarios6.png');
+        
         //carga de imagenes menu
         this.load.image("menu_fondo", './assets/menu/menu_fondo.png');
         this.load.image("play_button", './assets/menu/play_button.png');

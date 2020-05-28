@@ -1,8 +1,8 @@
 
 //opciones = ["fuego", "hielo", "rayo"];
 var opciones = [0, 1, 2];
-var vidaMaquina = 6;
-var vidaUsuario = 6;
+var vidaMaquina = 3;
+var vidaUsuario = 3;
 var eleccionUsuario;
 var eleccionMaquina;
 export default class BatallaFinal extends Phaser.Scene {
@@ -13,7 +13,15 @@ export default class BatallaFinal extends Phaser.Scene {
   preload() { }
 
   create() {
+    this.logic = this.scene.get('logicLevels');
     this.add.image(0, 0, "fondobatallafinal").setOrigin(0).setDepth(0);
+
+    //vidas
+    this.logic.createLifePlayer(this);
+    this.logic.createLifeMrLion(this);
+
+    //texto
+
 
     //botones
     let fuegoButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 - 50, "fuegoButton").setDepth(1);
@@ -79,18 +87,17 @@ export default class BatallaFinal extends Phaser.Scene {
       this.usuario('0', hoverMrLion, hoverMrLionR, hoverMrLionH, hoverMrLionF);
     });
     hieloButton.on("pointerup", () => {
-      this.usuario('1',hoverMrLion, hoverMrLionR, hoverMrLionH, hoverMrLionF);
+      this.usuario('1', hoverMrLion, hoverMrLionR, hoverMrLionH, hoverMrLionF);
     });
     rayoButton.on("pointerup", () => {
-      this.usuario('2',hoverMrLion, hoverMrLionR, hoverMrLionH, hoverMrLionF);
+      this.usuario('2', hoverMrLion, hoverMrLionR, hoverMrLionH, hoverMrLionF);
     });
   }
 
   update() {
     console.log("update");
-
+    this.checkIfWin();
   }
-
 
   //Función para generar la respuesta aleatoria de la máquina
   aleatorio(minimo, maximo) {
@@ -158,9 +165,21 @@ export default class BatallaFinal extends Phaser.Scene {
         }
       }
     }
+    this.logic.updateLifePlayer(vidaUsuario);
+    this.logic.updateLifeMrLion(vidaMaquina);
     this.resultado(vidaMaquina, vidaUsuario);
   }
 
+  checkIfWin() {
+    if (vidaMaquina <= 0) {
+      this.scene.start("prologoAfterMrLion");
+    } else if (vidaUsuario === 0) {
+      //activar game over y volver a cargar batalla final
+      vidaMaquina = 3;
+      vidaUsuario = 3;
+      this.scene.start("batallaFinal");
+    }
+  }
   //Función para generar el mensaje correspondiente
   resultado(vidaMaquina, vidaUsuario) {
     if (vidaMaquina == 0) {

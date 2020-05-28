@@ -16,6 +16,8 @@
         import Boot from './src/scenes/boot.js'
         import Preloader from './src/scenes/preloader.js'
         import Prologo from './src/scenes/prologo.js'
+        import PrologoBeforeMrLion from './src/scenes/prologoAfterMrLion.js'
+        import PrologoAfterMrLion from './src/scenes/prologoBeforeMrLion.js'
         import MainMenu from './src/scenes/mainMenu.js'
         import Rules from './src/scenes/rules.js'
         import Credits from './src/scenes/credits.js'
@@ -35,7 +37,7 @@
                 autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
             },
             pixelArt: true,
-            scene: [Boot,Prologo, Preloader, MainMenu, Rules, Credits, GameUI,LogicLevels, Level1,BatallaFinal],
+            scene: [Boot,Prologo,PrologoBeforeMrLion,PrologoAfterMrLion, Preloader, MainMenu, Rules, Credits, GameUI,LogicLevels, Level1,BatallaFinal],
             physics: { default: 'arcade', arcade: { gravity: { y: 400 }, debug: false } }
         };
 

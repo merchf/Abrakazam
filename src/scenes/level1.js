@@ -140,7 +140,11 @@ export default class Level1 extends Phaser.Scene {
     this.physics.add.overlap(this.witch, this.keyObject, this.logic.catchKeyDoor, null, this);
     //si te caes del tren se resetea el nivel
     this.physics.add.collider(this.witch, this.muerte, this.logic.resetPlayer, null, this);
-    this.physics.add.collider(this.witch, this.door, this.logic.nextScene);
+    this.physics.add.collider(this.witch, this.door, (witch,obj) => {
+      if(witch.keyDoor){
+        this.scene.start("prologoBeforeMrLion");
+      }
+    });
 
     //Si está en la escalera permite escalar al jugador
     if (this.physics.add.overlap(this.witch, this.escalar)) {

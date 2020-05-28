@@ -39,7 +39,7 @@ export default class LogicLevels extends Phaser.Scene {
   //vida MrLion
 
   createLifeMrLion(scene) {
-    this.lifeMrLion = scene.add.sprite(10, 100, 'LifeMrLion3');
+    this.lifeMrLion = scene.add.sprite(650, 20, 'LifeMrLion3');
     this.lifeMrLion.setDepth(20);
     this.lifeMrLion.setTexture('LifeMrLion3');
   }
@@ -61,46 +61,46 @@ export default class LogicLevels extends Phaser.Scene {
 
   //ataques
   hurtPlayer(player, enemie) {
-    player.hurtFlag=true;
+    player.hurtFlag = true;
     player.play('deadWitch', false);
   }
-  updateHurtParams(player){
-    player.hurtFlag =false;
+  updateHurtParams(player) {
+    player.hurtFlag = false;
     player.health -= 1;
   }
   attackEnemyFire(charm, e) {
     charm.destroy();
     e.health -= 3;
     e.hurtFire = true;
-   
+
   }
   attackEnemyIce(charm, e) {
     e.hurtIce = true;
     charm.destroy();
-    
+
   }
   attackEnemyThunder(charm, e) {
     charm.destroy();
     e.hurtThunder = true;
   }
   //checks varios
-  checkFlagsHurtEnemy(scene,e){
+  checkFlagsHurtEnemy(scene, e) {
     e.getChildren().forEach(function (item) {
-      if(item.hurtFire){
+      if (item.hurtFire) {
         scene.time.addEvent({
           delay: item.delay, //tiempo que el enemigo esta stuneado
           callback: () => {
             item.hurtFire = false;
           },
         });
-      }else if(item.hurtIce){
+      } else if (item.hurtIce) {
         scene.time.addEvent({
           delay: item.delay, //tiempo que el enemigo esta stuneado
           callback: () => {
             item.hurtIce = false;
           },
         });
-      }else if(item.hurtThunder){
+      } else if (item.hurtThunder) {
         scene.time.addEvent({
           delay: item.delay, //tiempo que el enemigo esta stuneado
           callback: () => {
@@ -110,8 +110,8 @@ export default class LogicLevels extends Phaser.Scene {
       }
     });
   }
-  checkFlagsHurtPlayer(scene,player,logic){
-    if(player.hurtFlag){
+  checkFlagsHurtPlayer(scene, player, logic) {
+    if (player.hurtFlag) {
       logic.updateHurtParams(player);
       logic.updateLifePlayer(player.health);
       //ver si no se ha quedado sin vidas
@@ -155,11 +155,29 @@ export default class LogicLevels extends Phaser.Scene {
   }
 
   //pasar de nivel
-  nextScene(player, obj) {
-    if (player.keyDoor === true) {
-      this.scene.start('beforeFigthMrLion');
+  nextLevel(level) {
+    //habria que hacer un stop del level actual
+    switch (scene.level) {
+      case 1:
+        this.scene.start('level2');
+        break;
+      case 2:
+        this.scene.start('level3');
+        break;
+      case 3:
+        this.scene.start('level4');
+        break;
+      default:
+        this.scene.start('mainMenu');
     }
   }
+  prologoBeforeFinalBattle(player,obj) {
+    if (player.keyDoor === true) {
+      this.scene.start('prologoBeforeMrLion');
+    }
+  }
+  prologoAfterFinalBattle(player, obj) {
+    this.scene.start('batallaFinal');
 
-
+  }
 }
