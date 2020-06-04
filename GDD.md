@@ -15,7 +15,7 @@ Sólo consiguiendo las siete gemas el protagonista podrá adquirir suficiente po
 |**Objetos**: 7 gemas, pociones curativas y llaves.|
 |**Armas**: Magia: bolas de fuego, poder de congelación y rayos.|
 |**Personajes**: 13|
-|**Escenarios**: 7|
+|**Escenarios**: 7 niveles y 1 batalla final en cada nivel|
 
 
 
@@ -33,6 +33,7 @@ Sólo consiguiendo el poder de las siete gemas astrales, nacidas de las mismísi
 |20/02/2020| 2.0 |
 |27/02/2020| 3.0 |
 |14/04/2020| 4.0 |
+|04/06/2020| 5.0 |
 
  **1. Aspectos generales**
  
@@ -51,8 +52,7 @@ Además, al final de cada nivel, el jugador se enfrentará a un enemigo final pa
     
   **MAPA**
   
- ![MAPA](https://github.com/merchf/Abrakazam/blob/master/public/images/AbrakazamMapa.png)
-
+ ![MAPA](https://github.com/merchf/Abrakazam/blob/master/public/images/AbrakazamMapa.jpg)
  
 **1.1 Relato breve y parcial de una partida típica**
 
@@ -128,12 +128,11 @@ Si se queda sin vida, GAME OVER.
 - Saltar: Le permite al personaje moverse entre plataformas o subir escalones.
 - Andar: Le permite al personaje moverse por el nivel y recolectar los objetos, además de escapar de los enemigos.
 - Escalar: Le permite al personaje subir y bajar entre los diferentes niveles que tenga el nivel, además de subir y bajar a    plataformas, que no se puedan alcanzar saltando.
-- Atacar: Le permite al personaje defenderse contra sus enemigos (más de 6 de vida).
-	- Bolas de fuego (Q): - 1 de vida al enemigo. (Recarga Total: 5 segundos)
-	- Congelación (W): Mantiene al enemigo inmóvil 5 segundos. (Recarga Total: 5 segundos)
-	- Rayo (E): - 2 de vida. (Recarga Total: 10 segundos)
+- Atacar: Le permite al personaje defenderse contra sus enemigos (más de 3 de vida).
+	- Bolas de fuego (Q): - 1 de vida al enemigo.
+	- Congelación (W): Mantiene al enemigo inmóvil 5 segundos. 
+	- Rayo (E): - 2 de vida.
 - Atravesar puerta: Le permite al personaje pasar al nivel final del jefe. Soólo se podrá atravesar la puerta si se tiene la llave escondida en cada nivel.
-- Doble salto: Le permite al personaje llegar a plataformas más elevadas.
 - Coger objetos:  Le permite al personaje:
 	- Ganar vida, en el caso que recoja una poción.
 	- Abrir puertas y avanzar en el nivel, en el caso de que recoja una llave.
@@ -148,9 +147,9 @@ Dependiendo del nivel, los escenarios serán claros u oscuros, aunque predominar
 
 Mencionar el tipo de elementos que se van a necesitar (imágenes, sonidos, música…)
 
-- Imágenes:
-- Sonidos:
-- Música:
+- Imágenes: Fondos para los niveles de cielos nocturnos, atardeceres y con la luna presente.
+- Sonidos: Efectos de salto, abrir y cerrar puertas, lanzar hechizos, muerte, coger llave y poción curativa.
+- Música: Música de fondo para el menú principal y para los diferentes niveles del juego.
 
 **4.1.Historia**
 
@@ -174,15 +173,19 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 
 - Nivel 2-Castillo:
 	- Descripción: Tras el viaje en tren nuestro protagonista llega al castillo, ahora en ruinas y entra en él en busca del 	malvado Mr Lion y la gema.
-	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
-	- Enemigos: Trolls y Mr Lion.
+	- Metodología: Plataformas Horizontal, donde se utilizarán movimientos arriba, abajo, derecha e izquierda y salto.
+	- Enemigos: Ogros y Mr Lion.
 	- Objetos: poción curativa, llave y gema roja.
+
+	![Level2](https://github.com/merchf/Abrakazam/blob/master/assets/background/mapaNivel2.png)
 
 - Nivel 3- Escaleras:
 	- Descripción: Nuestro personaje tiene que huir del castillo, los enemigos son demasiados, por ello, comienza a subir las escaleras del castillo.
-	- Metodología: Plataformas Vertical, donde se utilizarán movimientos arriba, abajo, derecha e izquierda.
-	- Enemigos: Trolls y Mr Lion.
+	- Metodología: Plataformas Vertical, donde se utilizarán movimientos arriba, abajo, derecha e izquierda y salto.
+	- Enemigos: Ogros y Mr Lion.
 	- Objetos: poción curativa, llave y gema morada.
+	
+	![Level3](https://github.com/merchf/Abrakazam/blob/master/assets/background/mapaNivel3.png)
 
 - Nivel 4- Escoba/Cielo:
 	- Descripción: Nuestro personaje llega al final de las escaleras, su única opción para escapar de sus enemigos y continuar su viaje es echar a volar. Por ello llama a su escoba y salta.
@@ -211,16 +214,19 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 	 
 **4.3.Personajes**
 
-- Avatar del protagonista: Una bruja.
+- Avatar del protagonista: Una bruja, que tendrá tres corazones de vida.
 
  ![Brujita](https://github.com/merchf/Abrakazam/blob/master/public/images/Brujita.png)
  
 - Enemigos: Las criaturas que han atravesado el portal y están destruyendo el reino. Los enemigos que hay que ir derrotando en cada nivel. 
 	- Zombies: Perseguirán a la brujita y si la tocan la dañan. 
 	
-	![Zombies](https://github.com/merchf/Abrakazam/blob/master/assets/enemies/zombie/ZombieDer.png)
+	![Zombies](https://github.com/merchf/Abrakazam/blob/master/assets/enemies/zombie/Zombie_1.png)
 	
-	- Trolls.
+	- Ogros: Tendrán un mazo con el que pueden golpear.
+	
+	![Ogros](https://github.com/merchf/Abrakazam/blob/master/assets/enemies/ogro/Ogro_1.png)
+	
 	- Dragones.
 	- Espantapájaros.
 	- Arañas.
@@ -242,7 +248,7 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
  
 - Gemas: Entregada al final de cada nivel. Cada una tiene un color diferente y son necesarias para cerrar el portal final.
 
-![Gemas](https://github.com/merchf/Abrakazam/blob/master/public/images/Gemas.gif)
+ ![Gemas](https://github.com/merchf/Abrakazam/blob/master/public/images/Gemas.gif)
 
 
 **Referencias**
