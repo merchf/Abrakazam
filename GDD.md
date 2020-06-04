@@ -90,6 +90,10 @@ El juego contará con un menú inicial simple e intuitivo con:
 ![reglas](https://github.com/merchf/Abrakazam/blob/master/assets/menu/rules_button.png)
 ![RULES](https://github.com/merchf/Abrakazam/blob/master/assets/menu/rules.png)
 
+- Game Over: Cuando la brujita se quede sin vidas y pierda aparecerá la siguiente escena:
+
+![gameover](https://github.com/merchf/Abrakazam/blob/master/assets/cambioEscenarios/GameOver.png)
+
 La temática del menú será fantástica, mostrando las siete gemas y el portal mágico. Además de poner a algún personaje.
 
 **2.1.Configuración**
@@ -147,7 +151,34 @@ Dependiendo del nivel, los escenarios serán claros u oscuros, aunque predominar
 
 Mencionar el tipo de elementos que se van a necesitar (imágenes, sonidos, música…)
 
-- Imágenes: Fondos para los niveles de cielos nocturnos, atardeceres y con la luna presente.
+- Imágenes:
+
+	- Inicio: Escena que explica la historia y muestra el mapa.
+	
+	![inicio](https://github.com/merchf/Abrakazam/blob/master/assets/cambioEscenarios/Inicio.png)
+	
+	- Escenas entre niveles: Escenas de transición donde se indica qué gema ha gando la brujita.
+	
+	![nivela](https://github.com/merchf/Abrakazam/blob/master/assets/cambioEscenarios/Escenarios6.png)
+	![nivelb](https://github.com/merchf/Abrakazam/blob/master/assets/cambioEscenarios/Escenarios8.png)
+	![nivelc](https://github.com/merchf/Abrakazam/blob/master/assets/cambioEscenarios/Escenarios9.png)
+	
+	- Fondo para niveles: Según el nivel el fondo irá evolucionando, aunque preferiblemente será el cielo en pleno atardecer con la 	luna presente.
+	
+	![fondonivel](https://github.com/merchf/Abrakazam/blob/master/assets/background/luna.png)
+	![fondonivel](https://github.com/merchf/Abrakazam/blob/master/assets/background/montañas.png)
+
+	- Batalla final: El fondo será siempre el mismo, tanto el cementerio de la escena del diálogo, como la noche nocturna en el 		transcurso de la batalla.
+	
+	![dialogo](https://github.com/merchf/Abrakazam/blob/master/assets/cambioEscenarios/Escenarios4.png)
+	![batallafinal](https://github.com/merchf/Abrakazam/blob/master/assets/batallaFinal/fondobatallafinal.png)
+	![fhr](https://github.com/merchf/Abrakazam/blob/master/assets/batallaFinal/FHR.png)
+	
+	![fuego](https://github.com/merchf/Abrakazam/blob/master/assets/batallaFinal/botonesbatallafinal1.png)
+	![hielo](https://github.com/merchf/Abrakazam/blob/master/assets/batallaFinal/botonesbatallafinal2.png)
+	![rayo](https://github.com/merchf/Abrakazam/blob/master/assets/batallaFinal/botonesbatallafinal3.png)
+
+	
 - Sonidos: Efectos de salto, abrir y cerrar puertas, lanzar hechizos, muerte, coger llave y poción curativa.
 - Música: Música de fondo para el menú principal y para los diferentes niveles del juego.
 
