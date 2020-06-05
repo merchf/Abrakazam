@@ -1,19 +1,18 @@
-export default class PrologoAfterMrLion extends Phaser.Scene {
+export default class gameOver extends Phaser.Scene {
     constructor() {
-        super({ key: 'prologoAfterMrLion' });
+        super({ key: 'gameOver' });
     }
     create() {
-        this.add.image(0, 0, "afterMrLion").setOrigin(0).setDepth(0);
+        this.add.image(0, 0, "gameOver").setOrigin(0).setDepth(0);
         let nextButton = this.add.image(750,125, "next_button").setDepth(1);
         nextButton.setScale(0.5);
         nextButton.setInteractive();
         nextButton.on("pointerup", () => {
-           this.scene.start('level2');
+           // this.scene.start('batallafinal');
            //cargar batalla final
         });
-22222
     }
     update() {
-        console.log("prologo before final boss");
+        console.log("Game Over");
     }
 }
