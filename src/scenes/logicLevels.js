@@ -103,7 +103,6 @@ export default class LogicLevels extends Phaser.Scene {
     charm.destroy();
     e.health -= 3;
     e.hurtFire = true;
-
   }
   attackEnemyIce(charm, e) {
     e.hurtIce = true;

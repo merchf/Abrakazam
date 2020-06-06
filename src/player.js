@@ -3,6 +3,7 @@ import CharmIce from './charmIce.js'
 import CharmThunder from './charmThunder.js'
 
 export default class Player extends Phaser.GameObjects.Sprite {
+
   constructor(scene, x, y) {
     super(scene, x, y, 'bruja');
     this.scene.add.existing(this);
@@ -107,7 +108,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
       frameRate: 10,
     });
     this.scene.anims.create({
-      key: 'attackFireIB',
+      key: 'attackIceIB',
       frames: this.scene.anims.generateFrameNames('bruja', {
         prefix: 'Brujita_',
         suffix: '.png',
@@ -240,7 +241,6 @@ export default class Player extends Phaser.GameObjects.Sprite {
       this.body.setVelocityY(this.jumpSpeed);
       this.play('jumpBrujaI', true);
       //cuando tengamos lods audios aqui habría que meterlo
-
     }
 
 

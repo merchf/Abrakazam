@@ -22,8 +22,7 @@ export default class Zombie extends Phaser.GameObjects.Sprite {
       frames:  this.scene.anims.generateFrameNames('zombie', {
         prefix: 'Zombie_',
         suffix: '.png',
-        start: 1,
-        end: 1
+        start: 1
     }),//[{ key: 'zombie', frame: 'Zombie_1' }],
       frameRate: 10,
     });

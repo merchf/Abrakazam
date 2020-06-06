@@ -1,7 +1,7 @@
 export default class CharmIce extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y,witch) {
         super(scene, x, y, 'iceCharm');
-        this.speed = 50;
+        this.speed = 300;
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this);
         this.body.allowGravity = false;
