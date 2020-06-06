@@ -39,7 +39,7 @@ export default class LogicLevels extends Phaser.Scene {
   //vida MrLion
 
   createLifeMrLion(scene) {
-    this.lifeMrLion = scene.add.sprite(650, 20, 'LifeMrLion3');
+    this.lifeMrLion = scene.add.sprite(750, 20, 'LifeMrLion3');
     this.lifeMrLion.setDepth(20);
     this.lifeMrLion.setTexture('LifeMrLion3');
   }
