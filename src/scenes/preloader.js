@@ -71,6 +71,27 @@ export default class Preloader extends Phaser.Scene {
         this.load.image('iceCharm', './assets/bruja/Brujita_29.png');
         this.load.image('thunderCharm', './assets/bruja/Brujita_30.png');
 
+        //audios escenas
+        this.load.audio("mainMenuMusic", './public/music/musicamapas/moon.ogg');
+        this.load.audio("prologoMusic", './public/music/musicamapas/credits.ogg');
+        this.load.audio("prologoBeforeMrLionMusic", './public/music/musicamapas/moon.ogg');
+        this.load.audio("prologoAfterMrLionMusic", './public/music/musicamapas/moon.ogg');
+        this.load.audio("level1Music", './public/music/musicamapas2/running wild.mid');
+        this.load.audio("level2Music", './public/music/musicamapas/battle.ogg');
+        this.load.audio("level3Music", './public/music/musicamapas/castle.ogg');
+        this.load.audio("finalBattleMusic", './public/music/musicamapas/boss.ogg');
+        this.load.audio("gameOverMusic", './public/music/musicamapas2/1x game over.mid');
+        //audios objetos
+        this.load.audio("catchKeyMusic", './public/music/musicaparaimpactos/cogerllave.mp3');
+        this.load.audio("openDoorMusic", './public/music/musicaparaobjetos/doorOpen_1.ogg');
+        this.load.audio("catchHearthMusic", './public/music/musicaparaimpactos/cogervida.mp3');
+        //audios movimientos
+        this.load.audio("jumpMusic", './public/music/musicaparaimpactos/player-jump.wav');
+        this.load.audio("charmMusic", './public/music/musicaparaimpactos/hechizo4.ogg');
+        //audios enemigos
+        this.load.audio("zMusic", './public/music/musicaenemigos/zombie1.mp3');
+        this.load.audio("hurtZMusic", './public/music/musicaenemigos/zombiehurt1.mp3');
+
 
 
         //carga de sprites
