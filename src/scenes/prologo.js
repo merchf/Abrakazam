@@ -15,8 +15,8 @@ export default class Prologo extends Phaser.Scene {
         backButton.on("pointerup", () => {
             this.music.destroy();
             //this.scene.start('gameOver');
-            //this.scene.start('level1');
-            this.scene.start('prologoBeforeMrLion');
+            this.scene.start('level1');
+            //this.scene.start('prologoBeforeMrLion');
         });
 
     }
