@@ -11,8 +11,8 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("afterMrLion", './assets/cambioEscenarios/Escenarios6.png');
         this.load.image("afterMrLion2", './assets/cambioEscenarios/Escenarios8.png');
         this.load.image("afterMrLion3", './assets/cambioEscenarios/Escenarios9.png');
-        this.load.image("gameOver",'./assets/cambioEscenarios/GameOver.png' )
-        
+        this.load.image("gameOver", './assets/cambioEscenarios/GameOver.png')
+
         //carga de imagenes menu
         this.load.image("menu_fondo", './assets/menu/menu_fondo.png');
         this.load.image("play_button", './assets/menu/play_button.png');
@@ -42,7 +42,7 @@ export default class Preloader extends Phaser.Scene {
         //mapa
         this.load.tilemapTiledJSON('mapaLevel1', './assets/mapas/mapaNivel1.json');
         this.load.tilemapTiledJSON('mapaLevel2', './assets/mapas/mapaNivel2.json');
-        
+
         this.load.image("TrainBack", './assets/background/TrainBack.png');
         this.load.image("TrainFulll", './assets/background/TrainFulll.png');
         this.load.image("trees", './assets/background/trees.png');
@@ -50,7 +50,7 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("luna", './assets/background/luna.png');
         this.load.image("Stalin_without_bg", './assets/background/Stalin_without_bg.png');
         this.load.image("tile_castle_grey", './assets/background/tile_castle_grey.png');
-        this.load.image("montañas",'./assets/background/montañas.png')
+        this.load.image("montañas", './assets/background/montañas.png')
         //objetos
         this.load.image("keyDoor", './assets/objects/llaveobjeto.png');
         this.load.image("hearthUI", './assets/objects/PocionCuracionobjeto.png');
@@ -101,7 +101,7 @@ export default class Preloader extends Phaser.Scene {
         this.load.atlas('zombie', './assets/enemies/zombie/zombie_atlas.png', './assets/enemies/zombie/zombie_atlas.json');
 
         //ogro
-        
+
         // barras de carga, una sobre otra (rosa sobre morado o algo asi)
 
         let loadingBar = this.add.graphics({
@@ -125,7 +125,12 @@ export default class Preloader extends Phaser.Scene {
     }
 
     create() {
-        this.scene.start('mainMenu');
+        //audio
+        let musicMenu = this.sound.add("mainMenuMusic");
+        musicMenu.play();
+        musicMenu.setLoop(true);
+
+        this.scene.start('mainMenu', musicMenu);
         //this.scene.start('batallaFinal');
     }
     update() {
