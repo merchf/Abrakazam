@@ -8,7 +8,8 @@ export default class Prologo extends Phaser.Scene {
         backButton.setScale(0.5);
         backButton.setInteractive();
         backButton.on("pointerup", () => {
-            this.scene.start('level1');
+           // this.scene.start('level1');
+            this.scene.start('batallaFinal');
         });
 
     }

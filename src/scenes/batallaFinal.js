@@ -24,9 +24,9 @@ export default class BatallaFinal extends Phaser.Scene {
 
 
     //botones
-    let fuegoButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 - 50, "fuegoButton").setDepth(1);
-    let hieloButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 50, "hieloButton").setDepth(1);
-    let rayoButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 150, "rayoButton").setDepth(1);
+    let fuegoButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 - 100, "fuegoButton").setDepth(1);
+    let hieloButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 0, "hieloButton").setDepth(1);
+    let rayoButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 100, "rayoButton").setDepth(1);
 
     //hover botones
     let hoverBruja = this.add.image(this.game.renderer.width / 2 - 250, this.game.renderer.height / 2 + 80, "brujafinal").setDepth(1);
