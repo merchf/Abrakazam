@@ -14,6 +14,8 @@ export default class Level1 extends Phaser.Scene {
     create() {
 
         this.logic = this.scene.get('logicLevels');
+        this.music = this.logic.addMusicScenes(this,"level2");
+        //this.music.volume = 0.10;
         //mapa
         let map = this.add.tilemap("mapaLevel2");
         //Tilesets para el mapa
@@ -114,6 +116,7 @@ export default class Level1 extends Phaser.Scene {
         this.physics.add.collider(this.witch, this.capaMuerte, this.logic.resetPlayer, null, this);
         this.physics.add.collider(this.witch, this.door, (witch,obj) => {
           if(witch.keyDoor){
+            this.music.destroy();
             this.scene.start("prologoBeforeMrLion");
           }
         });

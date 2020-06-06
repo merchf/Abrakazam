@@ -16,6 +16,8 @@ export default class Level1 extends Phaser.Scene {
   create() {
 
     this.logic = this.scene.get('logicLevels');
+    this.music = this.logic.addMusicScenes(this,"level1");
+    this.music.volume = 0.10;
     //mapa
     let map = this.add.tilemap("mapaLevel1");
     //Tilesets para el mapa
@@ -135,13 +137,15 @@ export default class Level1 extends Phaser.Scene {
     }, null, this);
 
     this.logic.checkFlagsHurtEnemy(this, this.enemies);
-    this.logic.checkFlagsHurtPlayer(this, this.witch,this.logic);
+    this.logic.checkFlagsHurtPlayer(this, this.witch,this.logic,this.music);
     //controla coger la llave
     this.physics.add.overlap(this.witch, this.keyObject, this.logic.catchKeyDoor, null, this);
     //si te caes del tren se resetea el nivel
     this.physics.add.collider(this.witch, this.muerte, this.logic.resetPlayer, null, this);
     this.physics.add.collider(this.witch, this.door, (witch,obj) => {
       if(witch.keyDoor){
+        this.music.destroy();
+        //ruido abrir puerta
         this.scene.start("prologoBeforeMrLion");
       }
     });

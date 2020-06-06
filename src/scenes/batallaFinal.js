@@ -10,9 +10,16 @@ export default class BatallaFinal extends Phaser.Scene {
   constructor() {
     super({ key: 'batallaFinal' });
   }
+  
+  init(music) {
+    this.musicBattle = music;
+  }
   preload() { }
 
+
   create() {
+    this.musicBattle.resume();
+        //this.music.volume = 0.10;
     this.logic = this.scene.get('logicLevels');
     this.add.image(0, 0, "fondobatallafinal").setOrigin(0).setDepth(0);
 
@@ -172,12 +179,16 @@ export default class BatallaFinal extends Phaser.Scene {
 
   checkIfWin() {
     if (vidaMaquina <= 0) {
+      this.musicBattle.destroy();
+      vidaMaquina = 3;
+      vidaUsuario = 3;
       this.scene.start("prologoAfterMrLion");
     } else if (vidaUsuario === 0) {
       //activar game over y volver a cargar batalla final
       vidaMaquina = 3;
       vidaUsuario = 3;
-      this.scene.start("batallaFinal");
+      //this.music.pause();
+      this.scene.start("batallaFinal",this.musicBattle);
     }
   }
   //Función para generar el mensaje correspondiente

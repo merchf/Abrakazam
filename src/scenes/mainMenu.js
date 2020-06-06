@@ -64,7 +64,7 @@ export default class MainMenu extends Phaser.Scene {
     playButton.on("pointerup", () => {
       this.scene.start('prologo');
       this.musicMenu.destroy();
-      //this.scene.start("batallaFinal");
+     // this.scene.start("prologoBeforeMrLion");
     });
     rulesButton.on("pointerup", () => {
       this.scene.start('rules', this.musicMenu);

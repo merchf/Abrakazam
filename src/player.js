@@ -19,8 +19,9 @@ export default class Player extends Phaser.GameObjects.Sprite {
     //la llave tiene que estar a true para acabar cada nivel
     this.keyDoor = false;
     this.onLadder = false;
-    this.labelHealth = this.scene.add.text(10, 10);
-    this.labelKey = this.scene.add.text(10, 30);
+    this.labelKey = this.scene.add.text(10, 40);
+    
+    this.labelKey.setScrollFactor(0);
     this.cursors = this.scene.input.keyboard.createCursorKeys();
     this.setFlipX(true);
     //ataques y salto
@@ -31,10 +32,6 @@ export default class Player extends Phaser.GameObjects.Sprite {
       jump: Phaser.Input.Keyboard.KeyCodes.SPACE
     });
     this.updateKey();
-    this.updateLife();
-  }
-  updateLife() {
-    this.labelHealth.text = 'Vidas restantes:' + this.health;
   }
   updateKey() {
     if (this.keyDoor) {

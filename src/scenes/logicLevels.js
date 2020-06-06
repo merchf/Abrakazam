@@ -13,6 +13,34 @@ export default class LogicLevels extends Phaser.Scene {
   create() {
   }
 
+  addMusicScenes(scene, sceneKey) {
+    let music;
+    let keyMusic;
+    switch (sceneKey) {
+      case "prologo":
+        keyMusic = "prologoMusic";
+        break;
+      case "level1":
+        keyMusic = "level1Music";
+        break;
+      case "prologoBeforeMrLion":
+        keyMusic = "finalBattleMusic";
+        break;
+      case "batallaFinal":
+        keyMusic = "finalBattleMusic";
+        break;
+      case "prologoAfterMrLion":
+        keyMusic = "prologoAfterMrLionMusic";
+        break;
+      case "level2":
+        keyMusic = "level2Music";
+        break;
+    }
+    music = scene.sound.add(keyMusic);
+    music.play();
+    music.setLoop(true);
+    return music;
+  }
 
   //vida player
   createLifePlayer(scene) {
@@ -110,17 +138,18 @@ export default class LogicLevels extends Phaser.Scene {
       }
     });
   }
-  checkFlagsHurtPlayer(scene, player, logic) {
+  checkFlagsHurtPlayer(scene, player, logic, music) {
     if (player.hurtFlag) {
       logic.updateHurtParams(player);
       logic.updateLifePlayer(player.health);
       //ver si no se ha quedado sin vidas
-      logic.checkLife(player);
+      logic.checkLife(player, music);
 
     }
   }
-  checkLife(player) {
+  checkLife(player, music) {
     if (player.health <= 0) {
+      music.destroy();
       this.scene.start("level1");
     }
   }
@@ -147,10 +176,10 @@ export default class LogicLevels extends Phaser.Scene {
   }
   //coger objetos
   catchKeyDoor(player, object1) {
-
-    console.log("COGE LLAVEEEEEEEEEEEEEEEEEEEEEEE");
+    let music = this.sound.add("catchKeyMusic");
+    music.play();
     player.keyDoor = true;
-    //quiza es mejor hacer object1.kill();
+    player.updateKey();
     object1.destroy();
   }
 
@@ -171,7 +200,7 @@ export default class LogicLevels extends Phaser.Scene {
         this.scene.start('mainMenu');
     }
   }
-  prologoBeforeFinalBattle(player,obj) {
+  prologoBeforeFinalBattle(player, obj) {
     if (player.keyDoor === true) {
       this.scene.start('prologoBeforeMrLion');
     }

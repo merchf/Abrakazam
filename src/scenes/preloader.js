@@ -73,14 +73,14 @@ export default class Preloader extends Phaser.Scene {
 
         //audios escenas
         this.load.audio("mainMenuMusic", './public/music/musicamapas/moon.ogg');
-        this.load.audio("prologoMusic", './public/music/musicamapas/credits.ogg');
-        this.load.audio("prologoBeforeMrLionMusic", './public/music/musicamapas/moon.ogg');
-        this.load.audio("prologoAfterMrLionMusic", './public/music/musicamapas/moon.ogg');
-        this.load.audio("level1Music", './public/music/musicamapas2/running wild.mid');
+        this.load.audio("prologoMusic", './public/music/musicamapas/underground.ogg');
+        //this.load.audio("prologoBeforeMrLionMusic", './public/music/musicamapas/underground.ogg');
+        this.load.audio("prologoAfterMrLionMusic", './public/music/musicamapas/credits.ogg');
+        this.load.audio("level1Music", './public/music/musicamapas2/runningwild.mp3');
         this.load.audio("level2Music", './public/music/musicamapas/battle.ogg');
         this.load.audio("level3Music", './public/music/musicamapas/castle.ogg');
         this.load.audio("finalBattleMusic", './public/music/musicamapas/boss.ogg');
-        this.load.audio("gameOverMusic", './public/music/musicamapas2/1x game over.mid');
+        this.load.audio("gameOverMusic", './public/music/musicamapas2/gameover.mp3');
         //audios objetos
         this.load.audio("catchKeyMusic", './public/music/musicaparaimpactos/cogerllave.mp3');
         this.load.audio("openDoorMusic", './public/music/musicaparaobjetos/doorOpen_1.ogg');
