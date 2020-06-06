@@ -5,6 +5,9 @@ export default class CharmThunder extends Phaser.GameObjects.Sprite {
         this.scene.add.existing(this);
         this.scene.physics.add.existing(this);
         this.body.allowGravity = false;
+
+        this.distance=50;
+        
         if (witch.flipX) {
             this.body.setVelocityX(this.speed);
         }

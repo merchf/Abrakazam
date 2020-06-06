@@ -7,11 +7,12 @@ export default class PrologoBeforeMrLion extends Phaser.Scene {
         this.music = this.logic.addMusicScenes(this,"prologoBeforeMrLion");
         //this.music.volume = 0.10;
         this.add.image(0, 0, "beforeMrLion").setOrigin(0).setDepth(0);
-        let nextButton = this.add.image(750,125, "next_button").setDepth(1);
-        nextButton.setScale(0.5);
+        let nextButton = this.add.image(770, 50, "flecha_button").setDepth(1);
+        nextButton.setScale(1);
         nextButton.setInteractive();
         nextButton.on("pointerup", () => {
-            this.scene.start('batallaFinal',this.music);
+            this.music.destroy();
+            this.scene.start('batallaFinal');
         });
 
     }

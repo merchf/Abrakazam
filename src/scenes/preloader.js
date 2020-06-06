@@ -23,7 +23,7 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("credits_fondo", './assets/menu/credits.png');
         this.load.image("back_button", './assets/menu/back_button.png');
         this.load.image("next_button", './assets/menu/next_button.png');
-
+        this.load.image("flecha_button", './assets/menu/flecha_button.png');
 
         //carga de imagenes batalla final
         this.load.image("fondobatallafinal", './assets/batallaFinal/fondobatallafinal.png');
@@ -101,6 +101,7 @@ export default class Preloader extends Phaser.Scene {
         this.load.atlas('zombie', './assets/enemies/zombie/zombie_atlas.png', './assets/enemies/zombie/zombie_atlas.json');
 
         //ogro
+        this.load.atlas('ogro', './assets/enemies/ogro/ogro_atlas.png', './assets/enemies/ogro/ogro_atlas.json');
 
         // barras de carga, una sobre otra (rosa sobre morado o algo asi)
 

@@ -24,7 +24,7 @@ export default class LogicLevels extends Phaser.Scene {
         keyMusic = "level1Music";
         break;
       case "prologoBeforeMrLion":
-        keyMusic = "finalBattleMusic";
+        keyMusic = "prologoMusic";
         break;
       case "batallaFinal":
         keyMusic = "finalBattleMusic";
@@ -34,6 +34,9 @@ export default class LogicLevels extends Phaser.Scene {
         break;
       case "level2":
         keyMusic = "level2Music";
+        break;
+      case "gameOver":
+        keyMusic = "gameOverMusic";
         break;
     }
     music = scene.sound.add(keyMusic);
@@ -186,18 +189,13 @@ export default class LogicLevels extends Phaser.Scene {
   //pasar de nivel
   nextLevel(level) {
     //habria que hacer un stop del level actual
-    switch (scene.level) {
-      case 1:
-        this.scene.start('level2');
+    switch (level) {
+      case "uno":
+        this.scene.start('prologoAfterMrLion');
         break;
-      case 2:
-        this.scene.start('level3');
+      case "dos":
+        this.scene.start('prologoAfterMrLion2');
         break;
-      case 3:
-        this.scene.start('level4');
-        break;
-      default:
-        this.scene.start('mainMenu');
     }
   }
   prologoBeforeFinalBattle(player, obj) {

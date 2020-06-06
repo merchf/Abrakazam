@@ -1,6 +1,6 @@
 {
     "frames":{
-            "ogro_13.png":{
+        "Ogro_13.png":{
             "frame": {
                 "w": 48,
                 "h": 48,
@@ -12,7 +12,7 @@
                 "y": 0.5
             }
         },
-        "ogro_11.png":{
+        "Ogro_11.png":{
             "frame": {
                 "w": 48,
                 "h": 48,
@@ -24,8 +24,7 @@
                 "y": 0.5
             }
         },
-        {
-            "filename": "ogro_1",
+        "Ogro_1.png":{
             "frame": {
                 "w": 48,
                 "h": 48,
@@ -37,8 +36,7 @@
                 "y": 0.5
             }
         },
-        {
-            "filename": "ogro_2",
+        "Ogro_2.png":{
             "frame": {
                 "w": 48,
                 "h": 48,
@@ -50,8 +48,7 @@
                 "y": 0.5
             }
         },
-        {
-            "filename": "ogro_3",
+        "Ogro_3.png":{
             "frame": {
                 "w": 48,
                 "h": 48,
@@ -63,8 +60,7 @@
                 "y": 0.5
             }
         },
-        {
-            "filename": "ogro_4",
+        "Ogro_4.png":{
             "frame": {
                 "w": 48,
                 "h": 48,
@@ -76,8 +72,7 @@
                 "y": 0.5
             }
         },
-        {
-            "filename": "ogro_5",
+        "Ogro_5.png":{
             "frame": {
                 "w": 48,
                 "h": 48,
@@ -89,8 +84,7 @@
                 "y": 0.5
             }
         },
-        {
-            "filename": "ogro_6",
+        "Ogro_6.png":{
             "frame": {
                 "w": 48,
                 "h": 48,
@@ -102,8 +96,7 @@
                 "y": 0.5
             }
         },
-        {
-            "filename": "ogro_7",
+        "Ogro_7.png":{
             "frame": {
                 "w": 48,
                 "h": 48,
@@ -115,8 +108,7 @@
                 "y": 0.5
             }
         },
-        {
-            "filename": "ogro_8",
+        "Ogro_8.png":{
             "frame": {
                 "w": 48,
                 "h": 48,
@@ -128,8 +120,7 @@
                 "y": 0.5
             }
         },
-        {
-            "filename": "ogro_9",
+        "Ogro_9.png":{
             "frame": {
                 "w": 48,
                 "h": 48,
@@ -141,8 +132,7 @@
                 "y": 0.5
             }
         },
-        {
-            "filename": "ogro_10",
+        "Ogro_10.png":{
             "frame": {
                 "w": 48,
                 "h": 48,
@@ -154,8 +144,7 @@
                 "y": 0.5
             }
         },
-        {
-            "filename": "ogro_12",
+        "Ogro_12.png":{
             "frame": {
                 "w": 31,
                 "h": 17,
@@ -167,7 +156,7 @@
                 "y": 0.5
             }
         }
-    ],
+    },
     "meta": {
         "image": "ogro_atlas.png",
         "description": "Atlas generado con Atlas Packer Gamma V2",

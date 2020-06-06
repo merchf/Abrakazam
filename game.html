@@ -27,7 +27,8 @@
         import Level1 from './src/scenes/level1.js'
         import Level2 from './src/scenes/level2.js'
         import BatallaFinal from './src/scenes/batallaFinal.js'
-      //  import Scene from '/src/scenes/scene.js'
+        import GameOver from './src/scenes/gameOver.js'
+      //import Scene from '/src/scenes/scene.js'
         import End from './src/scenes/end.js'
 
         var config = {
@@ -39,7 +40,7 @@
                 autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
             },
             pixelArt: true,
-            scene: [Boot,Prologo,PrologoBeforeMrLion,PrologoAfterMrLion, Preloader, MainMenu, Rules, Credits, GameUI,LogicLevels, Level1,Level2,BatallaFinal],
+            scene: [Boot,Prologo,PrologoBeforeMrLion,PrologoAfterMrLion, Preloader, MainMenu, Rules, Credits, GameUI,LogicLevels, Level1,Level2,BatallaFinal,GameOver],
             physics: { default: 'arcade', arcade: { gravity: { y: 400 }, debug: false } }
         };
 

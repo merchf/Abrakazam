@@ -35,9 +35,9 @@ export default class Player extends Phaser.GameObjects.Sprite {
   }
   updateKey() {
     if (this.keyDoor) {
-      this.labelKey.text = 'Llave encontrada! Ya puedes abrir la puerta.';
+      this.labelKey.text = '¡Llave encontrada! Ya puedes abrir la puerta.';
     } else {
-      this.labelKey.text = 'Encuentra la llave para poder abrir la última puerta.';
+      this.labelKey.text = 'Encuentra la llave para poder abrir la puerta.';
     }
   }
   createAnims() {
