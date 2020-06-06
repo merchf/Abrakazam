@@ -40,14 +40,15 @@ export default class Level1 extends Phaser.Scene {
         this.door.setCollisionByExclusion(-1, true);
     
     
-        //añadiosObjeto
-        // this.keyObject = this.add.sprite(4354, 414, "keyDoor");
+        //añadimosObjeto
         this.keyObject = this.physics.add.sprite(3874, 806, "keyDoor");
+        this.hearthUI = this.physics.add.sprite(4089, 155, "hearthUI");
+        //this.hearthUI = this.physics.add.sprite(220, 524, "hearthUI");
         this.logic.createLifePlayer(this);
     
     
         //player
-        this.witch = new Player(this, 200, 524);
+        this.witch = new Player(this, 102, 524);
         this.witch.createAnims();
         //  this.collider = this.physics.add.collider(this.witch, this.suelo);
         this.witch.body.debugBodyColor = 0x09b500;
@@ -55,13 +56,15 @@ export default class Level1 extends Phaser.Scene {
         //colisiones playes
         this.physics.add.collider(this.witch, this.capaSuelo);
         this.physics.add.collider(this.keyObject, this.capaSuelo);
+        this.physics.add.collider(this.hearthUI, this.capaSuelo);
     
         //enemies(ogros)
         this.enemies = this.physics.add.group();
+
         //esto habria que meterlo como una funcion
         //colocarlos bien
-        let o = new Ogro(this, 102, 524);
-       /* let o1 = new Ogro(this, 990.909, 509.091);
+        let o = new Ogro(this, 200, 524);
+        let o1 = new Ogro(this, 990.909, 509.091);
         let o2 = new Ogro(this, 2112.12, 348.485);
         let o3 = new Ogro(this, 3130.3, 503.03);
         let o4 = new Ogro(this, 3330.3, 506.061);
@@ -72,9 +75,9 @@ export default class Level1 extends Phaser.Scene {
         let o9 = new Ogro(this, 4572.73, 509.091);
         let o10 = new Ogro(this, 5306.06, 157.576);
         let o11 = new Ogro(this, 4927.27, 412.121);
-        let o12 = new Ogro(this, 5693.94, 157.576);*/
+        let o12 = new Ogro(this, 5693.94, 157.576);
         this.enemies.add(o);
-        /*this.enemies.add(o1);
+        this.enemies.add(o1);
         this.enemies.add(o2);
         this.enemies.add(o3);
         this.enemies.add(o4);
@@ -85,12 +88,15 @@ export default class Level1 extends Phaser.Scene {
         this.enemies.add(o9);
         this.enemies.add(o10);
         this.enemies.add(o11);
-        this.enemies.add(o12);*/
-
+        this.enemies.add(o12);
+      this.enemies.getChildren().forEach(function (item) { //necesario para crear cada enemigo con sus propiedades. Hacerlo antes de añadirlo al grupo no funciona
+      item.create();
+      item.createAnims();
+    }, this);
     
         //colisiones enemigos
         this.physics.add.collider(this.enemies, this.capaSuelo);
-        this.physics.add.collider(this.enemies, this.enemies);
+        
     
     
         //disparos
@@ -135,10 +141,14 @@ export default class Level1 extends Phaser.Scene {
           obj1.destroy();
         }, null, this);
     
-       // this.logic.checkFlagsHurtEnemy(this, this.enemies);
+        this.logic.checkFlagsHurtEnemy(this, this.enemies);
         this.logic.checkFlagsHurtPlayer(this, this.witch,this.logic);
         //controla coger la llave
         this.physics.add.overlap(this.witch, this.keyObject, this.logic.catchKeyDoor, null, this);
+
+        //controla coger la vida
+        this.physics.add.overlap(this.witch, this.hearthUI, this.logic.catchHeart, null, this);
+
         //si te caes se resetea el nivel
         this.physics.add.collider(this.witch, this.capaMuerte, this.logic.resetPlayer, null, this);
         this.physics.add.collider(this.witch, this.door, (witch,obj) => {

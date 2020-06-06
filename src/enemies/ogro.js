@@ -18,23 +18,12 @@ export default class Ogro extends Phaser.GameObjects.Sprite {
     }
     createAnims() {
       this.scene.anims.create({
-        key: 'default',
+        key: 'def',
         frames: [{ key: 'ogro', frame: 'Ogro_1'}],
         frameRate: 10,
       });
       this.scene.anims.create({
         key: 'walkDchaOgro',
-        frames: this.scene.anims.generateFrameNames('ogro', {
-            prefix: 'Ogro_',
-            suffix: '.png',
-            start: 2,
-            end: 7
-        }),
-      frameRate:10,
-     });
-
-     this.scene.anims.create({
-        key: 'walkIzqOgro',
         frames: this.scene.anims.generateFrameNames('ogro', {
             prefix: 'Ogro_',
             suffix: '.png',
@@ -93,7 +82,7 @@ export default class Ogro extends Phaser.GameObjects.Sprite {
         //dcha
         else if (this.body.touching.left || this.body.blocked.left) {
           this.body.setVelocityX(this.speed);
-          console.log("gira a la chaaaaaaaaaaa")
+          console.log("gira")
         } 
       }
       

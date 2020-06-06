@@ -111,8 +111,8 @@ export default class LogicLevels extends Phaser.Scene {
 
   }
   attackEnemyThunder(charm, e) {
-    charm.destroy();
     e.hurtThunder = true;
+    charm.destroy();
   }
   //checks varios
   checkFlagsHurtEnemy(scene, e) {
@@ -157,9 +157,9 @@ export default class LogicLevels extends Phaser.Scene {
     }
   }
   checkLadder(player) {
-
     player.onLadder = true;
   }
+
   //reset player 
   resetPlayer(player, obj2) {
 
@@ -183,6 +183,12 @@ export default class LogicLevels extends Phaser.Scene {
     music.play();
     player.keyDoor = true;
     player.updateKey();
+    object1.destroy();
+  }
+
+  catchHeart(player, object1) {
+    let music = this.sound.add("catchHearthMusic");
+    music.play();
     object1.destroy();
   }
 

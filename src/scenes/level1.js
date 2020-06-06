@@ -70,6 +70,7 @@ export default class Level1 extends Phaser.Scene {
 
     //enemies(zombie)
     this.enemies = this.physics.add.group();
+    
     //esto habria que meterlo como una funcion
     //colocarlos bien
     let z1 = new Zombie(this, 100, 250);
