@@ -54,7 +54,7 @@ export default class LogicLevels extends Phaser.Scene {
     let music = this.sound.add("hurtZMusic");
     music.play();
   }
-  /*--------- ogrooooo--------
+  
   addMusicO(){
     let music = this.sound.add("oMusic");
     music.play();
@@ -63,7 +63,7 @@ export default class LogicLevels extends Phaser.Scene {
     let music = this.sound.add("hurtOMusic");
     music.play();
   }
-*/
+
   //vida player
   createLifePlayer(scene) {
     this.life = scene.add.sprite(50, 20, 'Life3').setDepth(1);

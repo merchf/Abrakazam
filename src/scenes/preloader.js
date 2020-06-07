@@ -95,6 +95,8 @@ export default class Preloader extends Phaser.Scene {
         //audios enemigos
         this.load.audio("zMusic", './public/music/musicaenemigos/zombie1.mp3');
         this.load.audio("hurtZMusic", './public/music/musicaenemigos/zombiehurt1.mp3');
+        this.load.audio("oMusic", './public/music/musicaenemigos/ogroSonido.mp3');
+        this.load.audio("hurtOMusic", './public/music/musicaenemigos/ogroMuerteSonido.mp3');
 
 
 
