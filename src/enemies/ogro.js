@@ -46,7 +46,12 @@ export default class Ogro extends Phaser.GameObjects.Sprite {
 
      this.scene.anims.create({
         key: 'deadOgro',
-        frames: [{ key: 'ogro', frame: 'Ogro_13'}],
+        frames: this.scene.anims.generateFrameNames('ogro', {
+            prefix: 'Ogro_',
+            suffix: '.png',
+            start: 13,
+            end: 13
+        }),
         frameRate: 10,
       });
       //Mazo es el 'Ogro_12'
@@ -66,9 +71,11 @@ export default class Ogro extends Phaser.GameObjects.Sprite {
         this.destroy();
         return
       }
+      
+      this.play("walkDchaOgro",true);
       //mirror para los sprites
       if(!this.someHurts()){
-        this.play("walkDchaOgro");
+        this.play("walkDchaOgro",true);
         if (this.body.velocity.x > 0){
           this.setFlipX(false); 
         }else if (this.body.velocity.x < 0){
@@ -88,14 +95,14 @@ export default class Ogro extends Phaser.GameObjects.Sprite {
       
       
       if(this.hurtFire){
-        this.play("burnedDZ",false);
+        this.play("deadOgro",false);
       }
       if(this.hurtIce){
-        this.play("burnedDZ",false);
+        this.play("deadOgro",false);
         this.body.setVelocityX(0);
       }
       if(this.hurtThunder){
-        this.play("burnedDZ",false);
+        this.play("deadOgro",false);
         this.body.setVelocityX(this.speed-15);
       }
   

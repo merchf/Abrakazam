@@ -1,13 +1,11 @@
 import Player from '../player.js';
 import Zombie from '../enemies/zombie.js';
-import GameUI from './gameUI.js';
-
-
 export default class Level1 extends Phaser.Scene {
 
   constructor() {
     super({ key: 'level1' });
     this.level = 1;
+    this.levelName = "level1";
   }
   preload() {
 
@@ -73,18 +71,49 @@ export default class Level1 extends Phaser.Scene {
     //enemies(zombie)
     this.enemies = this.physics.add.group();
     
-    //esto habria que meterlo como una funcion
-    //colocarlos bien
+    //esto habria que meterlo como una funcion jeje
     let z1 = new Zombie(this, 100, 250);
-    let z2 = new Zombie(this, 600, 400);
+    let z2 = new Zombie(this, 600, 250);
     let z3 = new Zombie(this, 1400, 250);
     let z4 = new Zombie(this, 1600, 250);
-    let z5 = new Zombie(this, 2300, 400);
+    let z5 = new Zombie(this, 2300, 250);
+    let z6 = new Zombie(this, 2600, 250);
+    let z7 = new Zombie(this, 3000, 250);
+    let z8 = new Zombie(this, 3400, 250);
+    let z9 = new Zombie(this, 3950, 250);
+    let z10 = new Zombie(this, 4010, 250);
+    let z11 = new Zombie(this, 4600, 250);
+    let z12 = new Zombie(this, 4354, 250);
+    let z13 = new Zombie(this, 4340, 250);
+    let z14 = new Zombie(this, 5600, 250);
+    let z15 = new Zombie(this, 6600, 250);
+    let z16 = new Zombie(this, 5000, 250);
+    let z17 = new Zombie(this, 8090, 250);
+    let z18 = new Zombie(this, 6680, 250);
+    let z19 = new Zombie(this, 7000, 250);
+    let z20 = new Zombie(this, 7820, 250);
+    let z21 = new Zombie(this, 8000, 250);
     this.enemies.add(z1);
     this.enemies.add(z2);
     this.enemies.add(z3);
     this.enemies.add(z4);
     this.enemies.add(z5);
+    this.enemies.add(z6);
+    this.enemies.add(z7);
+    this.enemies.add(z8);
+    this.enemies.add(z9);
+    this.enemies.add(z10);
+    this.enemies.add(z11);
+    this.enemies.add(z12);
+    this.enemies.add(z13);
+    this.enemies.add(z14);
+    this.enemies.add(z15);
+    this.enemies.add(z16);
+    this.enemies.add(z17);
+    this.enemies.add(z18);
+    this.enemies.add(z19);
+    this.enemies.add(z20);
+    this.enemies.add(z21);
     this.enemies.getChildren().forEach(function (item) { //necesario para crear cada enemigo con sus propiedades. Hacerlo antes de añadirlo al grupo no funciona
       item.create();
       item.createAnims();
@@ -126,7 +155,7 @@ export default class Level1 extends Phaser.Scene {
     //Si el rayo toca a un zombie
     this.physics.add.overlap(this.charmThunder, this.enemies, this.logic.attackEnemyThunder);
     //Si el z nos toa
-    this.physics.add.overlap(this.witch, this.enemies, this.logic.hurtPlayer);
+    this.physics.add.collider(this.witch, this.enemies, this.logic.hurtPlayer);
 
     //si los hechizos chocasn con la pared desaparecen
     this.physics.add.collider(this.charmFire, this.suelo, (obj1, obj2) => {
@@ -154,11 +183,13 @@ export default class Level1 extends Phaser.Scene {
     });
 
     //Si está en la escalera permite escalar al jugador
-    if (this.physics.add.overlap(this.witch, this.escalar)) {
-      this.witch.onLadder = true;
-    } else {
+    
+   /* this.physics.add.collider(this.witch, this.suelo, (witch,suelo) => { 
       this.witch.onLadder = false;
-    }
+    } );*/
+    this.physics.add.overlap(this.witch, this.escalar, (witch,ladder) => { 
+      this.witch.onLadder = true;
+    } );
     
     console.log("update");
   }

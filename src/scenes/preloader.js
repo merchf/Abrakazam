@@ -138,7 +138,7 @@ export default class Preloader extends Phaser.Scene {
         musicMenu.setLoop(true);
 
         this.scene.start('mainMenu', musicMenu);
-        //this.scene.start('batallaFinal');
+        
     }
     update() {
         console.log("menu");

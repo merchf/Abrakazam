@@ -50,10 +50,7 @@ export default class LogicLevels extends Phaser.Scene {
     let music = this.sound.add("zMusic");
     music.play();
   }
-  addMusicHurtZ() {
-    let music = this.sound.add("hurtZMusic");
-    music.play();
-  }
+  
   /*--------- ogrooooo--------
   addMusicO(){
     let music = this.sound.add("oMusic");
@@ -148,9 +145,14 @@ export default class LogicLevels extends Phaser.Scene {
   //ataques
   hurtPlayer(player, enemie) {
     player.hurtFlag = true;
-    player.play('deadWitch', false);
   }
-  updateHurtParams(player) {
+  updateHurtParams(player,scene) {
+    scene.time.addEvent({
+      delay: player.timeImposibleHurt, //tiempo que el enemigo esta stuneado
+      callback: () => {
+        player.imposibleHurt = false;
+      },
+    });
     player.hurtFlag = false;
     player.health -= 1;
   }
@@ -171,7 +173,9 @@ export default class LogicLevels extends Phaser.Scene {
   //checks varios
   checkFlagsHurtEnemy(scene, e) {
     e.getChildren().forEach(function (item) {
+
       if (item.hurtFire) {
+        item.frozen = false;
         scene.time.addEvent({
           delay: item.delay, //tiempo que el enemigo esta stuneado
           callback: () => {
@@ -182,10 +186,12 @@ export default class LogicLevels extends Phaser.Scene {
         scene.time.addEvent({
           delay: item.delay, //tiempo que el enemigo esta stuneado
           callback: () => {
+            item.frozen = true;
             item.hurtIce = false;
           },
         });
       } else if (item.hurtThunder) {
+        item.frozen = false;
         scene.time.addEvent({
           delay: item.delay, //tiempo que el enemigo esta stuneado
           callback: () => {
@@ -197,21 +203,19 @@ export default class LogicLevels extends Phaser.Scene {
   }
   checkFlagsHurtPlayer(scene, player, logic, music) {
     if (player.hurtFlag) {
-      logic.updateHurtParams(player);
+      player.imposibleHurt = true;
+      logic.updateHurtParams(player,scene);
       logic.updateLifePlayer(player.health);
       //ver si no se ha quedado sin vidas
-      logic.checkLife(player, music);
+      logic.checkLife(player, music,scene.levelName);
 
     }
   }
-  checkLife(player, music) {
+  checkLife(player, music,levelKey) {
     if (player.health <= 0) {
       music.destroy();
-      this.scene.start("level1");
+      this.scene.start(levelKey);
     }
-  }
-  checkLadder(player) {
-    player.onLadder = true;
   }
 
   //reset player 

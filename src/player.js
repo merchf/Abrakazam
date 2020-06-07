@@ -14,10 +14,12 @@ export default class Player extends Phaser.GameObjects.Sprite {
     this.jumpSpeed = -250;
     this.health = 3;
     this.hurtFlag = false;
+    this.imposibleHurt = false;
     this.lastFired = 0;
     this.timeFire = 5;
     this.timeIce = 10;
     this.timeThunder = 2;
+    this.timeImposibleHurt = 2000;
     //la llave tiene que estar a true para acabar cada nivel
     this.keyDoor = false;
     this.onLadder = false;
@@ -43,11 +45,11 @@ export default class Player extends Phaser.GameObjects.Sprite {
     }
   }
   createAnims() {
-    this.scene.anims.create({
+   /* this.scene.anims.create({
       key: 'default',
       frames: [{ key: 'bruja', frame: 'Brujita_1' }],
       frameRate: 10,
-    });
+    });*/
     this.scene.anims.create({
       key: 'walkDchaBruja',
       frames: this.scene.anims.generateFrameNames('bruja', {
@@ -160,7 +162,12 @@ export default class Player extends Phaser.GameObjects.Sprite {
     });
     this.scene.anims.create({
       key: 'deadWitch',
-      frames: [{ key: 'bruja', frame: 'Brujita_31' }],
+      frames: this.scene.anims.generateFrameNames('bruja', {
+        prefix: 'Brujita_',
+        suffix: '.png',
+        start: 31,
+        end: 31
+      }),
       frameRate: 10,
     });
   }
@@ -187,15 +194,16 @@ export default class Player extends Phaser.GameObjects.Sprite {
     }
 
     //escalar
-    if (this.cursors.up.isDown && this.onLadder == true) {
+    if (this.cursors.up.isDown && this.onLadder) {
       this.body.setVelocityY(-100);
       this.play('climbBruja', true);
-    } else if (this.cursors.down.isDown && this.onLadder == true) {
+    } else if (this.cursors.down.isDown && this.onLadder) {
       this.body.setVelocityY(100);
       this.play('climbBruja', true);
     }
     //cuando recibe daño
-    if (this.anims.isPlaying && this.anims.currentAnim.key === 'deadWitch') {
+    if (this.hurtFlag) {
+      this.play('deadWitch',false);
       if (this.body.touching.down) {
         this.body.setVelocityY(-800);
       }
@@ -203,10 +211,10 @@ export default class Player extends Phaser.GameObjects.Sprite {
         this.body.setVelocityX(+800);
       }
       else if (this.body.touching.right) {
-        this.body.setVelocityX(-800);
+        this.body.setVelocityX(-100);
       }
       else if (this.body.touching.up) {
-        this.body.setVelocityY(+800);
+        this.body.setVelocityY(+100);
       }
     }
 
