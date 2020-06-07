@@ -18,6 +18,8 @@ export default class Level1 extends Phaser.Scene {
     this.logic = this.scene.get('logicLevels');
     this.music = this.logic.addMusicScenes(this,"level1");
     this.music.volume = 0.10;
+    this.logic.createButtonMusic(this);
+    this.logic.createButtonPause(this);
     //mapa
     let map = this.add.tilemap("mapaLevel1");
     //Tilesets para el mapa
@@ -111,7 +113,7 @@ export default class Level1 extends Phaser.Scene {
   update(time, delta) {
 
     //updates de personajes
-    this.witch.preUpdate(time, delta, this.bullets);
+    this.witch.preUpdate(time, delta);
     this.enemies.getChildren().forEach(function (item) {
       item.preUpdate(time, delta);
     }, this);

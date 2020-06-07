@@ -15,7 +15,8 @@ export default class Level1 extends Phaser.Scene {
 
         this.logic = this.scene.get('logicLevels');
         this.music = this.logic.addMusicScenes(this,"level2");
-        //this.music.volume = 0.10;
+        //this.music.volume = 0.10;    
+        this.logic.createButtonMusic(this);
         //mapa
         let map = this.add.tilemap("mapaLevel2");
         //Tilesets para el mapa

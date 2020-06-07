@@ -56,11 +56,6 @@ export default class MainMenu extends Phaser.Scene {
     });
 
     //acciones al clicar
-
-
-    // pointerUp(playButton, 'level1');
-    // pointerUp(rulesButton, 'rules');
-    //pointerUp(creditsButton, 'credits');
     playButton.on("pointerup", () => {
       this.scene.start('prologo');
       this.musicMenu.destroy();

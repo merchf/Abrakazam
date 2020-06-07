@@ -6,6 +6,8 @@ export default class LogicLevels extends Phaser.Scene {
 
   constructor() {
     super({ key: 'logicLevels' });
+    this.musicOn = true;
+    this.pause = false;
   }
   preload() {
   }
@@ -44,13 +46,66 @@ export default class LogicLevels extends Phaser.Scene {
     music.setLoop(true);
     return music;
   }
-
+  addMusicZ() {
+    let music = this.sound.add("zMusic");
+    music.play();
+  }
+  addMusicHurtZ() {
+    let music = this.sound.add("hurtZMusic");
+    music.play();
+  }
+  /*--------- ogrooooo--------
+  addMusicO(){
+    let music = this.sound.add("oMusic");
+    music.play();
+  }
+  addMusicHurtO(){
+    let music = this.sound.add("hurtOMusic");
+    music.play();
+  }
+*/
   //vida player
   createLifePlayer(scene) {
-    this.life = scene.add.sprite(50, 20, 'Life3');
-    this.life.setDepth(1);
+    this.life = scene.add.sprite(50, 20, 'Life3').setDepth(1);
     this.life.setTexture('Life3');
     this.life.setScrollFactor(0);
+  }
+  createButtonMusic(scene) {
+    let buttonMusic = scene.add.sprite(28, 90, 'musicOn').setDepth(1);
+    buttonMusic.setTexture('musicOn');
+    buttonMusic.setScrollFactor(0);
+    buttonMusic.setInteractive();
+
+    buttonMusic.on("pointerup", () => {
+      if (this.musicOn) {
+        buttonMusic.setTexture("musicOff");
+        scene.music.pause();
+        this.musicOn = false;
+      } else {
+        buttonMusic.setTexture("musicOn");
+        scene.music.resume();
+        this.musicOn = true;
+      }
+    });
+  }
+  createButtonPause(scene) {
+    let buttonPause = scene.add.sprite(40, 130, 'pause_button').setDepth(1);
+    buttonPause.setScrollFactor(0);
+    buttonPause.setInteractive();
+    buttonPause.setScale(0.5);
+    buttonPause.on("pointerup", () => {
+      if (!this.pause) {
+        buttonPause.setTexture("pause_button");
+        scene.music.resume();
+        scene.resume();
+        this.pause = true;
+      } else {
+    //   buttonPause.setTexture("continue_button");
+        scene.music.pause();
+        scene.stop();
+        this.pause = false;
+      }
+    });
   }
 
   updateLifePlayer(health) {
@@ -186,9 +241,12 @@ export default class LogicLevels extends Phaser.Scene {
   }
 
   catchHeart(player, object1) {
-    let music = this.sound.add("catchHearthMusic");
-    music.play();
-    object1.destroy();
+    if (player.health < 3) {
+      let music = this.sound.add("catchHearthMusic");
+      music.play();
+      player.health += 1;
+      object1.destroy();
+    }
   }
 
   //pasar de nivel

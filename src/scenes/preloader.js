@@ -24,6 +24,10 @@ export default class Preloader extends Phaser.Scene {
         this.load.image("back_button", './assets/menu/back_button.png');
         this.load.image("next_button", './assets/menu/next_button.png');
         this.load.image("flecha_button", './assets/menu/flecha_button.png');
+        this.load.image("pause_button", './assets/menu/pause.png');
+        this.load.image("musicOn", './assets/menu/musicOn.png');
+        this.load.image("musicOff", './assets/menu/musicOff.png');
+
 
         //carga de imagenes batalla final
         this.load.image("fondobatallafinal", './assets/batallaFinal/fondobatallafinal.png');

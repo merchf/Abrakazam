@@ -6,13 +6,14 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
   constructor(scene, x, y) {
     super(scene, x, y, 'bruja');
+    this.scene = scene;
     this.scene.add.existing(this);
     this.scene.physics.add.existing(this);
     this.body.setCollideWorldBounds();
     this.speed = 230;
     this.jumpSpeed = -250;
     this.health = 3;
-    this.hurtFlag =false;
+    this.hurtFlag = false;
     this.lastFired = 0;
     this.timeFire = 5;
     this.timeIce = 10;
@@ -21,7 +22,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
     this.keyDoor = false;
     this.onLadder = false;
     this.labelKey = this.scene.add.text(10, 40);
-    
+
     this.labelKey.setScrollFactor(0);
     this.cursors = this.scene.input.keyboard.createCursorKeys();
     this.setFlipX(true);
@@ -164,7 +165,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
     });
   }
 
-  preUpdate(t, dt, bullets) {
+  preUpdate(t, dt) {
     super.preUpdate(t, dt)
     this.body.setSize(0, 85);
 
@@ -173,32 +174,27 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
       this.body.setVelocityX(0);
       this.play('attackFireIB', true);
-
       this.throwCharmFire();
-      //meter audio fuego
 
     } else if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.iceAttack) && this.body.onFloor()) {
       this.body.setVelocityX(0);
       this.play('attackIceIB', true);
       this.throwCharmIce();
-      //meter audio hielo
     } else if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.thunderAttack) && this.body.onFloor()) {
       this.body.setVelocityX(0);
       this.play('attackThunderIB', true);
       this.throwCharmThunder();
-      //meter audio trueno
     }
 
     //escalar
     if (this.cursors.up.isDown && this.onLadder == true) {
       this.body.setVelocityY(-100);
       this.play('climbBruja', true);
-      //cuando tengamos los audios aqui habría que meterlo
     } else if (this.cursors.down.isDown && this.onLadder == true) {
       this.body.setVelocityY(100);
       this.play('climbBruja', true);
-      //cuando tengamos los audios aqui habría que meterlo
     }
+    //cuando recibe daño
     if (this.anims.isPlaying && this.anims.currentAnim.key === 'deadWitch') {
       if (this.body.touching.down) {
         this.body.setVelocityY(-800);
@@ -240,10 +236,10 @@ export default class Player extends Phaser.GameObjects.Sprite {
     if (this.cursorsExtra.jump.isDown && this.body.onFloor()) {
       this.body.setVelocityY(this.jumpSpeed);
       this.play('jumpBrujaI', true);
-      //cuando tengamos lods audios aqui habría que meterlo
+      this.addMusicJump();
     }
 
-
+    //sprites segun lado
     if (this.body.velocity.x > 0)
       this.setFlipX(true); //derecha
     else if (this.body.velocity.x < 0)
@@ -253,13 +249,22 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
   throwCharmFire() {
     let charm = new CharmFire(this.scene, this.x, this.y, this);
-    console.log("lanzo fuedooooooooooooooooooooooooooooooooo)")
+    this.addMusicCharm();
   }
   throwCharmIce() {
     let charm = new CharmIce(this.scene, this.x, this.y, this);
+    this.addMusicCharm();
   }
   throwCharmThunder() {
     let charm = new CharmThunder(this.scene, this.x, this.y, this);
-
+    this.addMusicCharm();
+  }
+  addMusicCharm(){
+    let music = this.scene.sound.add("charmMusic");
+    music.play();
+  }
+  addMusicJump(){
+    let music = this.scene.sound.add("jumpMusic");
+    music.play();
   }
 }
