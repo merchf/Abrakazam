@@ -89,7 +89,7 @@ export default class LogicLevels extends Phaser.Scene {
     });
   }
   createButtonPause(scene) {
-    let buttonPause = scene.add.sprite(40, 130, 'pause_button').setDepth(1);
+    let buttonPause = scene.add.sprite(90, 90, 'pause_button').setDepth(1);
     buttonPause.setScrollFactor(0);
     buttonPause.setInteractive();
     buttonPause.setScale(0.5);
