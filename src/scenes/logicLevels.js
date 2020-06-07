@@ -54,7 +54,7 @@ export default class LogicLevels extends Phaser.Scene {
     let music = this.sound.add("hurtZMusic");
     music.play();
   }
-  
+  /*--------- ogrooooo--------
   addMusicO(){
     let music = this.sound.add("oMusic");
     music.play();
@@ -63,7 +63,7 @@ export default class LogicLevels extends Phaser.Scene {
     let music = this.sound.add("hurtOMusic");
     music.play();
   }
-
+*/
   //vida player
   createLifePlayer(scene) {
     this.life = scene.add.sprite(50, 20, 'Life3').setDepth(1);
@@ -71,7 +71,7 @@ export default class LogicLevels extends Phaser.Scene {
     this.life.setScrollFactor(0);
   }
   createButtonMusic(scene) {
-    let buttonMusic = scene.add.sprite(28, 90, 'musicOn').setDepth(1);
+    let buttonMusic = scene.add.sprite(120, 20, 'musicOn').setDepth(1);
     buttonMusic.setTexture('musicOn');
     buttonMusic.setScrollFactor(0);
     buttonMusic.setInteractive();
@@ -89,7 +89,7 @@ export default class LogicLevels extends Phaser.Scene {
     });
   }
   createButtonPause(scene) {
-    let buttonPause = scene.add.sprite(90, 90, 'pause_button').setDepth(1);
+    let buttonPause = scene.add.sprite(180, 20, 'pause_button').setDepth(1);
     buttonPause.setScrollFactor(0);
     buttonPause.setInteractive();
     buttonPause.setScale(0.5);

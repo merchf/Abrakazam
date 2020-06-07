@@ -126,7 +126,7 @@ export default class Level1 extends Phaser.Scene {
     //Si el rayo toca a un zombie
     this.physics.add.overlap(this.charmThunder, this.enemies, this.logic.attackEnemyThunder);
     //Si el z nos toa
-    this.physics.add.collider(this.witch, this.enemies, this.logic.hurtPlayer);
+    this.physics.add.overlap(this.witch, this.enemies, this.logic.hurtPlayer);
 
     //si los hechizos chocasn con la pared desaparecen
     this.physics.add.collider(this.charmFire, this.suelo, (obj1, obj2) => {
