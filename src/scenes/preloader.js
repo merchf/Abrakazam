@@ -46,7 +46,8 @@ export default class Preloader extends Phaser.Scene {
         //mapa
         this.load.tilemapTiledJSON('mapaLevel1', './assets/mapas/mapaNivel1.json');
         this.load.tilemapTiledJSON('mapaLevel2', './assets/mapas/mapaNivel2.json');
-
+        this.load.tilemapTiledJSON('mapaLevel3', './assets/mapas/mapaNivel3.json');
+        
         this.load.image("TrainBack", './assets/background/TrainBack.png');
         this.load.image("TrainFulll", './assets/background/TrainFulll.png');
         this.load.image("trees", './assets/background/trees.png');

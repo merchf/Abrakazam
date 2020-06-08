@@ -15,7 +15,6 @@ export default class PrologoAfterMrLion extends Phaser.Scene {
            this.scene.start('level2');
            //cargar batalla final
         });
-22222
     }
     update() {
         console.log("prologo before final boss");

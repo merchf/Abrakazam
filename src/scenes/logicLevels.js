@@ -37,6 +37,9 @@ export default class LogicLevels extends Phaser.Scene {
       case "level2":
         keyMusic = "level2Music";
         break;
+      case "level3":
+        keyMusic = "level3Music";
+        break;
       case "gameOver":
         keyMusic = "gameOverMusic";
         break;

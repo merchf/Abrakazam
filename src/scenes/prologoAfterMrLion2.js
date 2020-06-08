@@ -8,7 +8,7 @@ export default class PrologoAfterMrLion extends Phaser.Scene {
         nextButton.setScale(1);
         nextButton.setInteractive();
         nextButton.on("pointerup", () => {
-           //this.scene.start('level3');
+           this.scene.start('level3');
            //cargar batalla final
         });
 22222
