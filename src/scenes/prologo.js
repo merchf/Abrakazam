@@ -14,7 +14,7 @@ export default class Prologo extends Phaser.Scene {
         backButton.setInteractive();
         backButton.on("pointerup", () => {
             this.music.destroy();
-            this.scene.start('level3');
+            this.scene.start('level1');
         });
 
     }
