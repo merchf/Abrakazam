@@ -1,20 +1,22 @@
 
 
-export default class Prologo extends Phaser.Scene {
+export default class Continuara extends Phaser.Scene {
     constructor() {
-        super({ key: 'prologo' });
+        super({ key: 'continuara' });
     }
     create() {
         this.logic = this.scene.get('logicLevels');
         this.music = this.logic.addMusicScenes(this, "prologo");
 
-        this.add.image(0, 0, "prologo").setOrigin(0).setDepth(0);
+        this.add.image(0, 0, "continue").setOrigin(0).setDepth(0);
         let backButton = this.add.image(770, 50, "flecha_button").setDepth(1);
         backButton.setScale(1);
         backButton.setInteractive();
         backButton.on("pointerup", () => {
             this.music.destroy();
-            this.scene.start('level3');
+            this.scene.start('prologo');
+            //this.scene.start('level1');
+            //this.scene.start('prologoBeforeMrLion');
         });
 
     }

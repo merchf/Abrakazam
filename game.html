@@ -18,8 +18,9 @@
         import Prologo from './src/scenes/prologo.js'
         import PrologoBeforeMrLion from './src/scenes/prologoAfterMrLion.js'
         import PrologoAfterMrLion from './src/scenes/prologoBeforeMrLion.js'
-        //import PrologoAfterMrLion2 from './src/scenes/prologoBeforeMrLion2.js'
-        //import PrologoAfterMrLion3 from './src/scenes/prologoBeforeMrLion3.js'
+        import Continuara from './src/scenes/continuara.js'
+       // import PrologoAfterMrLion2 from './src/scenes/prologoBeforeMrLion2.js'
+       // import PrologoAfterMrLion3 from './src/scenes/prologoBeforeMrLion3.js'
         import MainMenu from './src/scenes/mainMenu.js'
         import Rules from './src/scenes/rules.js'
         import Credits from './src/scenes/credits.js'
@@ -40,7 +41,7 @@
                 autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
             },
             pixelArt: true,
-            scene: [Boot,Preloader,Prologo,PrologoBeforeMrLion,PrologoAfterMrLion,/*PrologoAfterMrLion2,/*PrologoAfterMrLion3,*/MainMenu,Rules,Credits,LogicLevels,Level1,Level2,Level3,BatallaFinal,GameOver],
+            scene: [Boot,Preloader,Prologo,PrologoBeforeMrLion,PrologoAfterMrLion/*,PrologoAfterMrLion2,PrologoAfterMrLion3*/,Continuara,MainMenu,Rules,Credits,LogicLevels,Level1,Level2,Level3,BatallaFinal,GameOver],
             physics: { default: 'arcade', arcade: { gravity: { y: 400 }, debug: false } }
         };
 

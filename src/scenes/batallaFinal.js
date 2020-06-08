@@ -3,7 +3,6 @@
 var opciones = [0, 1, 2];
 var vidaMaquina = 3;
 var vidaUsuario = 3;
-//var eleccionUsuario;
 var eleccionMaquina;
 export default class BatallaFinal extends Phaser.Scene {
 
@@ -26,9 +25,6 @@ export default class BatallaFinal extends Phaser.Scene {
     this.logic.createLifePlayer(this);
     this.logic.createLifeMrLion(this);
 
-    //texto
-
-
     //botones
     let fuegoButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 - 100, "fuegoButton").setDepth(1);
     let hieloButton = this.add.image(this.game.renderer.width / 2, this.game.renderer.height / 2 + 0, "hieloButton").setDepth(1);
@@ -44,8 +40,6 @@ export default class BatallaFinal extends Phaser.Scene {
     let hoverMrLionR = this.add.image(this.game.renderer.width / 2 + 250, this.game.renderer.height / 2 + 80, "MrLionRayo").setDepth(1);
     let hoverMrLionF = this.add.image(this.game.renderer.width / 2 + 250, this.game.renderer.height / 2 + 80, "MrLionFuego").setDepth(1);
 
-
-
     hoverBruja.setVisible(true);
     hoverBrujaF.setVisible(false);
     hoverBrujaH.setVisible(false);
@@ -54,6 +48,7 @@ export default class BatallaFinal extends Phaser.Scene {
     hoverMrLionH.setVisible(false);
     hoverMrLionR.setVisible(false);
     hoverMrLionF.setVisible(false);
+
     //fuego
     fuegoButton.setInteractive();
     fuegoButton.on("pointerover", () => {
@@ -176,17 +171,16 @@ export default class BatallaFinal extends Phaser.Scene {
     this.resultado(vidaMaquina, vidaUsuario);
   }
 
+  //GANAR O PERDER
   checkIfWin() {
     if (vidaMaquina <= 0) {
       //this.musicBattle.destroy();
       this.music.destroy();
       vidaMaquina = 3;
       vidaUsuario = 3;
-      //var nivel = 1;
-      //this.logic.nextLevel(1);
+      //this.logic.nextLevel(nivel);
       this.scene.start("prologoAfterMrLion");
     } else if (vidaUsuario === 0) {
-      //activar game over y volver a cargar batalla final
       //this.music.pause();
       // this.scene.start("batallaFinal",this.musicBattle);
       //this.musicBattle.destroy();
@@ -196,20 +190,15 @@ export default class BatallaFinal extends Phaser.Scene {
       this.scene.start("gameOver");
     }
   }
-  //Función para generar el mensaje correspondiente
+  //Función para generar el mensaje correspondiente por consola
   resultado(vidaMaquina, vidaUsuario) {
     if (vidaMaquina == 0) {
-      //document.getElementById('efecto').innerHTML ='<h1>¡GANASTE!</h1>';
       console.log("GANAS");
     } else if (vidaUsuario == 0) {
-      //document.getElementById('efecto').innerHTML ='<h1>¡PERDISTE!</h1>';
       console.log("PIERDES");
     } else {
-      // document.innerHTML ='<h1>Sigue luchando</h1>';
       console.log(vidaMaquina, vidaUsuario);
     }
-    //document.getElementById('efecto').style.display = "";
-    //Document.style.display="NONE";
   }
 
   pointerUp(boton, escena) {

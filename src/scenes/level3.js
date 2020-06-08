@@ -42,7 +42,7 @@ export default class Level3 extends Phaser.Scene {
 
 
     //añadimosObjeto
-    this.keyObject = this.physics.add.sprite(10, 1224, "keyDoor");
+    this.keyObject = this.physics.add.sprite(64, 1224, "keyDoor");
     this.hearthUI = this.physics.add.sprite(46.6666666666667, 1792, "hearthUI");
     //this.hearthUI = this.physics.add.sprite(220, 524, "hearthUI");
     this.logic.createLifePlayer(this);
