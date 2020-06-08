@@ -27,6 +27,7 @@ export default class PrologoAfterMrLion extends Phaser.Scene {
             escena++;
             this.scene.start('level3');
            }else if(escena===3){
+            escena=1;
             this.scene.start('continuara');
            }
            

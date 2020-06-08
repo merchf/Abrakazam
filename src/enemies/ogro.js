@@ -107,7 +107,12 @@ export default class Ogro extends Phaser.GameObjects.Sprite {
         this.play("deadOgro",false);
         this.body.setVelocityX(this.speed-50);
       }
-  
+      
+      if(this.body.velocity.x > 0){
+        this.setFlipX(false);
+      }else if(this.body.velocity.x < 0){
+        this.setFlipX(true);
+      }
   
     }
   
