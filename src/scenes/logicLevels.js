@@ -260,11 +260,14 @@ export default class LogicLevels extends Phaser.Scene {
   nextLevel(level) {
     //habria que hacer un stop del level actual
     switch (level) {
-      case "uno":
-        this.scene.start('prologoAfterMrLion');
+      case 1:
+        this.scene.start("prologoAfterMrLion");
         break;
-      case "dos":
-        this.scene.start('prologoAfterMrLion2');
+      case 2:
+        this.scene.start("prologoAfterMrLion2");
+        break;
+      case 3:
+        this.scene.start("prologoAfterMrLion3");
         break;
     }
   }

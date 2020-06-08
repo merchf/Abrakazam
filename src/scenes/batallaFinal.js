@@ -3,7 +3,7 @@
 var opciones = [0, 1, 2];
 var vidaMaquina = 3;
 var vidaUsuario = 3;
-var eleccionUsuario;
+//var eleccionUsuario;
 var eleccionMaquina;
 export default class BatallaFinal extends Phaser.Scene {
 
@@ -182,7 +182,8 @@ export default class BatallaFinal extends Phaser.Scene {
       this.music.destroy();
       vidaMaquina = 3;
       vidaUsuario = 3;
-      this.logic.nextLevel()
+      //var nivel = 1;
+      //this.logic.nextLevel(1);
       this.scene.start("prologoAfterMrLion");
     } else if (vidaUsuario === 0) {
       //activar game over y volver a cargar batalla final
