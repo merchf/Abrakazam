@@ -141,7 +141,7 @@ export default class Level3 extends Phaser.Scene {
     //Si el ogro nos toca
     this.physics.add.collider(this.witch, this.enemies, this.logic.hurtPlayer);
 
-    //si los hechizos chocasn con la pared desaparecen
+    //si los hechizos chocan con la pared desaparecen
     this.physics.add.collider(this.charmFire, this.capaSuelo, (obj1, obj2) => {
       obj1.destroy();
     }, null, this);
@@ -159,7 +159,7 @@ export default class Level3 extends Phaser.Scene {
 
     //controla coger la vida
     this.physics.add.overlap(this.witch, this.hearthUI, this.logic.catchHeart, null, this);
-
+    
     //si te caes se resetea el nivel
     this.physics.add.collider(this.witch, this.capaMuerte, this.logic.resetPlayer, null, this);
     this.physics.add.collider(this.witch, this.door, (witch, obj) => {

@@ -2,8 +2,8 @@
 export default class Ogro extends Phaser.GameObjects.Sprite {
     constructor(scene, x, y) {
       super(scene, x, y, 'ogro');
-      this.health = 5;
-      this.speed=30;
+      this.health = 7;
+      this.speed=60;
       this.delay =2000;
       this.hurtFire =false;
       this.hurtIce =false;
@@ -14,7 +14,7 @@ export default class Ogro extends Phaser.GameObjects.Sprite {
       this.scene.physics.add.existing(this);
       this.body.setCollideWorldBounds(true);
       this.body.setVelocityX(this.speed);
-      this.setScale(0.65);
+      this.setScale(0.95);
     }
     createAnims() {
       this.scene.anims.create({
@@ -97,13 +97,15 @@ export default class Ogro extends Phaser.GameObjects.Sprite {
       if(this.hurtFire){
         this.play("deadOgro",false);
       }
+
       if(this.hurtIce){
         this.play("deadOgro",false);
         this.body.setVelocityX(0);
       }
+
       if(this.hurtThunder){
         this.play("deadOgro",false);
-        this.body.setVelocityX(this.speed-15);
+        this.body.setVelocityX(this.speed-50);
       }
   
   

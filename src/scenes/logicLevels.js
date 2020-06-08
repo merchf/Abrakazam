@@ -164,11 +164,12 @@ export default class LogicLevels extends Phaser.Scene {
     e.health -= 3;
     e.hurtFire = true;
   }
-  attackEnemyIce(charm, e) {
-    e.hurtIce = true;
-    charm.destroy();
 
+  attackEnemyIce(charm, e) {
+    charm.destroy();
+    e.hurtIce = true;
   }
+  
   attackEnemyThunder(charm, e) {
     e.hurtThunder = true;
     charm.destroy();
@@ -252,6 +253,7 @@ export default class LogicLevels extends Phaser.Scene {
       let music = this.sound.add("catchHearthMusic");
       music.play();
       player.health += 1;
+      //logic.updateLifePlayer(player.health);
       object1.destroy();
     }
   }

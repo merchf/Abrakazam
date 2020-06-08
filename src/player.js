@@ -178,7 +178,6 @@ export default class Player extends Phaser.GameObjects.Sprite {
 
     //attack
     if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.fireAttack) && this.body.onFloor()) {
-
       this.body.setVelocityX(0);
       this.play('attackFireIB', true);
       this.throwCharmFire();
