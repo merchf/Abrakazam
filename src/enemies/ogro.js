@@ -8,6 +8,8 @@ export default class Ogro extends Phaser.GameObjects.Sprite {
       this.hurtFire =false;
       this.hurtIce =false;
       this.hurtThunder =false;
+      this.distanceAttack = 100;
+      this.distanceMazo = 50;
     }
     create() {
       this.scene.add.existing(this);
@@ -63,6 +65,9 @@ export default class Ogro extends Phaser.GameObjects.Sprite {
       }else{
         return false;
       }
+    }
+    checkDistanceToWitch(witch){
+      
     }
   
     preUpdate(t, dt) {

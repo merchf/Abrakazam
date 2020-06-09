@@ -20,6 +20,7 @@ export default class PrologoAfterMrLion extends Phaser.Scene {
         nextButton.setInteractive();
         nextButton.on("pointerup", () => {
            this.music.destroy();
+           
            if(escena===1){
             escena++;
             this.scene.start('level2');

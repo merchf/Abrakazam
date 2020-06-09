@@ -53,7 +53,6 @@ export default class Level1 extends Phaser.Scene {
 
 
     //añadiosObjeto
-    // this.keyObject = this.add.sprite(4354, 414, "keyDoor");
     this.keyObject = this.physics.add.sprite(4354, 414, "keyDoor");
     this.logic.createLifePlayer(this);
 
@@ -61,10 +60,8 @@ export default class Level1 extends Phaser.Scene {
     //player
     this.witch = new Player(this, 200, 400);
     this.witch.createAnims();
-    //  this.collider = this.physics.add.collider(this.witch, this.suelo);
-    this.witch.body.debugBodyColor = 0x09b500;
 
-    //colisiones playes
+    //colisiones player
     this.physics.add.collider(this.witch, this.suelo);
     this.physics.add.collider(this.keyObject, this.suelo);
 
@@ -178,7 +175,9 @@ export default class Level1 extends Phaser.Scene {
       if(witch.keyDoor){
         this.music.destroy();
         //ruido abrir puerta
+        this.scene.stop(this);
         this.scene.start("prologoBeforeMrLion");
+
       }
     });
 
@@ -188,7 +187,7 @@ export default class Level1 extends Phaser.Scene {
       this.witch.onLadder = false;
     } );*/
     this.physics.add.overlap(this.witch, this.escalar, (witch,ladder) => { 
-      this.witch.onLadder = true;
+      witch.onLadder = true;
     } );
     
     console.log("update");

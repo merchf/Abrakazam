@@ -7,7 +7,6 @@ export default class LogicLevels extends Phaser.Scene {
   constructor() {
     super({ key: 'logicLevels' });
     this.musicOn = true;
-    this.pause = false;
   }
   preload() {
   }
@@ -53,7 +52,7 @@ export default class LogicLevels extends Phaser.Scene {
     let music = this.sound.add("zMusic");
     music.play();
   }
-  
+
   /*--------- ogrooooo--------
   addMusicO(){
     let music = this.sound.add("oMusic");
@@ -94,17 +93,9 @@ export default class LogicLevels extends Phaser.Scene {
     buttonPause.setInteractive();
     buttonPause.setScale(0.5);
     buttonPause.on("pointerup", () => {
-      if (!this.pause) {
-        buttonPause.setTexture("pause_button");
-        scene.music.resume();
-        scene.resume();
-        this.pause = true;
-      } else {
-    //   buttonPause.setTexture("continue_button");
-        scene.music.pause();
-        scene.stop();
-        this.pause = false;
-      }
+      scene.music.pause();
+      this.scene.stop(scene);
+      this.scene.launch('pause',scene);
     });
   }
 
@@ -149,7 +140,7 @@ export default class LogicLevels extends Phaser.Scene {
   hurtPlayer(player, enemie) {
     player.hurtFlag = true;
   }
-  updateHurtParams(player,scene) {
+  updateHurtParams(player, scene) {
     scene.time.addEvent({
       delay: player.timeImposibleHurt, //tiempo que el enemigo esta stuneado
       callback: () => {
@@ -169,9 +160,10 @@ export default class LogicLevels extends Phaser.Scene {
     charm.destroy();
     e.hurtIce = true;
   }
-  
+
   attackEnemyThunder(charm, e) {
     e.hurtThunder = true;
+    e.health -= 1;
     charm.destroy();
   }
   //checks varios
@@ -181,14 +173,14 @@ export default class LogicLevels extends Phaser.Scene {
       if (item.hurtFire) {
         item.frozen = false;
         scene.time.addEvent({
-          delay: item.delay, //tiempo que el enemigo esta stuneado
+          delay: item.delay,
           callback: () => {
             item.hurtFire = false;
           },
         });
       } else if (item.hurtIce) {
         scene.time.addEvent({
-          delay: item.delay, //tiempo que el enemigo esta stuneado
+          delay: item.delay,
           callback: () => {
             item.frozen = true;
             item.hurtIce = false;
@@ -197,7 +189,7 @@ export default class LogicLevels extends Phaser.Scene {
       } else if (item.hurtThunder) {
         item.frozen = false;
         scene.time.addEvent({
-          delay: item.delay, //tiempo que el enemigo esta stuneado
+          delay: item.delay,
           callback: () => {
             item.hurtThunder = false;
           },
@@ -208,14 +200,14 @@ export default class LogicLevels extends Phaser.Scene {
   checkFlagsHurtPlayer(scene, player, logic, music) {
     if (player.hurtFlag) {
       player.imposibleHurt = true;
-      logic.updateHurtParams(player,scene);
+      logic.updateHurtParams(player, scene);
       logic.updateLifePlayer(player.health);
       //ver si no se ha quedado sin vidas
-      logic.checkLife(player, music,scene.levelName);
+      logic.checkLife(player, music, scene.levelName);
 
     }
   }
-  checkLife(player, music,levelKey) {
+  checkLife(player, music, levelKey) {
     if (player.health <= 0) {
       music.destroy();
       this.scene.start(levelKey);
@@ -253,11 +245,16 @@ export default class LogicLevels extends Phaser.Scene {
       let music = this.sound.add("catchHearthMusic");
       music.play();
       player.health += 1;
-      //logic.updateLifePlayer(player.health);
+      player.catchHeart = true;
       object1.destroy();
     }
   }
-
+  checkCatchHeart(player, logic) {
+    if (player.catchHeart) {
+      logic.updateLifePlayer(player.health);
+      player.catchHeart = false;
+    }
+  }
   //pasar de nivel
   nextLevel(level) {
     //habria que hacer un stop del level actual

@@ -22,6 +22,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
     this.timeImposibleHurt = 2000;
     //la llave tiene que estar a true para acabar cada nivel
     this.keyDoor = false;
+    this.catchHeart = false;
     this.onLadder = false;
     this.labelKey = this.scene.add.text(10, 40);
 
@@ -45,11 +46,11 @@ export default class Player extends Phaser.GameObjects.Sprite {
     }
   }
   createAnims() {
-   /* this.scene.anims.create({
-      key: 'default',
-      frames: [{ key: 'bruja', frame: 'Brujita_1' }],
-      frameRate: 10,
-    });*/
+    /* this.scene.anims.create({
+       key: 'default',
+       frames: [{ key: 'bruja', frame: 'Brujita_1' }],
+       frameRate: 10,
+     });*/
     this.scene.anims.create({
       key: 'walkDchaBruja',
       frames: this.scene.anims.generateFrameNames('bruja', {
@@ -175,7 +176,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
   preUpdate(t, dt) {
     super.preUpdate(t, dt)
     this.body.setSize(0, 85);
-
+    console.log(this.onLadder);
     //attack
     if (Phaser.Input.Keyboard.JustDown(this.cursorsExtra.fireAttack) && this.body.onFloor()) {
       this.body.setVelocityX(0);
@@ -202,7 +203,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
     }
     //cuando recibe daño
     if (this.hurtFlag) {
-      this.play('deadWitch',false);
+      this.play('deadWitch', false);
       if (this.body.touching.down) {
         this.body.setVelocityY(-800);
       }
@@ -266,11 +267,11 @@ export default class Player extends Phaser.GameObjects.Sprite {
     let charm = new CharmThunder(this.scene, this.x, this.y, this);
     this.addMusicCharm();
   }
-  addMusicCharm(){
+  addMusicCharm() {
     let music = this.scene.sound.add("charmMusic");
     music.play();
   }
-  addMusicJump(){
+  addMusicJump() {
     let music = this.scene.sound.add("jumpMusic");
     music.play();
   }
