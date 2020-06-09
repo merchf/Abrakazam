@@ -46,9 +46,10 @@ Todos los niveles serán plataforma. Contendrán pociones de curación, llaves (
 Además, al final de cada nivel, el jugador se enfrentará a un enemigo final para conseguir la gema y completar el nivel.
 
 
- **Vista general**
+ **Vista general Web**
  
- ![Portada Juego]()
+ ![Portada Juego](https://github.com/merchf/Abrakazam/blob/master/public/images/web.png)
+ ![Portada Juego2](https://github.com/merchf/Abrakazam/blob/master/public/images/web2.png)
   
     
   **MAPA**
