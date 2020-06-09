@@ -26,3 +26,9 @@ Los archivos .js dentro de la carpeta /src darán toda la lógica y funcionalida
  - **level1.js, level2.js, level3.js:** Escenas de cada nivel donde se cargan los distintos mapas y enemigos y se atiende al comportamiento del jugador para actualizar en todo momento el estado del juego.
  - **continuara.js:** Escena final del juego.
  - **logicLevels.js:** Lógica del juego que coincide entre niveles. Se ha creado con intención de evitar la repetición de código y optimizar recursos.
+ - **charmFire.js:** Define el hechizo de fuego que lanza la brujita y asi poder quitar vida al enemigo.
+ **- charmIce.js:** Define el hechizo de hielo que lanza la brujita y asi poder congelar al enemigo.
+ **- charmThunder.js:** Define el hechizo de trueno que lanza la brujita y asi poder ralentizar y quitar vida al enemigo.
+ **- zombie.js:** Sprite del primer enemigo que nos encontramos en el nivel 1.
+ - **ogro.js:**  Sprite del segundo enemigo que nos encontramos en el nivel 2 y 3.
+ **- player.js:**  Sprite del protagonista del juego, nuestro main. Incluye sus animaciones y la lógica del movimiento y ataque. 
