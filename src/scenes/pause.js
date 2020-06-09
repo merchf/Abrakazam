@@ -10,9 +10,11 @@ export default class Pause extends Phaser.Scene {
     }
 
     create() {
-        let buttonPause = this.add.sprite(this.game.renderer.width / 2, this.game.renderer.height / 2, 'pause_button').setDepth(1);
-        buttonPause.setInteractive();
-        buttonPause.on("pointerup", () => {
+        let buttonPlay = this.add.sprite(180, 20, 'pause_button').setDepth(2);
+
+        buttonPlay.setScale(0.5);
+        buttonPlay.setInteractive();
+        buttonPlay.on("pointerup", () => {
             this.scene.resume(this.sceneName);
             this.scene.stop();
         });

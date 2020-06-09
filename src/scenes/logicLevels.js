@@ -93,8 +93,7 @@ export default class LogicLevels extends Phaser.Scene {
     buttonPause.setInteractive();
     buttonPause.setScale(0.5);
     buttonPause.on("pointerup", () => {
-      scene.music.pause();
-      this.scene.stop(scene);
+      this.scene.pause(scene);
       this.scene.launch('pause',scene);
     });
   }
