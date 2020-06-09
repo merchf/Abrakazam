@@ -34,6 +34,7 @@ Sólo consiguiendo el poder de las siete gemas astrales, nacidas de las mismísi
 |27/02/2020| 3.0 |
 |14/04/2020| 4.0 |
 |04/06/2020| 5.0 |
+|09/06/2020| 6.0 |
 
  **1. Aspectos generales**
  
@@ -57,16 +58,18 @@ Además, al final de cada nivel, el jugador se enfrentará a un enemigo final pa
 **1.1 Relato breve y parcial de una partida típica**
 
 - El jugador ingresa el nombre que quiere tener y da a JUGAR.
-- Aparece la pantalla del primer nivel. En el juego habrá siete niveles, cada uno con temática diferente haciendo alusión al viaje que hará nuestro protagonista, desde su inicio hasta llegar al portal final. 
-  Niveles: Tren-Castillo-Escaleras- Escoba-Laberinto-Bosque Oscuro- Lago negro.
+- Aparece la pantalla del primer nivel. En el juego habrá siete niveles (actualmente hay diseñados tres niveles), cada uno con temática diferente haciendo alusión al viaje que hará nuestro protagonista, desde su inicio hasta llegar al portal final. 
+  Niveles: Tren-Castillo-Escaleras-Escoba-Laberinto-Bosque Oscuro-Lago negro.
+  Cada vez que el personaje muera en el nivel, se reiniciará el nivel y tendrá que comenzar de nuevo la partida desde ese nivel.
 - El nivel consta de:
-    - Plataformas (tanto fijas como móviles): Donde el jugador podrá ir saltando.
-    - Escaleras y enredaderas: Por las cuales el jugador podrá subir y bajar escalando.
+    - Plataformas: Donde el jugador podrá ir saltando.
+    - Escaleras: Por las cuales el jugador podrá subir y bajar escalando.
     - Pociones de curación: que sanarán al personaje.
     - Enemigos: Depende de la temática del nivel habrá un enemigo u otro. El personaje podrá derrotarlos usando sus poderes o esquivarlos.
-    - Llaves: para abrir puertas, quellevarán al jefe final de cada nivel.
+    - Llaves: para abrir la puerta, que llevará al jefe final de cada nivel.
     - Puerta final: para pasar la la pantalla del jefe.
 - Una vez pasada la puerta final, el personaje se enfrentará al jefe del nivel con el mítico juego de piedra, papel o tijera.
+- Si no lo derrota volverá a comenzar la partida desde el jefe final del nivel en el que se encuentra hasta derrotarlo.
 - Una vez derrotado al jefe final, el jugador obtendrá la gema y pasará al siguiente nivel.
 - Cuando se llegue al último nivel el juego de piedra papel o tijera se pondrá más difícil, dejando más de tres opciones a elegir.
 
@@ -94,7 +97,11 @@ El juego contará con un menú inicial simple e intuitivo con:
 
 ![gameover](https://github.com/merchf/Abrakazam/blob/master/assets/cambioEscenarios/GameOver.png)
 
-La temática del menú será fantástica, mostrando las siete gemas y el portal mágico. Además de poner a algún personaje.
+- To be continue...: El juego no está acabado del todo, hay 3 de 7 niveles, por lo que esta escena llevará de nuevo al menu principal del juego y será la última escena que se muestre cuando se pasen los tres niveles.
+
+![continue](https://github.com/merchf/Abrakazam/blob/master/assets/cambioEscenarios/Continuara.png)
+
+La temática del menú será fantástica, mostrandoel portal mágico. Además de poner a la brujita junto a los botones de selleccionar.
 
 **2.1.Configuración**
 
@@ -104,39 +111,38 @@ No dispone de configuración.
 
 Para los controles se utilizará el teclado, ya que es un juego destinado a que se juego en PC.
 La interfaz de juego se desarrollará en JavaScript con metodología html.
-Se desarrollarán diferentes niveles con diseños diferentes y plataformas, en los que el personaje podrá saltar, atacar, 	escalar, moverse a la izquierda y derecha, meterse por puertas, recoger objetos e interactuar con objetos. Todo ello, 		utilizando las flechas del teclado y algunas letras.
+Se desarrollarán diferentes niveles con diseños diferentes y plataformas, en los que el personaje podrá saltar, atacar, escalar, moverse a la izquierda y derecha, meterse por puertas, recoger objetos e interactuar con objetos. Todo ello, utilizando las flechas del teclado y algunas teclas específicas(Q,W,E).
 	 
 **3. Jugabilidad**
 
-Durante el juego habrá que ir superando los niveles, derrotando enemigos y  jefes e ir  recolectando las gemas para cerrar el portal del nivel final.
+Durante el juego habrá que ir superando los niveles, derrotando enemigos y a Mr Lion e ir recolectando las gemas para cerrar el portal del nivel final.
 
 **3.1.Mecánica**
 
 - Saltar: espacio.
 - Andar: flechas izquierda y derecha.
-- Escalar: flechas arriba y abajo cuando se llegue a una escalera o enredadera.
+- Escalar: flechas arriba y abajo cuando se llegue a una escalera.
 - Atacar: Teclas Q, W y E para lanzar diferentes conjuros.
-- Atravesar puerta: flecha para arriba cuando el personaje está frente a una puerta.
-- Doble salto: doble espacio.
-- Coger objetos:Llevar al personaje al objeto y este se coge automáticamente.
+- Atravesar puerta: Cuando la brujita coja la llave del nivel, la puerta será accesible y con sólo tocarla pasara a la siguiente escena.
+- Coger objetos: Llevar al personaje al objeto y este se coge automáticamente. Dependiendo del objeto se generará diferentes funcionalidades.
 
 **3.2.Dinámica**
 
 Para poder completar un nivel se deberá pasar el nivel plataforma hasta llegar a una puerta, que te lleva a la pantalla del jefe final.
-Una vez ahí se establece el juego de piedra(Q), papel(W) o tijera(E), cada uno asignado a un hechizo en nuestro caso. 
-Si se supera se gana la gema, te pasas en nivel y puedes seguir jugando.
+Una vez ahí se establece el juego de fuego, hielo o rayo, que está basado en el piedra, papel o tijera pero en nuestro caso se asigna a hechizos. En este juego te enfrentas a Mr Lion, que es controlado por la máquina y cuyas decisiones serán aleatorias.
+Si se supera la batalla se gana la gema, te pasas en nivel y puedes seguir jugando.
 
-Para perder en el juego tu personaje se tiene que quedar sin vidas, en principio contará con seis corazones. Dependerá de los ataques de  cada enemigo la vida que el personaje pierda, excepto en la batalla final que irá perdiendo un corazón entero. 
-Si se queda sin vida, GAME OVER.
+Para perder en el juego tu personaje se tiene que quedar sin vidas, en principio contará con tres corazones. Dependerá de los ataques de  cada enemigo la vida que el personaje pierda, excepto en la batalla final que irá perdiendo un corazón entero. 
+Si se queda sin vida en un nivel se regenerará de nuevo al inicio de ese nivel, en caso de que muera en la batalla final, GAME OVER, y hasta que no derrote a Mr Lion no podrá pasar de nivel.
 
 - Saltar: Le permite al personaje moverse entre plataformas o subir escalones.
 - Andar: Le permite al personaje moverse por el nivel y recolectar los objetos, además de escapar de los enemigos.
 - Escalar: Le permite al personaje subir y bajar entre los diferentes niveles que tenga el nivel, además de subir y bajar a    plataformas, que no se puedan alcanzar saltando.
 - Atacar: Le permite al personaje defenderse contra sus enemigos (más de 3 de vida).
-	- Bolas de fuego (Q): - 1 de vida al enemigo.
-	- Congelación (W): Mantiene al enemigo inmóvil 5 segundos. 
-	- Rayo (E): - 2 de vida.
-- Atravesar puerta: Le permite al personaje pasar al nivel final del jefe. Soólo se podrá atravesar la puerta si se tiene la llave escondida en cada nivel.
+	- Bolas de fuego (Q): - 3 de vida al enemigo.
+	- Congelación (W): Mantiene al enemigo inmóvil. 
+	- Rayo (E): ralentiza al enemigo, reduciendo su velocidad actual cada vez que le toca el hechizo.
+- Atravesar puerta: Le permite al personaje pasar al nivel final del jefe. Sólo se podrá atravesar la puerta si se tiene la llave escondida en cada nivel.
 - Coger objetos:  Le permite al personaje:
 	- Ganar vida, en el caso que recoja una poción.
 	- Abrir puertas y avanzar en el nivel, en el caso de que recoja una llave.
@@ -180,19 +186,24 @@ Mencionar el tipo de elementos que se van a necesitar (imágenes, sonidos, músi
 
 	
 - Sonidos: Efectos de salto, abrir y cerrar puertas, lanzar hechizos, muerte, coger llave y poción curativa.
+	- http://www.sonidosmp3gratis.com/index.php
+	- https://www.audacityteam.org/download/windows/
+
 - Música: Música de fondo para el menú principal y para los diferentes niveles del juego.
+	- https://opengameart.org/
 
 **4.1.Historia**
 
 El juego transcurre en el mágico reino de Abrakazam, donde el malvado Mr Lion ha abierto un portal mágico trayendo el pánico y el terror a todas sus tierras.
 Sólo consiguiendo el poder de las siete gemas astrales, nacidas de las mismísimas estrellas y repartidas por todo el reino, se podrá cerrar el portal y devolver la paz.
 
-El protagonista comenzará su aventura en un tren lleno de zombies, llegará a un castillo en ruinas, subirá un porrón de escaleras, echará a volar en su escoba para escapar de sus enemigos, aterrizará en un laberinto, que termina desembocando en el bosque oscuro, donde se encuentra el portal mágico en medio del lago negro. Todo esto venciendo a los enemigos, a sus jefes y ganando las siete gemas para cerrar el portal y vencer a Mr Lion.
+El protagonista comenzará su aventura en un tren lleno de zombies, llegará a un castillo en ruinas, subirá un porrón de escaleras del castillo, echará a volar en su escoba para escapar de sus enemigos, aterrizará en un laberinto, que termina desembocando en el bosque oscuro, donde se encuentra el portal mágico en medio del lago negro. Todo esto venciendo a los enemigos, a Mr Lion en cada nivel y ganando las siete gemas para cerrar el portal y vencer a Mr Lion de una vez por todas.
 
 	 
 **4.2.Niveles**
 
 Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedra, papel o tijera).
+Además de contar con un contador de vidas, un botón de pausa, un botón de música e instrucciones generales.
 
 - Nivel 1-Tren:
 	- Descripción: Al inicio el protagonista está en un tren camino a su destino, tendrá que atravesar los vagones hasta 		llegar a la locomotora, donde encontrará la puerta de salida.
@@ -214,7 +225,7 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 	- Descripción: Nuestro personaje tiene que huir del castillo, los enemigos son demasiados, por ello, comienza a subir las escaleras del castillo.
 	- Metodología: Plataformas Vertical, donde se utilizarán movimientos arriba, abajo, derecha e izquierda y salto.
 	- Enemigos: Ogros y Mr Lion.
-	- Objetos: poción curativa, llave y gema morada.
+	- Objetos: poción curativa, escoba(necesaria para el nivel 4), llave y gema morada.
 	
 	![Level3](https://github.com/merchf/Abrakazam/blob/master/assets/background/mapaNivel3.png)
 
@@ -245,16 +256,16 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 	 
 **4.3.Personajes**
 
-- Avatar del protagonista: Una bruja, que tendrá tres corazones de vida.
+- Avatar del protagonista: Una bruja, que tendrá tres corazones de vida y poderes mágicos.
 
  ![Brujita](https://github.com/merchf/Abrakazam/blob/master/public/images/Brujita.png)
  
 - Enemigos: Las criaturas que han atravesado el portal y están destruyendo el reino. Los enemigos que hay que ir derrotando en cada nivel. 
-	- Zombies: Perseguirán a la brujita y si la tocan la dañan. 
+	- Zombies: Perseguirán a la brujita y si la tocan la dañan, pero su velocidad es reducida y quitan un corazón. Tienen 5 corazones de vida.
 	
 	![Zombies](https://github.com/merchf/Abrakazam/blob/master/assets/enemies/zombie/Zombie_1.png)
 	
-	- Ogros: Tendrán un mazo con el que pueden golpear.
+	- Ogros: Tendrán un mazo con el que pueden golpear quitando un corazón de vida, son pequeños pero rápidos. Tienen 7 corazones de vida.
 	
 	![Ogros](https://github.com/merchf/Abrakazam/blob/master/assets/enemies/ogro/Ogro_1.png)
 	
@@ -263,7 +274,7 @@ Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedr
 	- Arañas.
 	- Medusas.
 	
-- Mr Lion: El antagonista del juego. El malvado hechicero que ha abierto el portal, que ha traído a todos los enemigos y el caos al reino. El jefe final que hay que derrotar en los niveles.
+- Mr Lion: El antagonista del juego. El malvado hechicero que ha abierto el portal, que ha traído a todos los enemigos y el caos al reino. El jefe final que hay que derrotar en los niveles. Tiene poder de fuego, hielo y rayo, además de contener las gemas que necesitas.
 
  ![Mr Lion](https://github.com/merchf/Abrakazam/blob/master/public/images/MrLion.png)
  
