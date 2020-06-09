@@ -14,7 +14,7 @@ export default class Level1 extends Phaser.Scene {
   create() {
 
     this.logic = this.scene.get('logicLevels');
-    this.music = this.logic.addMusicScenes(this,"level1");
+    this.music = this.logic.addMusicScenes(this, "level1");
     this.music.volume = 0.10;
     this.logic.createButtonMusic(this);
     this.logic.createButtonPause(this);
@@ -28,18 +28,19 @@ export default class Level1 extends Phaser.Scene {
     let moon_background = map.addTilesetImage('luna', "luna");
     let Stalin_without_bg = map.addTilesetImage('Stalin_without_bg', "Stalin_without_bg");
     let finalDoor = map.addTilesetImage('tile_castle_grey', "tile_castle_grey");
+    let montanas = map.addTilesetImage('montañas', "montañas");
 
     //capas
     // this.tileset = map.addTilesetImage('tilesetNameInTiled', 'tilesetNameInPhaser');
 
     this.topeZ = map.createStaticLayer("Capa tope Zombies", [trainBack, trainFull, Stalin_without_bg], 0, 0);
+    this.escalar = map.createStaticLayer("escalar", [finalDoor, montanas], 0, 0);
     this.background = map.createStaticLayer("Capa del fondo atardecer", [moon_background], 0, 0, 17, 291);
     this.train = map.createStaticLayer("Capa del tren ", [trainBack, trainFull, Stalin_without_bg], 0, 0);
     this.suelo = map.createStaticLayer("suelo", [trainBack, trainFull, Stalin_without_bg], 0, 0);
     this.muerte = map.createStaticLayer("Capa muerte", [trainBack, trainFull, Stalin_without_bg], 0, 0);
     this.arboles = map.createStaticLayer("Capa fondo arboles oscuros alante", [trees1], 0, 0);
     this.arboles1 = map.createStaticLayer("Capa de fondo arboles alante", [trees], 0, 0);
-    this.escalar = map.createStaticLayer("escalar", [trainBack, finalDoor], 0, 0);
     this.door = map.createStaticLayer("puerta", [finalDoor], 0, 0);
     this.objects = map.getObjectLayer["Capa de Objetos "];
 
@@ -67,7 +68,7 @@ export default class Level1 extends Phaser.Scene {
 
     //enemies(zombie)
     this.enemies = this.physics.add.group();
-    
+
     //esto habria que meterlo como una funcion jeje
     let z1 = new Zombie(this, 100, 250);
     let z2 = new Zombie(this, 600, 250);
@@ -166,13 +167,13 @@ export default class Level1 extends Phaser.Scene {
     }, null, this);
 
     this.logic.checkFlagsHurtEnemy(this, this.enemies);
-    this.logic.checkFlagsHurtPlayer(this, this.witch,this.logic,this.music);
+    this.logic.checkFlagsHurtPlayer(this, this.witch, this.logic, this.music);
     //controla coger la llave
     this.physics.add.overlap(this.witch, this.keyObject, this.logic.catchKeyDoor, null, this);
     //si te caes del tren se resetea el nivel
     this.physics.add.collider(this.witch, this.muerte, this.logic.resetPlayer, null, this);
-    this.physics.add.collider(this.witch, this.door, (witch,obj) => {
-      if(witch.keyDoor){
+    this.physics.add.collider(this.witch, this.door, (witch, obj) => {
+      if (witch.keyDoor) {
         this.music.destroy();
         //ruido abrir puerta
         this.scene.stop(this);
@@ -182,14 +183,15 @@ export default class Level1 extends Phaser.Scene {
     });
 
     //Si está en la escalera permite escalar al jugador
-    
-   /* this.physics.add.collider(this.witch, this.suelo, (witch,suelo) => { 
+
+    /*this.physics.add.collider(this.witch, this.suelo, (witch, suelo) => {
       this.witch.onLadder = false;
-    } );*/
-    this.physics.add.overlap(this.witch, this.escalar, (witch,ladder) => { 
+    });*/
+
+    this.physics.add.overlap(this.witch, this.escalar, (witch, ladder) => {
       witch.onLadder = true;
-    } );
-    
+    });
+
     console.log("update");
   }
 }

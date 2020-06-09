@@ -60,6 +60,7 @@ export default class Preloader extends Phaser.Scene {
         //objetos
         this.load.image("keyDoor", './assets/objects/llaveobjeto.png');
         this.load.image("hearthUI", './assets/objects/PocionCuracionobjeto.png');
+        this.load.image("escoba", './assets/objects/escoba.png');
 
         //vidas
         this.load.image("Life3", './assets/objects/VidaBruja1.png');

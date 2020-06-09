@@ -22,6 +22,7 @@ export default class Player extends Phaser.GameObjects.Sprite {
     this.timeImposibleHurt = 2000;
     //la llave tiene que estar a true para acabar cada nivel
     this.keyDoor = false;
+    this.catchEscoba = false;
     this.catchHeart = false;
     this.onLadder = false;
     this.labelKey = this.scene.add.text(10, 40);

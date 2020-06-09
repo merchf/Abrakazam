@@ -141,7 +141,7 @@ Si se queda sin vida en un nivel se regenerará de nuevo al inicio de ese nivel,
 - Atacar: Le permite al personaje defenderse contra sus enemigos (más de 3 de vida).
 	- Bolas de fuego (Q): - 3 de vida al enemigo.
 	- Congelación (W): Mantiene al enemigo inmóvil. 
-	- Rayo (E): ralentiza al enemigo, reduciendo su velocidad actual cada vez que le toca el hechizo.
+	- Rayo (E): ralentiza al enemigo, reduciendo su velocidad actual cada vez que le toca el hechizo. Además hace -1 de vida.
 - Atravesar puerta: Le permite al personaje pasar al nivel final del jefe. Sólo se podrá atravesar la puerta si se tiene la llave escondida en cada nivel.
 - Coger objetos:  Le permite al personaje:
 	- Ganar vida, en el caso que recoja una poción.

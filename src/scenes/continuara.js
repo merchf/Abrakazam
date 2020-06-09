@@ -14,9 +14,10 @@ export default class Continuara extends Phaser.Scene {
         backButton.setInteractive();
         backButton.on("pointerup", () => {
             this.music.destroy();
-            this.scene.start('prologo');
-            //this.scene.start('level1');
-            //this.scene.start('prologoBeforeMrLion');
+            let musicMenu = this.sound.add("mainMenuMusic");
+            musicMenu.play();
+            musicMenu.setLoop(true);
+            this.scene.start('mainMenu', musicMenu);
         });
 
     }

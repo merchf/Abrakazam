@@ -44,6 +44,7 @@ export default class Level3 extends Phaser.Scene {
     //añadimosObjeto
     this.keyObject = this.physics.add.sprite(64, 1224, "keyDoor");
     this.hearthUI = this.physics.add.sprite(46.6666666666667, 1792, "hearthUI");
+    this.escoba = this.physics.add.sprite(33.3333, 354.545, "escoba");
     //this.hearthUI = this.physics.add.sprite(220, 524, "hearthUI");
     this.logic.createLifePlayer(this);
 
@@ -58,6 +59,7 @@ export default class Level3 extends Phaser.Scene {
     this.physics.add.collider(this.witch, this.capaSuelo);
     this.physics.add.collider(this.keyObject, this.capaSuelo);
     this.physics.add.collider(this.hearthUI, this.capaSuelo);
+    this.physics.add.collider(this.escoba, this.capaSuelo);
 
     //enemies(ogros)
     this.enemies = this.physics.add.group();
@@ -159,6 +161,9 @@ export default class Level3 extends Phaser.Scene {
 
     //controla coger la vida
     this.physics.add.overlap(this.witch, this.hearthUI, this.logic.catchHeart, null, this);
+
+    //controla coger la escoba
+    this.physics.add.overlap(this.witch, this.escoba, this.logic.catchEscoba, null, this);
     
     //si te caes se resetea el nivel
     this.physics.add.collider(this.witch, this.capaMuerte, this.logic.resetPlayer, null, this);

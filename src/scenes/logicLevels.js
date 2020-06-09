@@ -94,7 +94,7 @@ export default class LogicLevels extends Phaser.Scene {
     buttonPause.setScale(0.5);
     buttonPause.on("pointerup", () => {
       this.scene.pause(scene);
-      this.scene.launch('pause',scene);
+      this.scene.launch('pause', scene);
     });
   }
 
@@ -248,12 +248,22 @@ export default class LogicLevels extends Phaser.Scene {
       object1.destroy();
     }
   }
+
+  catchEscoba(player, object1) {
+    let music = this.sound.add("catchKeyMusic");
+    music.play();
+    player.catchEscoba = true;
+    object1.destroy();
+  }
+
+
   checkCatchHeart(player, logic) {
     if (player.catchHeart) {
       logic.updateLifePlayer(player.health);
       player.catchHeart = false;
     }
   }
+  
   //pasar de nivel
   nextLevel(level) {
     //habria que hacer un stop del level actual
