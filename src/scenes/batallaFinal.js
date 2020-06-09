@@ -9,17 +9,17 @@ export default class BatallaFinal extends Phaser.Scene {
   constructor() {
     super({ key: 'batallaFinal' });
   }
-  
+
   preload() { }
 
 
   create() {
     //this.musicBattle.resume();
-        //this.music.volume = 0.10;
-    
+    //this.music.volume = 0.10;
+
     this.logic = this.scene.get('logicLevels');
     this.add.image(0, 0, "fondobatallafinal").setOrigin(0).setDepth(0);
-   
+
     this.music = this.logic.addMusicScenes(this, "batallaFinal");
     //vidas
     this.logic.createLifePlayer(this);

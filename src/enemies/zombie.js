@@ -8,7 +8,7 @@ export default class Zombie extends Phaser.GameObjects.Sprite {
     this.hurtFire = false;
     this.hurtIce = false;
     this.hurtThunder = false;
-    this.frozen =false;
+    this.frozen = false;
   }
   create() {
     this.scene.add.existing(this);
@@ -31,7 +31,7 @@ export default class Zombie extends Phaser.GameObjects.Sprite {
 
     this.scene.anims.create({
       key: 'burnedDZ',
-      frames:this.scene.anims.generateFrameNames('zombie', {
+      frames: this.scene.anims.generateFrameNames('zombie', {
         prefix: 'Zombie_',
         suffix: '.png',
         start: 2,
@@ -50,7 +50,7 @@ export default class Zombie extends Phaser.GameObjects.Sprite {
       frameRate: 10,
     }); this.scene.anims.create({
       key: 'electrocutedDZ',
-      frames:this.scene.anims.generateFrameNames('zombie', {
+      frames: this.scene.anims.generateFrameNames('zombie', {
         prefix: 'Zombie_',
         suffix: '.png',
         start: 4,
@@ -104,9 +104,9 @@ export default class Zombie extends Phaser.GameObjects.Sprite {
       this.destroy();
       return
     }
-    
+
     this.play("walkDchaZ", true);
-    if(this.frozen){
+    if (this.frozen) {
       this.play("frozenDZ", true);
     }
     //mirror para los sprites
@@ -141,9 +141,9 @@ export default class Zombie extends Phaser.GameObjects.Sprite {
       this.play("electrocutedDZ", true);
       this.body.setVelocityX(this.speed - 15);
     }
-    if(this.body.velocity.x > 0){
+    if (this.body.velocity.x > 0) {
       this.setFlipX(false);
-    }else if(this.body.velocity.x < 0){
+    } else if (this.body.velocity.x < 0) {
       this.setFlipX(true);
     }
 

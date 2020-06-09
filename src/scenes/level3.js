@@ -28,7 +28,7 @@ export default class Level3 extends Phaser.Scene {
     // this.tileset = map.addTilesetImage('tilesetNameInTiled', 'tilesetNameInPhaser');
     this.tope = map.createStaticLayer("topeOgros", [castle], 0, 0);
     this.objects = map.getObjectLayer["objetos"];
-    this.fondoCielo = map.createStaticLayer("fondoMontanas", [montañas,moon], 0, 0, 30, 200);
+    this.fondoCielo = map.createStaticLayer("fondoMontanas", [montañas, moon], 0, 0, 30, 200);
     this.fondoCastillo = map.createStaticLayer("fondoCastillo", [castle], 0, 0, 30, 200);
     this.capaSuelo = map.createStaticLayer("suelo", [castle], 0, 0);
     this.fondoDelante = map.createStaticLayer("decoraciones", [castle], 0, 0);
@@ -155,7 +155,7 @@ export default class Level3 extends Phaser.Scene {
     }, null, this);
 
     this.logic.checkFlagsHurtEnemy(this, this.enemies);
-    this.logic.checkFlagsHurtPlayer(this, this.witch, this.logic,this.music);
+    this.logic.checkFlagsHurtPlayer(this, this.witch, this.logic, this.music);
     //controla coger la llave
     this.physics.add.overlap(this.witch, this.keyObject, this.logic.catchKeyDoor, null, this);
 
@@ -164,7 +164,7 @@ export default class Level3 extends Phaser.Scene {
 
     //controla coger la escoba
     this.physics.add.overlap(this.witch, this.escoba, this.logic.catchEscoba, null, this);
-    
+
     //si te caes se resetea el nivel
     this.physics.add.collider(this.witch, this.capaMuerte, this.logic.resetPlayer, null, this);
     this.physics.add.collider(this.witch, this.door, (witch, obj) => {

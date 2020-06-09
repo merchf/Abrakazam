@@ -141,14 +141,14 @@ export default class Level2 extends Phaser.Scene {
     }, null, this);
 
     this.logic.checkFlagsHurtEnemy(this, this.enemies);
-    this.logic.checkFlagsHurtPlayer(this, this.witch, this.logic,this.music);
-   
+    this.logic.checkFlagsHurtPlayer(this, this.witch, this.logic, this.music);
+
     //controla coger la llave
     this.physics.add.overlap(this.witch, this.keyObject, this.logic.catchKeyDoor, null, this);
     //controla coger la vida
     this.physics.add.overlap(this.witch, this.hearthUI, this.logic.catchHeart, null, this);
-    this.logic.checkCatchHeart(this.witch,this.logic);
-  
+    this.logic.checkCatchHeart(this.witch, this.logic);
+
     //si te caes se resetea el nivel
     this.physics.add.collider(this.witch, this.capaMuerte, this.logic.resetPlayer, null, this);
     this.physics.add.collider(this.witch, this.door, (witch, obj) => {

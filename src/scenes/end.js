@@ -8,6 +8,5 @@ export default class End extends Phaser.Scene {
   }
 
   create() {
-    this.add.text(10, 10, 'Se acabó!');
   }
 }

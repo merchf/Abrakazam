@@ -1,6 +1,3 @@
-import Player from '../player.js';
-import Zombie from '../enemies/zombie.js';
-
 
 export default class LogicLevels extends Phaser.Scene {
 
@@ -141,7 +138,7 @@ export default class LogicLevels extends Phaser.Scene {
   }
   updateHurtParams(player, scene) {
     scene.time.addEvent({
-      delay: player.timeImposibleHurt, //tiempo que el enemigo esta stuneado
+      delay: player.timeImposibleHurt,
       callback: () => {
         player.imposibleHurt = false;
       },
@@ -263,7 +260,7 @@ export default class LogicLevels extends Phaser.Scene {
       player.catchHeart = false;
     }
   }
-  
+
   //pasar de nivel
   nextLevel(level) {
     //habria que hacer un stop del level actual
