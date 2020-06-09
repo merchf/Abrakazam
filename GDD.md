@@ -12,7 +12,7 @@ Sólo consiguiendo las siete gemas el protagonista podrá adquirir suficiente po
 |**Géneros**:  Fantasía y aventura  |  **Modos:** Historia. Un jugador. Plataforma.|
 |--|--|
 |**Público objetivo**: +7  |**Plataformas**: PC|
-|**Objetos**: 7 gemas, pociones curativas y llaves.|
+|**Objetos**: 7 gemas, pociones curativas, escoba y llaves.|
 |**Armas**: Magia: bolas de fuego, poder de congelación y rayos.|
 |**Personajes**: 13|
 |**Escenarios**: 7 niveles y 1 batalla final en cada nivel|
@@ -58,10 +58,12 @@ Además, al final de cada nivel, el jugador se enfrentará a un enemigo final pa
  
 **1.1 Relato breve y parcial de una partida típica**
 
-- El jugador ingresa el nombre que quiere tener y da a JUGAR.
-- Aparece la pantalla del primer nivel. En el juego habrá siete niveles (actualmente hay diseñados tres niveles), cada uno con temática diferente haciendo alusión al viaje que hará nuestro protagonista, desde su inicio hasta llegar al portal final. 
+- El jugador da a play en la web y le aparece el menu de juego donde de nuevo da al botón PLAY para empezar la partida.
+- Aparece la pantalla del primer nivel tras la escena del prólogo, donde se explica la historia. En el juego habrá siete niveles (actualmente hay diseñados tres niveles), cada uno con temática diferente haciendo alusión al viaje que hará nuestra brujita, desde su inicio hasta llegar al portal final. 
   Niveles: Tren-Castillo-Escaleras-Escoba-Laberinto-Bosque Oscuro-Lago negro.
   Cada vez que el personaje muera en el nivel, se reiniciará el nivel y tendrá que comenzar de nuevo la partida desde ese nivel.
+  Además el juego consta con varias escenas que ayudarán a entender mejor la historia que va transcurriendo.
+  
 - El nivel consta de:
     - Plataformas: Donde el jugador podrá ir saltando.
     - Escaleras: Por las cuales el jugador podrá subir y bajar escalando.
@@ -80,16 +82,16 @@ El juego contará con un menú inicial simple e intuitivo con:
 
 ![FondoMenu](https://github.com/merchf/Abrakazam/blob/master/assets/menu/menu_fondo.png)
 
-- Botón JUGAR: iniciará el juego.
+- Botón PLAY: iniciará el juego.
 
 ![play](https://github.com/merchf/Abrakazam/blob/master/assets/menu/play_button.png)
 
-- Botón CRÉDITOS: mostrará los nombres de los creadores y las herramientas utilizadas en el desarrollo del juego.
+- Botón CREDITS: mostrará los nombres de los creadores y las herramientas utilizadas en el desarrollo del juego.
 
 ![credits](https://github.com/merchf/Abrakazam/blob/master/assets/menu/credits_button.png)
 ![CRÉDITOS](https://github.com/merchf/Abrakazam/blob/master/assets/menu/credits.png)
 
-- Botón REGLAS: Para mostrás las instruccones del juego y los movimientos del personaje.
+- Botón RULES: Para mostrás las instruccones del juego y los movimientos del personaje.
 
 ![reglas](https://github.com/merchf/Abrakazam/blob/master/assets/menu/rules_button.png)
 ![RULES](https://github.com/merchf/Abrakazam/blob/master/assets/menu/rules.png)
@@ -102,7 +104,8 @@ El juego contará con un menú inicial simple e intuitivo con:
 
 ![continue](https://github.com/merchf/Abrakazam/blob/master/assets/cambioEscenarios/Continuara.png)
 
-La temática del menú será fantástica, mostrandoel portal mágico. Además de poner a la brujita junto a los botones de selleccionar.
+La temática del menú será fantástica, con tonalidades violetas y fondo nocturno, mostrando también el portal mágico. 
+Además de poner a la brujita junto a los botones para seleccionar.
 
 **2.1.Configuración**
 
@@ -126,12 +129,14 @@ Durante el juego habrá que ir superando los niveles, derrotando enemigos y a Mr
 - Atacar: Teclas Q, W y E para lanzar diferentes conjuros.
 - Atravesar puerta: Cuando la brujita coja la llave del nivel, la puerta será accesible y con sólo tocarla pasara a la siguiente escena.
 - Coger objetos: Llevar al personaje al objeto y este se coge automáticamente. Dependiendo del objeto se generará diferentes funcionalidades.
+- Atacar Batalla Final: Ratón del ordenador para lanzar el conjuro que selecciones.
 
 **3.2.Dinámica**
 
 Para poder completar un nivel se deberá pasar el nivel plataforma hasta llegar a una puerta, que te lleva a la pantalla del jefe final.
-Una vez ahí se establece el juego de fuego, hielo o rayo, que está basado en el piedra, papel o tijera pero en nuestro caso se asigna a hechizos. En este juego te enfrentas a Mr Lion, que es controlado por la máquina y cuyas decisiones serán aleatorias.
-Si se supera la batalla se gana la gema, te pasas en nivel y puedes seguir jugando.
+Una vez ahí se establece el juego de fuego, hielo o rayo, que está basado en el piedra, papel o tijera pero en nuestro caso se asigna a hechizos. En este juego te enfrentas a Mr Lion, utilizando el ratón de tu ordenador para seleccionar que hechizo quieres utilizar.
+Las decisiones de Mr Lion son totalmente aleatorias, lo que hace dificil poder ganarle.
+Si se supera la batalla se gana la gema, pasas el nivel y puedes seguir jugando.
 
 Para perder en el juego tu personaje se tiene que quedar sin vidas, en principio contará con tres corazones. Dependerá de los ataques de  cada enemigo la vida que el personaje pierda, excepto en la batalla final que irá perdiendo un corazón entero. 
 Si se queda sin vida en un nivel se regenerará de nuevo al inicio de ese nivel, en caso de que muera en la batalla final, GAME OVER, y hasta que no derrote a Mr Lion no podrá pasar de nivel.
@@ -148,15 +153,17 @@ Si se queda sin vida en un nivel se regenerará de nuevo al inicio de ese nivel,
 	- Ganar vida, en el caso que recoja una poción.
 	- Abrir puertas y avanzar en el nivel, en el caso de que recoja una llave.
 	- Pasar de nivel, en el caso que consiga la gema.
+- Atacar Batalla Final: Le permite al personaje lanzar el conjuro que quiera, si es superior al que lance Mr Lion le quitará vida, sino Mr Lion será el que quite vida a nuestro personaje.
 
 **3.3.Estética**
 
-Modo pixel, basándonos en Alex Kidd.
+Como ya hemos mostrado en el Menú de inicio seguiremos una estética modo pixel, basándonos en Alex Kidd.
 Dependiendo del nivel, los escenarios serán claros u oscuros, aunque predominarán los oscuros.
-	
-**4.Contenido**
+En el caso de los tres primeros niveles, usamos fondos acordes al menu de inicio, siguiendo la estética pixel y manteniendo las tonalidades violetas y nocturnas (se adjuntan imagenes más adelante).
 
-Mencionar el tipo de elementos que se van a necesitar (imágenes, sonidos, música…)
+En cuanto a las escenas entre los niveles se mantiene el estilo pixel en las letras, aunque en ocasiones se utilizan fondos degradados de color morado y magenta, colores característicos del juego (se adjuntan imagenes más adelante).
+
+**4.Contenido**
 
 - Imágenes:
 
@@ -186,12 +193,13 @@ Mencionar el tipo de elementos que se van a necesitar (imágenes, sonidos, músi
 	![rayo](https://github.com/merchf/Abrakazam/blob/master/assets/batallaFinal/botonesbatallafinal3.png)
 
 	
-- Sonidos: Efectos de salto, abrir y cerrar puertas, lanzar hechizos, muerte, coger llave y poción curativa.
+- Sonidos: Efectos de salto, lanzar hechizos, muerte, coger llave, escoba y poción curativa.
 	- http://www.sonidosmp3gratis.com/index.php
 	- https://www.audacityteam.org/download/windows/
 
-- Música: Música de fondo para el menú principal y para los diferentes niveles del juego.
+- Música: Música de fondo para el menú principal y para los diferentes niveles del juego. 
 	- https://opengameart.org/
+	
 
 **4.1.Historia**
 
@@ -203,8 +211,19 @@ El protagonista comenzará su aventura en un tren lleno de zombies, llegará a u
 	 
 **4.2.Niveles**
 
-Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final (piedra, papel o tijera).
-Además de contar con un contador de vidas, un botón de pausa, un botón de música e instrucciones generales.
+Cada nivel cuenta con una pantalla extra, donde se enfrenta al jefe final en la metodología de juego del piedra, papel o tijera (fuego, hielo o rayo).
+
+![general](https://github.com/merchf/Abrakazam/blob/master/public/images/BF.png)
+![vidas](https://github.com/merchf/Abrakazam/blob/master/assets/objects/VidaBruja1.png)
+![vidas](https://github.com/merchf/Abrakazam/blob/master/assets/objects/VidasMrLion1.png)
+
+Además cada nivel contará con un contador de vidas, un botón de pausa, un botón de música e instrucciones generales:
+
+![musicaOn](https://github.com/merchf/Abrakazam/blob/master/assets/menu/musicOn.png)
+![musicaOff](https://github.com/merchf/Abrakazam/blob/master/assets/menu/musicOff.png)
+![pausa](https://github.com/merchf/Abrakazam/blob/master/assets/menu/pause.png)
+![vidas](https://github.com/merchf/Abrakazam/blob/master/assets/objects/VidaBruja1.png)
+![general](https://github.com/merchf/Abrakazam/blob/master/public/images/generalNivel.png)
 
 - Nivel 1-Tren:
 	- Descripción: Al inicio el protagonista está en un tren camino a su destino, tendrá que atravesar los vagones hasta 		llegar a la locomotora, donde encontrará la puerta de salida.
@@ -224,7 +243,7 @@ Además de contar con un contador de vidas, un botón de pausa, un botón de mú
 
 - Nivel 3- Escaleras:
 	- Descripción: Nuestro personaje tiene que huir del castillo, los enemigos son demasiados, por ello, comienza a subir las escaleras del castillo.
-	- Metodología: Plataformas Vertical, donde se utilizarán movimientos arriba, abajo, derecha e izquierda y salto.
+	- Metodología: Plataformas Vertical, donde se utilizarán movimientos derecha e izquierda y salto.
 	- Enemigos: Ogros y Mr Lion.
 	- Objetos: poción curativa, escoba(necesaria para el nivel 4), llave y gema morada.
 	
@@ -260,24 +279,26 @@ Además de contar con un contador de vidas, un botón de pausa, un botón de mú
 - Avatar del protagonista: Una bruja, que tendrá tres corazones de vida y poderes mágicos.
 
  ![Brujita](https://github.com/merchf/Abrakazam/blob/master/public/images/Brujita.png)
+ ![AtlasBruja](https://github.com/merchf/Abrakazam/blob/master/assets/bruja/atlasbruja.png)
  
 - Enemigos: Las criaturas que han atravesado el portal y están destruyendo el reino. Los enemigos que hay que ir derrotando en cada nivel. 
 	- Zombies: Perseguirán a la brujita y si la tocan la dañan, pero su velocidad es reducida y quitan un corazón. Tienen 5 corazones de vida.
 	
-	![Zombies](https://github.com/merchf/Abrakazam/blob/master/assets/enemies/zombie/Zombie_1.png)
+	![ZombiesAtlas](https://github.com/merchf/Abrakazam/blob/master/assets/enemies/zombie/zombie_atlas.png)
 	
 	- Ogros: Tendrán un mazo con el que pueden golpear quitando un corazón de vida, son pequeños pero rápidos. Tienen 7 corazones de vida.
 	
-	![Ogros](https://github.com/merchf/Abrakazam/blob/master/assets/enemies/ogro/Ogro_1.png)
+	![ogroAtlas](https://github.com/merchf/Abrakazam/blob/master/assets/enemies/ogro/ogro_atlas.png)
 	
 	- Dragones.
 	- Espantapájaros.
 	- Arañas.
 	- Medusas.
 	
-- Mr Lion: El antagonista del juego. El malvado hechicero que ha abierto el portal, que ha traído a todos los enemigos y el caos al reino. El jefe final que hay que derrotar en los niveles. Tiene poder de fuego, hielo y rayo, además de contener las gemas que necesitas.
+- Mr Lion: El antagonista del juego. El malvado hechicero que ha abierto el portal, que ha traído a todos los enemigos y el caos al reino. El jefe final que hay que derrotar en los niveles. Tiene poder de fuego, hielo y rayo (utilizados aleatoriamente por la máquina), además de contener las gemas que necesitas. Tiene 3 corazones de vida.
 
- ![Mr Lion](https://github.com/merchf/Abrakazam/blob/master/public/images/MrLion.png)
+ ![Mr Lion](https://github.com/merchf/Abrakazam/blob/master/assets/enemies/mrLion/MrLion%20(1).png)
+ 
  
 **4.4.Objetos**
  
@@ -293,6 +314,14 @@ Además de contar con un contador de vidas, un botón de pausa, un botón de mú
 
  ![Gemas](https://github.com/merchf/Abrakazam/blob/master/public/images/Gemas.gif)
 
+- Escoba: Necesaria para el Nivel 4, donde nuestra brujita tendrá que volar. Colocada en el nivel 3.
+	
+ ![Escoba](https://github.com/merchf/Abrakazam/blob/master/assets/objects/escoba.png)
 
 **Referencias**
--  Juego de Alex Kidd.
+- Juego de Alex Kidd.
+- Aseprite.
+- Tiled.
+- Audacity.
+- OpenGameArt.org
+
