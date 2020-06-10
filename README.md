@@ -19,6 +19,7 @@ Sólo consiguiendo el poder de las siete gemas astrales, nacidas de las mismísi
 https://merchf.github.io/Abrakazam/
 
  - # Gameplay: 
+https://github.com/merchf/Abrakazam/tree/master/public/videos
 
 - # Documento de diseño del videojuego: 
 https://github.com/merchf/DVI_Project/blob/master/GDD.md
